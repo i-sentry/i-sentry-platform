@@ -11,7 +11,7 @@ type ServiceProp = {
 const Services = () => {
   return (
     <>
-      <section className="">
+      <section className="py-10">
         <div className="wrapper">
           <div className="space-y-6 text-center md:mx-auto md:max-w-xl">
             <h2 className="text-xl font-normal text-white md:text-3xl md:leading-10">
@@ -48,9 +48,21 @@ const Services = () => {
                 </span>
               </Button>
             </div>
-            <div className="grid gap-y-8 sm:grid-cols-2 sm:gap-6 lg:mt-10">
+            <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-6 lg:mt-10">
               {services.map((item: ServiceProp, index: number) => (
-                <ServiceCard key={"0" + (index + 1)} index={index} {...item} />
+                <>
+                  <ServiceCard
+                    key={"0" + (index + 1)}
+                    index={index}
+                    {...item}
+                  />
+                  {index === 1 && (
+                    <hr className="mt-3 border-0 border-t border-[#f9f9f92d] sm:col-span-2" />
+                  )}
+                  {index === 3 && (
+                    <hr className="mt-3 border-0 border-t border-[#f9f9f92d] sm:col-span-2" />
+                  )}
+                </>
               ))}
             </div>
           </div>
