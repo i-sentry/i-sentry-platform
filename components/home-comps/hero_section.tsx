@@ -6,8 +6,8 @@ const Hero = () => {
     <>
       <section className="h-auto w-full py-20">
         <div className="wrapper">
-          <div className="mx-auto flex max-w-xl flex-col items-center">
-            <h1 className="text-center text-[28px] font-normal text-white sm:text-3xl">
+          <div className="mx-auto flex flex-col items-center md:max-w-2xl">
+            <h1 className="text-center text-[28px] font-normal text-white sm:text-3xl md:text-5xl">
               Pioneering the Digital Frontier
             </h1>
             <p className="mb-8 mt-3 text-center text-sm font-extralight leading-6 text-[#C2C2C2CC] sm:mx-auto sm:w-[80%]">

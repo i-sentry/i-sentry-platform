@@ -1,60 +1,58 @@
 import React from "react";
-import Placeholder from "@/public/images/placeholder.png";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 import ServiceCard from "./service_card";
-import { StaticImageData } from "next/image";
 
 type ServiceProp = {
   title: string;
-  description: string;
-  images?: StaticImageData[];
-  buttonText?: string;
-  listItems?: string[];
+  listItems: string[];
 };
-
-const services: ServiceProp[] = [
-  {
-    title: "Product Innovation Lab",
-    description:
-      "Transform ideas into reality with our cutting-edge development capabilities. From concept to deployment, we craft revolutionary           digital solutions that set new industry standards.",
-    // images: [Placeholder, Placeholder, Placeholder],
-    buttonText: "Explore Our Products",
-    listItems: ["Custom Software Development", "IoT Solutions"],
-  },
-  {
-    title: "Product Innovation Lab",
-    description:
-      "Transform ideas into reality with our cutting-edge development capabilities. From concept to deployment, we craft revolutionary           digital solutions that set new industry standards.",
-    // images: [Placeholder, Placeholder, Placeholder],
-    buttonText: "Explore Our Products",
-    listItems: ["Custom Software Development", "IoT Solutions"],
-  },
-  {
-    title: "Product Innovation Lab",
-    description:
-      "Transform ideas into reality with our cutting-edge development capabilities. From concept to deployment, we craft revolutionary           digital solutions that set new industry standards.",
-    images: [Placeholder, Placeholder, Placeholder],
-    // buttonText: "Explore Our Products",
-    // listItems: ["Custom Software Development", "IoT Solutions"],
-  },
-  {
-    title: "Product Innovation Lab",
-    description:
-      "Transform ideas into reality with our cutting-edge development capabilities. From concept to deployment, we craft revolutionary           digital solutions that set new industry standards.",
-    images: [Placeholder],
-    // buttonText: "Explore Our Products",
-    // listItems: ["Custom Software Development", "IoT Solutions"],
-  },
-];
 
 const Services = () => {
   return (
     <>
-      <section className="py-10">
+      <section className="">
         <div className="wrapper">
-          <div className="grid gap-6 md:grid-cols-2">
-            {services.map((item: ServiceProp, index: number) => (
-              <ServiceCard {...item} key={index} />
-            ))}
+          <div className="space-y-6 text-center md:mx-auto md:max-w-xl">
+            <h2 className="text-xl font-normal text-white md:text-3xl md:leading-10">
+              Innovative Solutions for a<br className="hidden md:block" />{" "}
+              Rapidly Evolving World
+            </h2>
+            <p className="font-inter text-sm font-extralight leading-6 text-[#C2C2C2] md:text-base">
+              At I-Sentry Technologies, we stand at the vanguard of
+              technological advancement. Our cutting-edge solutions and global
+              expertise empower businesses to navigate and thrive in the digital
+              landscape of tomorrow.
+            </p>
+            <Button className="h-auto rounded-full bg-grad px-8 py-3.5 font-light">
+              Join our Program
+            </Button>
+          </div>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
+            <div className="space-y-6">
+              <h3 className="text-base font-normal text-[#C2C2C2] md:text-lg">
+                Our Mentorship Program
+              </h3>
+              <p className="text-sm font-extralight leading-6 text-[#C2C2C2] md:text-base md:leading-6">
+                Transform your career trajectory through our intensive year-long
+                mentorship program. At I-Sentry Technologies, we don&apos;t just
+                teach—we immerse you in real-world projects, surround you with
+                industry experts, and guide your journey from aspiring developer
+                to tech professional.
+              </p>
+              <Button className="mt-12 h-auto items-center gap-x-4 rounded-full border border-[#F4F4F40D] bg-grad-alt px-8 py-3.5 font-dm-sans font-light">
+                Learn more
+                <span>
+                  <ChevronRight />
+                </span>
+              </Button>
+            </div>
+            <div className="grid gap-y-8 sm:grid-cols-2 sm:gap-6 lg:mt-10">
+              {services.map((item: ServiceProp, index: number) => (
+                <ServiceCard key={"0" + (index + 1)} index={index} {...item} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -63,3 +61,45 @@ const Services = () => {
 };
 
 export default Services;
+
+const services: ServiceProp[] = [
+  {
+    title: "Program Foundation Building",
+    listItems: [
+      "Technical skill assessment and personalized learning path",
+      "Core technology stack immersion",
+      "Industry best practices and standards",
+      "Weekly one-on-one mentoring sessions",
+    ],
+  },
+
+  {
+    title: "Program Foundation Building",
+    listItems: [
+      "Technical skill assessment and personalized learning path",
+      "Core technology stack immersion",
+      "Industry best practices and standards",
+      "Weekly one-on-one mentoring sessions",
+    ],
+  },
+
+  {
+    title: "Program Foundation Building",
+    listItems: [
+      "Technical skill assessment and personalized learning path",
+      "Core technology stack immersion",
+      "Industry best practices and standards",
+      "Weekly one-on-one mentoring sessions",
+    ],
+  },
+
+  {
+    title: "Program Foundation Building",
+    listItems: [
+      "Technical skill assessment and personalized learning path",
+      "Core technology stack immersion",
+      "Industry best practices and standards",
+      "Weekly one-on-one mentoring sessions",
+    ],
+  },
+];

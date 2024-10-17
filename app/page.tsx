@@ -1,6 +1,7 @@
 "use client";
 import Hero from "@/components/home-comps/hero_section";
 import Services from "@/components/home-comps/services_section";
+import About from "@/components/home-comps/about_section";
 
 // import Image from "next/image";
 
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <About />
       <Services />
     </>
   );
