@@ -94,6 +94,8 @@ const config: Config = {
         "grad-alt":
           "linear-gradient(90deg, rgba(2,59,116,0.1) 0%,rgba(86,140,194,0.1) 100%)",
         box: "linear-gradient(180deg, rgba(250,250,250,0.075) 0%, rgba(244,244,244,0.05) 100%)",
+        partners:
+          "linear-gradient(90deg, #030B1B 10%, rgba(3, 11, 27, 0) 25.4%, rgba(3, 11, 27, 0) 75.3%, #030B1B 90.4%)",
       },
       borderRadius: {
         lg: "var(--radius)",
