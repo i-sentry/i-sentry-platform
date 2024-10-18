@@ -37,7 +37,7 @@ const Testimonials = () => {
   return (
     <section className="py-16">
       <div className="wrapper">
-        <div className="text-center space-y-6 mb-16">
+        <div className="mb-16 space-y-6 text-center">
           <h2 className="text-2xl font-normal text-white">Testimonial</h2>
           <p className="text-sm font-extralight text-[#C2C2C2]">
             From past mentees
@@ -73,7 +73,7 @@ const Testimonials = () => {
             ))}
           </Marquee>
 
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-full bg-reviews"></div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-full bg-reviews sm:block"></div>
         </div>
       </div>
     </section>
