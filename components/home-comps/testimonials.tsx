@@ -46,27 +46,27 @@ const Testimonials = () => {
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl">
           <Marquee pauseOnHover className="[--duration:20s]">
-            {firstRow.map((review) => (
+            {firstRow.map((review, index) => (
               <ReviewCard
-                key={review.username}
+                key={review.username + index}
                 {...review}
                 className="w-[400px]"
               />
             ))}
           </Marquee>
           <Marquee reverse pauseOnHover className="[--duration:20s]">
-            {secondRow.map((review) => (
+            {secondRow.map((review, index) => (
               <ReviewCard
-                key={review.username}
+                key={review.username + index}
                 {...review}
                 className="w-[450px]"
               />
             ))}
           </Marquee>
           <Marquee pauseOnHover className="[--duration:30s]">
-            {firstRow.map((review) => (
+            {firstRow.map((review, index) => (
               <ReviewCard
-                key={review.username}
+                key={review.username + index + "0"}
                 {...review}
                 className="w-[300px]"
               />

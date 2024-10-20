@@ -24,7 +24,10 @@ const Services = () => {
               expertise empower businesses to navigate and thrive in the digital
               landscape of tomorrow.
             </p>
-            <Button className="h-auto rounded-full bg-grad px-8 py-3.5 font-light">
+            <Button
+              key="Join our Program"
+              className="h-auto rounded-full bg-grad px-8 py-3.5 font-light"
+            >
               Join our Program
             </Button>
           </div>
@@ -41,21 +44,23 @@ const Services = () => {
                 industry experts, and guide your journey from aspiring developer
                 to tech professional.
               </p>
-              <Button className="mt-12 h-auto items-center gap-x-4 rounded-full border border-[#F4F4F40D] bg-grad-alt px-8 py-3.5 font-dm-sans font-light">
+              <Button
+                key="Learn more"
+                className="mt-12 h-auto items-center gap-x-4 rounded-full border border-[#F4F4F40D] bg-grad-alt px-8 py-3.5 font-dm-sans font-light"
+              >
                 Learn more
                 <span>
                   <ChevronRight />
                 </span>
               </Button>
             </div>
-            <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-6 lg:mt-10">
+            <div
+              key={"service-list"}
+              className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-6 lg:mt-10"
+            >
               {services.map((item: ServiceProp, index: number) => (
                 <>
-                  <ServiceCard
-                    key={"0" + (index + 1)}
-                    index={index}
-                    {...item}
-                  />
+                  <ServiceCard key={"0" + index + 1} index={index} {...item} />
                   {index === 1 && (
                     <hr className="mt-3 border-0 border-t border-[#f9f9f92d] sm:col-span-2" />
                   )}

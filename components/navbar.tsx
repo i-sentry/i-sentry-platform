@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -16,10 +16,32 @@ type ComponentProps = {
 const Navbar: React.FC<ComponentProps> = ({}) => {
   const pathname = usePathname();
   const { setOpen } = useMobileMenuOverlay();
+  const [isSticky, setIsSticky] = useState(false);
+
+  // Scroll handler
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY >= 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [setIsSticky]);
+
+  console.log(isSticky);
 
   return (
     <>
-      <nav className="">
+      <nav
+        className={cn(
+          "fixed left-0 top-0 z-50 w-full duration-300",
+          isSticky ? "bg-brand-800/35 backdrop-blur-md" : "bg-transparent",
+        )}
+      >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
           {/* LOGO */}
           <Link href="/" className="text-white">

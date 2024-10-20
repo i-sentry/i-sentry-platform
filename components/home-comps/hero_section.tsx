@@ -1,11 +1,10 @@
 import React from "react";
 import { Button } from "../ui/button";
-import Marquee from "../ui/marquee";
 
 const Hero = () => {
   return (
     <>
-      <section className="h-auto w-full py-20">
+      <section className="h-auto w-full py-20 lg:flex lg:h-screen lg:items-center lg:justify-center lg:py-0">
         <div className="wrapper">
           <div className="mx-auto flex flex-col items-center md:max-w-2xl">
             <h1 className="text-center text-[28px] font-normal text-white sm:text-3xl md:text-5xl">
@@ -30,12 +29,9 @@ const Hero = () => {
       <section className="relative border-y-[0.2px] border-[#f9f9f924] py-4">
         <div className="absolute left-0 top-0 h-full w-full bg-partners"></div>
         <div className="wrapper text-white">
-          <Marquee>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo
-            expedita, hic earum animi vero harum porro eligendi dolore veniam
-            doloribus magni distinctio libero ab est itaque eum at quae.
-            Officiis?
-          </Marquee>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo
+          expedita, hic earum animi vero harum porro eligendi dolore veniam
+          doloribus magni distinctio libero ab est itaque eum at quae. Officiis?
         </div>
       </section>
     </>
