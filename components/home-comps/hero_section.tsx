@@ -16,7 +16,7 @@ const Hero = () => {
             </p>
 
             <div className="flex items-center gap-2">
-              <Button className="h-auto rounded-full border border-[#023B744D] bg-grad-alt px-8 py-3.5 backdrop-blur-xl">
+              <Button className="h-auto rounded-full border border-[#023B74]/20 bg-grad-alt px-8 py-3.5 backdrop-blur-[50px] hover:bg-grad-alt">
                 Our Services
               </Button>
               <Button className="h-auto rounded-full bg-grad px-8 py-3.5">

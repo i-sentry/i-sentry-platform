@@ -59,7 +59,7 @@ const Services = () => {
               className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-6 lg:mt-10"
             >
               {services.map((item: ServiceProp, index: number) => (
-                <>
+                <React.Fragment key={index}>
                   <ServiceCard key={"0" + index + 1} index={index} {...item} />
                   {index === 1 && (
                     <hr className="mt-3 border-0 border-t border-[#f9f9f92d] sm:col-span-2" />
@@ -67,7 +67,7 @@ const Services = () => {
                   {index === 3 && (
                     <hr className="mt-3 border-0 border-t border-[#f9f9f92d] sm:col-span-2" />
                   )}
-                </>
+                </React.Fragment>
               ))}
             </div>
           </div>
