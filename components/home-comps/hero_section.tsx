@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Marquee from "../ui/marquee";
 
 const Hero = () => {
   return (
@@ -16,10 +17,10 @@ const Hero = () => {
             </p>
 
             <div className="flex items-center gap-2">
-              <Button className="bg-grad-alt h-auto rounded-full border border-[#023B744D] px-8 py-3.5 backdrop-blur-xl">
+              <Button className="h-auto rounded-full border border-[#023B744D] bg-grad-alt px-8 py-3.5 backdrop-blur-xl">
                 Our Services
               </Button>
-              <Button className="bg-grad h-auto rounded-full px-8 py-3.5">
+              <Button className="h-auto rounded-full bg-grad px-8 py-3.5">
                 Join our Program
               </Button>
             </div>
@@ -27,11 +28,14 @@ const Hero = () => {
         </div>
       </section>
       <section className="relative border-y-[0.2px] border-[#f9f9f924] py-4">
-        <div className="bg-partners absolute left-0 top-0 h-full w-full"></div>
+        <div className="absolute left-0 top-0 h-full w-full bg-partners"></div>
         <div className="wrapper text-white">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo
-          expedita, hic earum animi vero harum porro eligendi dolore veniam
-          doloribus magni distinctio libero ab est itaque eum at quae. Officiis?
+          <Marquee>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo
+            expedita, hic earum animi vero harum porro eligendi dolore veniam
+            doloribus magni distinctio libero ab est itaque eum at quae.
+            Officiis?
+          </Marquee>
         </div>
       </section>
     </>
