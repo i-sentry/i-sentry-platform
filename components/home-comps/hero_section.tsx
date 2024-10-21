@@ -26,14 +26,6 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <section className="relative border-y-[0.2px] border-[#f9f9f924] py-4">
-        <div className="absolute left-0 top-0 h-full w-full bg-partners"></div>
-        <div className="wrapper text-white">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo
-          expedita, hic earum animi vero harum porro eligendi dolore veniam
-          doloribus magni distinctio libero ab est itaque eum at quae. Officiis?
-        </div>
-      </section>
     </>
   );
 };

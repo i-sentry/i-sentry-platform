@@ -6,6 +6,7 @@ import Statistics from "@/components/home-comps/stats_section";
 import Testimonials from "@/components/home-comps/testimonials";
 import MenteeSection from "@/components/home-comps/mentees_section";
 import Career from "@/components/home-comps/career_section";
+import Partners from "@/components/home-comps/partners_section";
 
 // import Image from "next/image";
 
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Partners />
       <About />
       <Services />
       <Statistics />
