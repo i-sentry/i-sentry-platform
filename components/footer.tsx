@@ -15,12 +15,12 @@ import FooterLink from "./footer_links";
 const Footer = () => {
   return (
     <footer>
-      <section className="bg-footer1 border-t border-[#C2C2C21A] px-4 py-10 backdrop-blur-md">
+      <section className="border-t border-[#C2C2C21A] bg-footer1 px-4 py-10 backdrop-blur-md">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 lg:grid lg:grid-cols-2 lg:items-start">
             <div className="">
-              <h3 className="mb-3 font-dm-sans text-[2rem] font-semibold leading-10 text-[#FAFAFA] sm:text-4xl md:text-5xl">
-                Let&apos;s work together
+              <h3 className="mb-3 font-dm-sans text-[2rem] font-semibold leading-10 text-[#FAFAFA] sm:text-4xl md:text-5xl md:font-bold md:leading-tight lg:text-6xl lg:leading-tight">
+                Let&apos;s work <br className="hidden lg:block" /> together
               </h3>
               <p className="font-extralight leading-8 text-[#97A4B7]">
                 At I-Sentry Technologies, we stand at the vanguard of
@@ -96,7 +96,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <section className="bg-footer2 overflow-hidden py-3">
+      <section className="overflow-hidden bg-footer2 py-3">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-center">
           <svg
             className="h-auto w-full"

@@ -22,7 +22,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY >= 300);
+      setIsSticky(window.scrollY >= 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -39,7 +39,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
       <nav
         className={cn(
           "fixed left-0 top-0 z-50 w-full duration-300",
-          isSticky ? "bg-brand-800/35 backdrop-blur-md" : "bg-transparent",
+          isSticky ? "bg-brand-800/80 backdrop-blur-md" : "bg-transparent",
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">

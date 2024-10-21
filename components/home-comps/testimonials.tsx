@@ -38,13 +38,15 @@ const Testimonials = () => {
     <section className="py-16">
       <div className="wrapper">
         <div className="mb-16 space-y-6 text-center">
-          <h2 className="text-2xl font-normal text-white">Testimonial</h2>
-          <p className="text-sm font-extralight text-[#C2C2C2]">
+          <h2 className="text-center text-xl font-medium text-white md:text-3xl md:leading-10">
+            Testimonial
+          </h2>
+          <p className="text-sm font-extralight text-[#C2C2C2] md:text-base">
             From past mentees
           </p>
         </div>
 
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
           <Marquee pauseOnHover className="[--duration:20s]">
             {firstRow.map((review, index) => (
               <ReviewCard
