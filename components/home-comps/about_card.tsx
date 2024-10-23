@@ -1,7 +1,6 @@
-import { ChevronRight } from "lucide-react";
-import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
+import SmartButton from "../custom_button";
 
 type ComponentProps = {
   showList?: boolean;
@@ -54,12 +53,12 @@ const AboutCard: React.FC<ComponentProps> = ({
               {listItems?.map((list: string) => <li key={list}>{list}</li>)}
             </ul>
 
-            <Button className="mt-12 h-auto items-center gap-x-4 rounded-full border border-[#F4F4F40D] bg-grad-alt px-8 py-3.5 font-dm-sans font-light">
-              {buttonText}
-              <span>
-                <ChevronRight />
-              </span>
-            </Button>
+            <SmartButton
+              variant="dark"
+              buttonText={`${buttonText}`}
+              className="mt-12 border-[#F4F4F40D] bg-grad-alt backdrop-blur-0 hover:shadow-none"
+              showAnimatedIcon
+            />
           </>
         )}
       </div>

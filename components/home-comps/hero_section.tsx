@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ui/button";
+import SmartButton from "../custom_button";
 
 const Hero = () => {
   return (
@@ -67,7 +67,7 @@ const Hero = () => {
               </defs>
             </svg>
           </>
-          <div className="mx-auto flex flex-col items-center md:max-w-2xl lg:max-w-4xl">
+          <div className="relative z-10 mx-auto flex flex-col items-center md:max-w-2xl lg:max-w-4xl">
             <h1 className="text-center text-[28px] font-semibold text-white sm:text-3xl md:text-5xl lg:text-6xl">
               Pioneering the Digital Frontier
             </h1>
@@ -77,12 +77,8 @@ const Hero = () => {
             </p>
 
             <div className="flex items-center gap-2">
-              <Button className="h-auto rounded-full border border-[#023B74]/20 bg-grad-alt px-8 py-3.5 backdrop-blur-[50px] hover:bg-grad-alt">
-                Our Services
-              </Button>
-              <Button className="h-auto rounded-full bg-grad px-8 py-3.5">
-                Join our Program
-              </Button>
+              <SmartButton variant="dark" buttonText="Our Services" />
+              <SmartButton variant="bright" buttonText="Join our Program" />
             </div>
           </div>
         </div>

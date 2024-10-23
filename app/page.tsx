@@ -8,10 +8,6 @@ import MenteeSection from "@/components/home-comps/mentees_section";
 import Career from "@/components/home-comps/career_section";
 import Partners from "@/components/home-comps/partners_section";
 
-// import Image from "next/image";
-
-// import AnimatedCircles from "@/components/animate_circles";
-
 export default function Home() {
   return (
     <>
