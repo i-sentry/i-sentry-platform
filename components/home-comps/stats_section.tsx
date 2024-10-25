@@ -25,7 +25,7 @@ const Statistics = () => {
   return (
     <section className="bg-[#01234540] py-[100px]">
       <div className="wrapper">
-        <h2 className="text-center text-xl font-medium text-white md:text-3xl md:leading-10">
+        <h2 className="text-center text-2xl font-semibold text-white md:text-4xl md:leading-tight">
           Powerful security deployed in minutes
         </h2>
 

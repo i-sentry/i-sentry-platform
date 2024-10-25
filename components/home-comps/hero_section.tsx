@@ -1,13 +1,14 @@
 import React from "react";
 import SmartButton from "../custom_button";
+import AnimatedCircle from "../animate_circles";
 
 const Hero = () => {
   return (
     <>
-      <section className="relative h-auto w-full overflow-hidden py-20 lg:flex lg:h-screen lg:items-center lg:justify-center lg:py-0">
+      <section className="relative min-h-[30vh] w-full overflow-hidden py-36 lg:flex lg:h-screen lg:items-center lg:justify-center lg:py-0 lg:py-20">
         <div className="wrapper">
           <>
-            <svg
+            {/* <svg
               className="absolute left-0 top-0 h-auto w-full"
               width="1920"
               height="767"
@@ -65,7 +66,8 @@ const Hero = () => {
                   <stop offset="1" stop-color="#C2C2C2" stop-opacity="0.5" />
                 </linearGradient>
               </defs>
-            </svg>
+            </svg> */}
+            <AnimatedCircle />
           </>
           <div className="relative z-10 mx-auto flex flex-col items-center md:max-w-2xl lg:max-w-4xl">
             <h1 className="text-center text-[28px] font-semibold text-white sm:text-3xl md:text-5xl lg:text-6xl">

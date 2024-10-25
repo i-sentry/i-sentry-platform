@@ -1,6 +1,8 @@
-import { aboutUs, legal, programs, solutions } from "@/utils";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { aboutUs, legal, programs, solutions } from "@/utils";
+import FooterLink from "./footer_links";
+import SmartButton from "./custom_button";
 import {
   FaDribbble,
   FaFacebook,
@@ -9,8 +11,6 @@ import {
   FaTwitch,
   FaXTwitter,
 } from "react-icons/fa6";
-import { Button } from "./ui/button";
-import FooterLink from "./footer_links";
 
 const Footer = () => {
   return (
@@ -31,12 +31,12 @@ const Footer = () => {
             </div>
 
             <div className="mt-6 inline-flex items-center gap-4 justify-self-end lg:mt-0">
-              <Button className="h-auto rounded-full border border-[#023B74]/20 bg-grad-alt p-3 px-5 font-dm-sans text-sm font-light text-white backdrop-blur-[50px] duration-300 hover:bg-grad-alt sm:px-8 sm:py-3.5">
-                Talk to our team
-              </Button>
-              <Button className="h-auto rounded-full bg-gradient-to-r from-base-700 to-base-300 p-3 px-5 font-dm-sans text-sm font-light text-white duration-300 sm:px-8 sm:py-3.5">
-                Join our Program
-              </Button>
+              <SmartButton
+                variant="dark"
+                buttonText="Talk to our team"
+                className="border-[#F4F4F40D] backdrop-blur-none"
+              />
+              <SmartButton variant="bright" buttonText="Join our Program" />
             </div>
           </div>
 

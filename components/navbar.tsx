@@ -8,6 +8,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { navMenu } from "@/utils";
 import { useMobileMenuOverlay } from "@/stores/mobile_menu";
 import MobileSideMenu from "./mobile-sidemenu";
+import SmartButton from "./custom_button";
 
 type ComponentProps = {
   text?: string;
@@ -84,9 +85,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
               >
                 Login
               </Link>
-              <Button className="h-auto rounded-full bg-gradient-to-r from-base-700 to-base-300 p-3 px-5 font-dm-sans text-sm font-normal text-white duration-300 hover:from-base-300 hover:to-base-700 sm:px-8 sm:py-3.5">
-                Join our Program
-              </Button>
+              <SmartButton variant="bright" buttonText="Join our Program" />
             </div>
 
             {/* HAMBURGER ICON */}

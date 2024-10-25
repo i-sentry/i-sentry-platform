@@ -23,7 +23,7 @@ const AboutCard: React.FC<ComponentProps> = ({
 }) => {
   return (
     <>
-      <div className="rounded-2xl border border-[#FAFAFA1F] bg-box p-6 backdrop-blur-xl">
+      <div className="rounded-2xl border border-[#FAFAFA1F] bg-box p-6">
         {showImages && (
           <div
             className={cn(
@@ -56,7 +56,7 @@ const AboutCard: React.FC<ComponentProps> = ({
             <SmartButton
               variant="dark"
               buttonText={`${buttonText}`}
-              className="mt-12 border-[#F4F4F40D] bg-grad-alt backdrop-blur-0 hover:shadow-none"
+              className="mt-12 border-[#F4F4F40D] bg-grad-alt backdrop-blur-none hover:shadow-none"
               showAnimatedIcon
             />
           </>

@@ -4,10 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-// import { gsap } from "gsap/dist/gsap";
-// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-// import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
-
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",

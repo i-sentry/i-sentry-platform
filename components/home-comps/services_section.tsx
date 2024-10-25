@@ -1,7 +1,6 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 import ServiceCard from "./service_card";
+import SmartButton from "../custom_button";
 
 type ServiceProp = {
   title: string;
@@ -14,7 +13,7 @@ const Services = () => {
       <section className="py-10">
         <div className="wrapper">
           <div className="space-y-6 text-center md:mx-auto md:max-w-xl">
-            <h2 className="text-xl font-normal text-white md:text-3xl md:leading-10">
+            <h2 className="text-2xl font-semibold text-white md:text-4xl md:leading-tight">
               Innovative Solutions for a<br className="hidden md:block" />{" "}
               Rapidly Evolving World
             </h2>
@@ -24,12 +23,11 @@ const Services = () => {
               expertise empower businesses to navigate and thrive in the digital
               landscape of tomorrow.
             </p>
-            <Button
-              key="Join our Program"
-              className="h-auto rounded-full bg-grad px-8 py-3.5 font-light"
-            >
-              Join our Program
-            </Button>
+            <SmartButton
+              variant="bright"
+              buttonText="Join our Program"
+              className="mt-12 border-[#F4F4F40D]"
+            />
           </div>
 
           <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
@@ -44,15 +42,13 @@ const Services = () => {
                 industry experts, and guide your journey from aspiring developer
                 to tech professional.
               </p>
-              <Button
-                key="Learn more"
-                className="mt-12 h-auto items-center gap-x-4 rounded-full border border-[#F4F4F40D] bg-grad-alt px-8 py-3.5 font-dm-sans font-light"
-              >
-                Learn more
-                <span>
-                  <ChevronRight />
-                </span>
-              </Button>
+
+              <SmartButton
+                variant="dark"
+                buttonText="Learn more"
+                className="mt-12 border-[#F4F4F40D] bg-grad-alt backdrop-blur-0 hover:shadow-none"
+                showAnimatedIcon
+              />
             </div>
             <div
               key={"service-list"}
