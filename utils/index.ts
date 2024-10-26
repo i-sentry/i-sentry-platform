@@ -6,8 +6,8 @@ export type LinkProps = {
 // NAVBAR MAIN MENU
 export const navMenu = [
   {
-    url: "/",
-    name: "Home",
+    url: "/projects",
+    name: "Projects",
   },
   {
     url: "/about",
