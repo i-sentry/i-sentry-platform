@@ -65,7 +65,7 @@ const Career = () => {
 
           <div>
             <Image
-              className="h-full w-full object-cover object-center"
+              className="h-full w-full rounded-md object-cover object-center"
               src={CareerImg}
               alt="placeholder"
               width={200}
