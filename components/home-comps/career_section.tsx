@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Placeholder from "@/public/images/placeholder.png";
+import CareerImg from "@/public/images/career-home.jpeg";
 import { ChevronRight } from "lucide-react";
 
 const Career = () => {
@@ -66,7 +66,7 @@ const Career = () => {
           <div>
             <Image
               className="h-full w-full object-cover object-center"
-              src={Placeholder}
+              src={CareerImg}
               alt="placeholder"
               width={200}
               height={200}
