@@ -106,6 +106,7 @@ const config: Config = {
           "linear-gradient(180deg, rgba(194, 194, 194, 0.02) 64.5%, rgba(194, 194, 194, 0.1) 95.33%)",
         footer2:
           "linear-gradient(180deg, rgba(250, 250, 250, 0.075) 0%, rgba(244, 244, 244, 0.05) 100%)",
+
       },
       borderRadius: {
         lg: "var(--radius)",

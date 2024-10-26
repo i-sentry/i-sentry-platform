@@ -1,7 +1,19 @@
+import PorkerHut from "@/public/assets/partners/porkerhut.svg";
+import TTfcx from "@/public/assets/partners/ttfcx.svg";
+import Dataphyte from "@/public/assets/partners/Dataphyte.svg";
+import Ri from "@/public/assets/partners/ri-softwares.svg";
+
 export type LinkProps = {
   name: string;
   url: string;
 };
+
+export const clients = [
+  { name: "Trusted Transfers", brand: TTfcx },
+  { name: "Dataphytes", brand: Dataphyte },
+  { name: "Porker Hut", brand: PorkerHut },
+  { name: "Ri-softwares", brand: Ri },
+];
 
 // NAVBAR MAIN MENU
 export const navMenu = [
