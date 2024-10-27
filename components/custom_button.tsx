@@ -1,10 +1,10 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight, ChevronRight } from "lucide-react";
 
 type ComponentProps = {
-  buttonText: string;
+  buttonText: string | ReactNode;
   variant: "bright" | "dark";
   showAnimatedIcon?: boolean;
   className?: string;
@@ -26,7 +26,7 @@ const SmartButton: React.FC<ComponentProps> = ({
         className,
       )}
     >
-      <span>{buttonText}</span>
+      <>{buttonText}</>
       {showAnimatedIcon && (
         <span className="relative inline-block">
           <ChevronRight
