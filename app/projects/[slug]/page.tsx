@@ -7,6 +7,7 @@ import EachElement from "@/components/widgets/list_rendering";
 import { Badge } from "@/components/ui/badge";
 import SmartButton from "@/components/custom_button";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import ProjectCard from "@/components/projects-comps/project_card";
 type ComponentProps = {
   params: {
     slug: string;
@@ -24,19 +25,20 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
   }, [params?.slug]);
   return (
     <>
-      {/* PROJECT THUMBNAIL */}
       <section className="py-28">
         <div className="wrapper">
+          {/* PROJECT THUMBNAIL */}
           <Image
             src={project?.image || PlaceHolder}
             alt="placeholder"
-            className="h-[300px] w-full rounded-lg object-cover object-center lg:h-[500px]"
+            className="h-[300px] w-full rounded-lg object-cover object-center sm:h-[400px] md:h-[500px] lg:h-[650px]"
           />
 
+          {/* PROJECT DETAILS */}
           <h1 className="mb-16 mt-14 text-[2rem] font-medium text-white">
             {project?.title || "No project name"}
           </h1>
-          <div className="flex flex-col-reverse md:grid md:grid-cols-2">
+          <div className="flex flex-col-reverse gap-8 md:grid md:grid-cols-2">
             <div className="space-y-6">
               {/* SERVICES */}
               <div>
@@ -100,15 +102,15 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                 focused on quickly setting up key pages and working closely with
                 them to add more features and enhancements. We built the site
                 using React, contributing to the creative direction and
-                animations to ensure it stayed true to the brand’s visual
+                animations to ensure it stayed true to the brand&apos;s visual
                 identity. Our approach The amazing team at Porkerhut came to us
                 to build their e-commerce website for selling pork meat and farm
                 produce. We focused on quickly setting up key pages and working
                 closely with them to add more features and enhancements.
                 <br /> <br />
                 We built the site using React, contributing to the creative
-                direction and animations to ensure it stayed true to the brand’s
-                visual identity.
+                direction and animations to ensure it stayed true to the
+                brand&apos;s visual identity.
               </p>
 
               <SmartButton
@@ -122,6 +124,42 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                     </span>
                   </>
                 }
+              />
+            </div>
+          </div>
+
+          {/* OTHER PROJECT IMAGES */}
+          <div className="mt-20 flex flex-wrap justify-center gap-6 *:h-[300px] *:rounded-xl *:object-cover *:object-center *:md:h-[400px]">
+            <Image
+              src={PlaceHolder}
+              alt="placeholder"
+              className="w-[95%] sm:w-[80%]"
+            />
+            <Image
+              src={PlaceHolder}
+              alt="placeholder"
+              className="hidden w-[calc(50%_-_20px)] md:block"
+            />
+            <Image
+              src={PlaceHolder}
+              alt="placeholder"
+              className="hidden w-[calc(50%_-_20px)] md:block"
+            />
+            <Image src={PlaceHolder} alt="placeholder" className="w-full" />
+          </div>
+
+          {/* RELATED POSTS */}
+          {/* CASE STUDIES */}
+          <div className="mt-16 border-t border-[#F9F9F94D] pt-10">
+            <h4 className="font-dm-sans text-lg font-medium text-white">
+              Next project
+            </h4>
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              <EachElement
+                of={caseStudies}
+                render={(item: IProject, index: number) => {
+                  return <ProjectCard key={item?.title + index} data={item} />;
+                }}
               />
             </div>
           </div>

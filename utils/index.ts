@@ -112,6 +112,7 @@ export type IProject = {
   slug: string;
   tools: string[];
   client: string;
+  url: string;
 };
 
 export const caseStudies: IProject[] = [
@@ -124,6 +125,7 @@ export const caseStudies: IProject[] = [
     slug: "porkerhut",
     tools: ["MongoDB", "ReactJS", "AWS"],
     client: "Web Design",
+    url: "/",
   },
   {
     id: "1",
@@ -134,5 +136,6 @@ export const caseStudies: IProject[] = [
     slug: "bankify",
     tools: ["MongoDB", "ReactJS"],
     client: "Web Design",
+    url: "/",
   },
 ];
