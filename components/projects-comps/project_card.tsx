@@ -13,7 +13,7 @@ type ComponentProps = {
 };
 
 const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
-  const isMobile = useMediaQuery("(min-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <Link
       href={`/projects/${data?.slug}`}
@@ -33,22 +33,33 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
             <EachElement
               of={data?.tags}
               render={(tag: string, index: number) => {
-                if (isMobile && index === 0) {
+                if (isMobile) {
+                  if (index === 0) {
+                    return (
+                      <Badge
+                        key={tag}
+                        className="inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light text-brand-900 hover:bg-white"
+                      >
+                        {tag}
+                      </Badge>
+                    );
+                  } else if (index === 1) {
+                    return (
+                      <Badge
+                        key={tag}
+                        className="inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light text-brand-900 hover:bg-white"
+                      >
+                        ...
+                      </Badge>
+                    );
+                  }
+                } else {
                   return (
                     <Badge
                       key={tag}
                       className="inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light text-brand-900 hover:bg-white"
                     >
                       {tag}
-                    </Badge>
-                  );
-                } else if (index === 1) {
-                  return (
-                    <Badge
-                      key={tag}
-                      className="inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light text-brand-900 hover:bg-white"
-                    >
-                      ...
                     </Badge>
                   );
                 }

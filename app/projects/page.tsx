@@ -1,3 +1,4 @@
+"use client";
 import ProjectCard from "@/components/projects-comps/project_card";
 import EachElement from "@/components/widgets/list_rendering";
 import React from "react";
@@ -5,16 +6,18 @@ import Image from "next/image";
 import Marquee from "@/components/ui/marquee";
 import { caseStudies, clients, IProject } from "@/utils";
 import { cn } from "@/lib/utils";
+import { useMediaQuery } from "usehooks-ts";
 
 const Projects = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <>
       <section className="relative">
         <div className="wrapper overflow-x-hidden">
           {/* HEADING */}
-          <div className="relative pt-[120px]">
+          <div className="relative pt-[150px] lg:static">
             <svg
-              className="absolute -left-5 bottom-0 h-[150px] w-[150px]"
+              className="absolute -left-5 bottom-0 h-[150px] w-[150px] lg:bottom-auto lg:left-[6rem] lg:top-[10rem] lg:h-[250px] lg:w-[500px]"
               width="359"
               height="358"
               viewBox="0 0 359 358"
@@ -65,7 +68,7 @@ const Projects = () => {
 
             {/* CONE PATTERN */}
             <svg
-              className="absolute -right-[140px] -top-[20px] h-[200px] w-[376px] -rotate-[20deg]"
+              className="absolute -right-[140px] -top-[20px] h-[200px] w-[376px] -rotate-[20deg] lg:-right-[12rem] lg:top-3 lg:h-[400px] lg:w-[500px] lg:scale-150"
               width="876"
               height="615"
               viewBox="0 0 876 615"
@@ -170,31 +173,35 @@ const Projects = () => {
               />
             </svg>
 
-            <div className="mx-auto max-w-xl text-center">
-              <p className="text-sm text-base-200">Case Studies</p>
-              <h2 className="mb-4 mt-3 font-dm-sans text-[32px] font-medium text-white">
-                Crafting unique
-                <br className="sm:hidden" /> solutions
-              </h2>
-              <p className="text-sm font-light text-brand-100">
-                Ready to transform your ideas into reality? Whether you&apos;re
-                looking for digital solutions or interested in our mentorship
-                program, we&apos;re here to help.
-              </p>
-            </div>
-            <div className="hidden md:block">
-              <p className="text-sm font-light text-brand-100">
-                Transform your career trajectory through our intensive year-long
-                mentorship program. At I-Sentry Technologies, we don&apos;t just
-                teach—we immerse you in real-world projects, surround you with
-                industry experts, and guide your journey from aspiring developer
-                to tech professional.
-              </p>
+            <div className="md:flex md:items-end md:justify-between">
+              <div className="mx-auto max-w-xl text-center md:mx-0 md:w-1/2 md:text-left">
+                <p className="text-sm text-base-200 lg:text-base">
+                  {isMobile ? "Case Studies" : "Projects"}
+                </p>
+                <h2 className="mb-4 mt-3 font-dm-sans text-[32px] font-normal text-white md:text-[3rem]">
+                  Crafting unique
+                  <br className="sm:hidden md:block" /> solutions
+                </h2>
+                <p className="text-sm font-light text-brand-100 md:hidden">
+                  Ready to transform your ideas into reality? Whether
+                  you&apos;re looking for digital solutions or interested in our
+                  mentorship program, we&apos;re here to help.
+                </p>
+              </div>
+              <div className="hidden md:block md:w-1/2">
+                <p className="text-base font-light leading-normal text-brand-100">
+                  Transform your career trajectory through our intensive
+                  year-long mentorship program. At I-Sentry Technologies, we
+                  don&apos;t just teach—we immerse you in real-world projects,
+                  surround you with industry experts, and guide your journey
+                  from aspiring developer to tech professional.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* CASE STUDIES */}
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-6 md:mt-24 md:grid-cols-2">
             <EachElement
               of={caseStudies}
               render={(item: IProject, index: number) => {
