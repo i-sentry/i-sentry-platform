@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
@@ -43,9 +42,11 @@ export default function RootLayout({
       <body className="overflow-x-hidden font-dm-sans">
         {/* NAVBAR */}
         <Navbar />
-        <TransitionProvider>
-          <TransitionComponent>{children}</TransitionComponent>
-        </TransitionProvider>
+        <main className="w-full overflow-x-clip">
+          <TransitionProvider>
+            <TransitionComponent>{children}</TransitionComponent>
+          </TransitionProvider>
+        </main>
 
         {/* FOOTER */}
         <Footer />

@@ -37,7 +37,7 @@ export const navMenu = [
     name: "Careers",
   },
   {
-    url: "/contact-us",
+    url: "/contact",
     name: "Contact us",
   },
 ];
