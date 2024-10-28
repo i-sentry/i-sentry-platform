@@ -51,7 +51,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                     render={(tag: string) => (
                       <Badge
                         key={tag}
-                        className="inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal text-brand-900 hover:bg-white"
+                        className="text-primary-900 inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal hover:bg-white"
                       >
                         {tag}
                       </Badge>
@@ -70,7 +70,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                     render={(tool: string) => (
                       <Badge
                         key={tool}
-                        className="inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal text-brand-900 hover:bg-white"
+                        className="text-primary-900 inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal hover:bg-white"
                       >
                         {tool}
                       </Badge>
@@ -85,7 +85,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                   Client
                 </h2>
                 <div className="flex items-center gap-3">
-                  <Badge className="inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal text-brand-900 hover:bg-white">
+                  <Badge className="text-primary-900 inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal hover:bg-white">
                     {project?.client}
                   </Badge>
                 </div>
@@ -115,7 +115,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
 
               <SmartButton
                 variant="dark"
-                className="bg-link mt-8 border-opacity-75 hover:shadow-white/5"
+                className="mt-8 border-opacity-75 bg-link hover:shadow-white/5"
                 buttonText={
                   <>
                     <span>Live Link</span>
