@@ -1,6 +1,9 @@
+/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').PluginCreator} */
 import type { Config } from "tailwindcss";
 import TailwindForm from "@tailwindcss/forms";
 import TailwindAnimate from "tailwindcss-animate";
+import { PluginAPI } from "tailwindcss/types/config";
 
 const config: Config = {
   darkMode: ["class"],
@@ -106,9 +109,17 @@ const config: Config = {
   plugins: [
     TailwindAnimate,
     TailwindForm,
-    /** @type {import('tailwindcss').PluginCreator} */
-    function ({ addVariant }) {
-      // Create a dynamic nth-child variant
+    /**
+     * @param {import('tailwindcss/types/config').PluginAPI} api
+     */
+    // function ({ addVariant }) {
+    //   // Create a dynamic nth-child variant
+    //   for (let i = 1; i <= 10; i++) {
+    //     addVariant(`nth-child-${i}`, `&:nth-child(${i})`);
+    //   }
+    // },
+    (api: PluginAPI) => {
+      const { addVariant } = api;
       for (let i = 1; i <= 10; i++) {
         addVariant(`nth-child-${i}`, `&:nth-child(${i})`);
       }
