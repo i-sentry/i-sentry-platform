@@ -9,7 +9,7 @@ export default function NotFound() {
       <p className="mt-3 text-[#97a4b7]">Could not find requested resource</p>
       <Link
         href="/"
-        className="mt-6 inline-block rounded-full border border-base-700 px-8 py-3.5 text-base-300"
+        className="border-secondary-700 text-secondary-300 mt-6 inline-block rounded-full border px-8 py-3.5"
       >
         Return Home
       </Link>

@@ -31,9 +31,9 @@ const MobileSideMenu = () => {
             href={link.url}
             key={index}
             className={cn(
-              "text-base-300 p-0.5",
+              "text-secondary-300 p-0.5",
               pathname?.endsWith(link.url) &&
-                "text-base-300 rounded-full bg-gradient-to-l from-[#10213e]/50 to-[#061935]/50",
+                "text-secondary-300 rounded-full bg-gradient-to-l from-[#10213e]/50 to-[#061935]/50",
             )}
           >
             <span
@@ -52,11 +52,11 @@ const MobileSideMenu = () => {
         <div className="mt-5 flex flex-col items-center gap-6 border-t pt-8">
           <Link
             href="/login"
-            className="font-dm-sans text-base-600 px-8 font-normal drop-shadow-[0_7px_3px_rgba(255,255,255,0.3)]"
+            className="text-secondary-600 px-8 font-dm-sans font-normal drop-shadow-[0_7px_3px_rgba(255,255,255,0.3)]"
           >
             Login
           </Link>
-          <Button className="font-dm-sans to-base-300 from-base-700 hover:from-base-300 hover:to-base-700 h-auto rounded-full bg-gradient-to-r px-8 py-3.5 font-normal text-white duration-300">
+          <Button className="to-secondary-300 from-secondary-700 hover:from-secondary-300 hover:to-secondary-700 h-auto rounded-full bg-gradient-to-r px-8 py-3.5 font-dm-sans font-normal text-white duration-300">
             Join our Program
           </Button>
         </div>

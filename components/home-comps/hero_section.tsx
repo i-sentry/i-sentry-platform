@@ -92,7 +92,7 @@ const Hero = () => {
 export default Hero;
 
 /* 
-       <Button className="mx-auto flex rounded-full bg-gradient-to-tr from-base-400 via-orange-400 to-brand-400 p-1 shadow-lg">
+       <Button className="mx-auto flex rounded-full bg-gradient-to-tr from-secondary-400 via-orange-400 to-primary-400 p-1 shadow-lg">
               <button className="bg-grad-alt flex-1 rounded-full px-6 py-1 text-xl font-bold">
                 Welcome
               </button>

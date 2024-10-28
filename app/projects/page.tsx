@@ -175,21 +175,21 @@ const Projects = () => {
 
             <div className="md:flex md:items-end md:justify-between">
               <div className="mx-auto max-w-xl text-center md:mx-0 md:w-1/2 md:text-left">
-                <p className="text-sm text-base-200 lg:text-base">
+                <p className="text-secondary-200 text-sm lg:text-base">
                   {isMobile ? "Case Studies" : "Projects"}
                 </p>
                 <h2 className="mb-4 mt-3 font-dm-sans text-[32px] font-normal text-white md:text-[3rem]">
                   Crafting unique
                   <br className="sm:hidden md:block" /> solutions
                 </h2>
-                <p className="text-sm font-light text-brand-100 md:hidden">
+                <p className="text-primary-100 text-sm font-light md:hidden">
                   Ready to transform your ideas into reality? Whether
                   you&apos;re looking for digital solutions or interested in our
                   mentorship program, we&apos;re here to help.
                 </p>
               </div>
               <div className="hidden md:block md:w-1/2">
-                <p className="text-base font-light leading-normal text-brand-100">
+                <p className="text-primary-100 text-base font-light leading-normal">
                   Transform your career trajectory through our intensive
                   year-long mentorship program. At I-Sentry Technologies, we
                   don&apos;t just teach—we immerse you in real-world projects,
