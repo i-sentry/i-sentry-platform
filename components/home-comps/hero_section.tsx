@@ -5,7 +5,7 @@ import AnimatedCircle from "../animate_circles";
 const Hero = () => {
   return (
     <>
-      <section className="relative min-h-[30vh] w-full overflow-hidden py-36 lg:flex lg:h-screen lg:items-center lg:justify-center lg:py-0 lg:py-20">
+      <section className="relative min-h-[30vh] w-full overflow-hidden py-36 lg:flex lg:h-screen lg:items-center lg:justify-center lg:py-20">
         <div className="wrapper">
           <>
             {/* <svg

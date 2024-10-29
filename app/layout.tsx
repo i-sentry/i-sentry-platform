@@ -42,9 +42,11 @@ export default function RootLayout({
       <body className="overflow-x-hidden font-dm-sans">
         {/* NAVBAR */}
         <Navbar />
-        <TransitionProvider>
-          <TransitionComponent>{children}</TransitionComponent>
-        </TransitionProvider>
+        <main className="w-full overflow-x-clip">
+          <TransitionProvider>
+            <TransitionComponent>{children}</TransitionComponent>
+          </TransitionProvider>
+        </main>
 
         {/* FOOTER */}
         <Footer />

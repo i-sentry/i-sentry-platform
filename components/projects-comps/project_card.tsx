@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
         <div className="relative z-10 p-6">
           {/* COMING SOON BADGE */}
           {!data?.isLunched && (
-            <Badge className="bg-secondary-700 hover:bg-secondary-700 mb-6 inline-block rounded-full border border-[#FAFAFA1F] px-6 py-2 font-dm-sans font-light">
+            <Badge className="mb-6 inline-block rounded-full border border-[#FAFAFA1F] bg-secondary-700 px-6 py-2 font-dm-sans font-light text-white hover:bg-secondary-700">
               Coming Soon
             </Badge>
           )}
@@ -38,7 +38,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
                     return (
                       <Badge
                         key={tag}
-                        className="text-primary-900 inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light hover:bg-white"
+                        className="inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light text-primary-900 hover:bg-white"
                       >
                         {tag}
                       </Badge>
@@ -47,7 +47,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
                     return (
                       <Badge
                         key={tag}
-                        className="text-primary-900 inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light hover:bg-white"
+                        className="inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light text-primary-900 hover:bg-white"
                       >
                         ...
                       </Badge>
@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
                   return (
                     <Badge
                       key={tag}
-                      className="text-primary-900 inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light hover:bg-white"
+                      className="inline-block rounded-full bg-white/80 px-6 py-3 font-dm-sans font-light text-primary-900 hover:bg-white"
                     >
                       {tag}
                     </Badge>
@@ -67,7 +67,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
             />
           </div>
         </div>
-        <div className="bg-primary-900/10 absolute left-0 top-0 z-[2] h-full w-full" />
+        <div className="absolute left-0 top-0 z-[2] h-full w-full bg-primary-900/10" />
         <Image
           src={data?.image}
           alt={data?.title}

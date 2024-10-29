@@ -91,7 +91,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
             {/* HAMBURGER ICON */}
             <Button
               onClick={setOpen}
-              className="cursor-pointer border-0 bg-transparent p-0 hover:bg-transparent lg:hidden"
+              className="cursor-pointer border-0 bg-transparent p-0 text-white hover:bg-transparent lg:hidden"
             >
               <HamburgerMenuIcon className="h-6 w-10" />
               <span className="sr-only">Open mainmenu</span>

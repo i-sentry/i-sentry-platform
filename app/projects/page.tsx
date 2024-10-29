@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <>
       <section className="relative">
-        <div className="wrapper overflow-x-hidden">
+        <div className="wrapper overflow-[hidden_!important]">
           {/* HEADING */}
           <div className="relative pt-[150px] lg:static">
             <svg
