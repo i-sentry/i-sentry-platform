@@ -30,7 +30,7 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className="mt-6 inline-flex items-center gap-4 justify-self-end lg:mt-0">
+            <div className="mt-6 inline-flex flex-wrap items-center gap-4 justify-self-end lg:mt-0">
               <SmartButton
                 variant="dark"
                 buttonText="Talk to our team"

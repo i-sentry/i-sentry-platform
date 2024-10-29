@@ -91,15 +91,15 @@ export const aboutUs: LinkProps[] = [
 export const legal: LinkProps[] = [
   {
     name: "Terms",
-    url: "/",
+    url: "/terms-of-service",
   },
   {
     name: "Privacy",
-    url: "/",
+    url: "/privacy-policy",
   },
   {
     name: "Settings",
-    url: "/",
+    url: "/settings",
   },
 ];
 

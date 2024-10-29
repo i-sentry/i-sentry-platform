@@ -39,11 +39,11 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
     <>
       <nav
         className={cn(
-          "fixed left-0 top-0 z-50 w-full duration-300",
+          "fixed left-0 top-0 z-50 w-full py-4 duration-300",
           isSticky ? "bg-primary-800/80 backdrop-blur-md" : "bg-transparent",
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+        <div className="wrapper flex items-center justify-between">
           {/* LOGO */}
           <Link href="/" className="text-white">
             Isentry
@@ -59,7 +59,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
                   className={cn(
                     "p-0.5 text-white",
                     pathname?.endsWith(link.url) &&
-                      "text-secondary-300 rounded-full bg-gradient-to-l from-[#10213e]/50 to-[#061935]/50",
+                      "rounded-full bg-gradient-to-l from-[#10213e]/50 to-[#061935]/50 text-secondary-300",
                   )}
                 >
                   <span
@@ -93,7 +93,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
               onClick={setOpen}
               className="cursor-pointer border-0 bg-transparent p-0 text-white hover:bg-transparent lg:hidden"
             >
-              <HamburgerMenuIcon className="h-6 w-10" />
+              <HamburgerMenuIcon className="h-6 w-6" />
               <span className="sr-only">Open mainmenu</span>
             </Button>
           </div>
