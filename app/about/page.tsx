@@ -1,12 +1,13 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-// import Placeholder from "@/public/images/placeholder.png";
+import Placeholder from "@/public/images/placeholder.png";
 import AboutImg from "@/public/images/about-us.png";
 import EachElement from "@/components/widgets/list_rendering";
 import SmartButton from "@/components/custom_button";
 import Team from "@/public/assets/mentees/Photo - Timilehin Abegunde.png";
 import KingIBK from "@/public/images/team/3.png";
+import Bamgbade from "@/public/images/team/bamgbade.jpg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 const About = () => {
@@ -218,7 +219,7 @@ const About = () => {
             <Image
               src={AboutImg}
               alt="Placeholder"
-              className="w-full self-stretch rounded-xl object-cover object-center md:h-auto md:max-h-[750px]"
+              className="hidden w-full self-stretch rounded-xl object-cover object-center md:block md:h-auto md:max-h-[750px]"
             />
 
             <div className="divide-y-[1px] divide-primary-50/20 rounded-[8px] border border-primary-50/20 bg-box p-5">
@@ -335,7 +336,7 @@ const About = () => {
           Meet the core innovators behind
           <br className="hidden md:block" /> our success
         </h3>
-        <div className="grid grid-cols-3 gap-x-16 gap-y-14">
+        <div className="grid gap-x-16 gap-y-14 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-3">
           <EachElement
             of={coreTeam}
             render={(member: MemberProps) => {
@@ -345,7 +346,7 @@ const About = () => {
                     <Image
                       src={member.photo}
                       alt="Placeholder"
-                      className="mb-4 h-[400px] w-full rounded-xl object-cover object-center"
+                      className="mb-4 h-[300px] w-full rounded-xl object-cover object-center xl:h-[400px]"
                     />
                     <h3 className="font-inter text-primary-50">
                       {member.name}
@@ -384,13 +385,13 @@ type MemberProps = {
 const coreTeam: MemberProps[] = [
   {
     name: "Idorenyin Williams",
-    title: "Co-Founder",
-    photo: Team,
+    title: "Co-Founder & Lead Frontend",
+    photo: Placeholder,
   },
   {
     name: "Bamgbade Oluwaseun",
     title: "Co-Founder",
-    photo: Team,
+    photo: Bamgbade,
   },
   {
     name: "Ibukun Ayomide-Baafog",
@@ -400,7 +401,7 @@ const coreTeam: MemberProps[] = [
   {
     name: "Akanimo",
     title: "Co-Founder",
-    photo: Team,
+    photo: Placeholder,
   },
   {
     name: "Abegunde Timilehin",
