@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -8,6 +8,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { navMenu } from "@/utils";
 import { useMobileMenuOverlay } from "@/stores/mobile_menu";
 import MobileSideMenu from "./mobile-sidemenu";
+import SmartButton from "./custom_button";
 
 type ComponentProps = {
   text?: string;
@@ -16,11 +17,33 @@ type ComponentProps = {
 const Navbar: React.FC<ComponentProps> = ({}) => {
   const pathname = usePathname();
   const { setOpen } = useMobileMenuOverlay();
+  const [isSticky, setIsSticky] = useState(false);
+
+  // Scroll handler
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY >= 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [setIsSticky]);
+
+  console.log(isSticky);
 
   return (
     <>
-      <nav className="">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+      <nav
+        className={cn(
+          "fixed left-0 top-0 z-50 w-full py-4 duration-300",
+          isSticky ? "bg-primary-800/80 backdrop-blur-md" : "bg-transparent",
+        )}
+      >
+        <div className="wrapper flex items-center justify-between">
           {/* LOGO */}
           <Link href="/" className="text-white">
             Isentry
@@ -36,7 +59,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
                   className={cn(
                     "p-0.5 text-white",
                     pathname?.endsWith(link.url) &&
-                      "rounded-full bg-gradient-to-l from-[#10213e]/50 to-[#061935]/50 text-base-300",
+                      "rounded-full bg-gradient-to-l from-[#10213e]/50 to-[#061935]/50 text-secondary-300",
                   )}
                 >
                   <span
@@ -62,17 +85,15 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
               >
                 Login
               </Link>
-              <Button className="h-auto rounded-full bg-gradient-to-r from-base-700 to-base-300 p-3 px-5 font-dm-sans text-sm font-normal text-white duration-300 hover:from-base-300 hover:to-base-700 sm:px-8 sm:py-3.5">
-                Join our Program
-              </Button>
+              <SmartButton variant="bright" buttonText="Join our Program" />
             </div>
 
             {/* HAMBURGER ICON */}
             <Button
               onClick={setOpen}
-              className="cursor-pointer border-0 bg-transparent p-0 hover:bg-transparent lg:hidden"
+              className="cursor-pointer border-0 bg-transparent p-0 text-white hover:bg-transparent lg:hidden"
             >
-              <HamburgerMenuIcon className="h-6 w-10" />
+              <HamburgerMenuIcon className="h-6 w-6" />
               <span className="sr-only">Open mainmenu</span>
             </Button>
           </div>

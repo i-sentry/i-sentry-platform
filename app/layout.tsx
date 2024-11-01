@@ -3,10 +3,11 @@ import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+import { TransitionProvider } from "@/context/transition";
+import TransitionComponent from "@/components/widgets/transition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,8 @@ export const metadata: Metadata = {
     "Our cutting-edge solutions and global expertise empower businesses to navigate and thrive in the digital landscape of tomorrow.",
 };
 
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,7 +42,12 @@ export default function RootLayout({
       <body className="overflow-x-hidden font-dm-sans">
         {/* NAVBAR */}
         <Navbar />
-        {children}
+        <main className="w-full overflow-x-clip">
+          <TransitionProvider>
+            <TransitionComponent>{children}</TransitionComponent>
+          </TransitionProvider>
+        </main>
+
         {/* FOOTER */}
         <Footer />
       </body>
