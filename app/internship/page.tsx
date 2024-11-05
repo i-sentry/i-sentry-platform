@@ -1,8 +1,10 @@
+"use client";
 import SmartButton from "@/components/custom_button";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import InternImage from "@/public/images/internship.jpeg";
+import Roles from "@/public/images/roles.png";
+import Carousel from "@/components/internship-comps/carousel";
 
 const Internship = () => {
   return (
@@ -31,41 +33,31 @@ const Internship = () => {
         </div>
       </section>
 
-      <div className="wrapper md:flex md:justify-between md:gap-3">
-        <figure>
+      <div className="wrapper lg:grid lg:grid-cols-2 lg:justify-between lg:gap-3">
+        <figure className="relative">
           <Image
             src={InternImage}
-            alt="A woman resting on the wall while operating her laptop"
-            className="rounded-xl"
+            alt="A woman resting  on the wall while operating her laptop"
+            className="rounded-xl object-cover object-center md:h-[300px]"
           />
 
-          <div className="flex">
-            <div
-              style={{
-                background: `linear-gradient(90deg, rgba(2, 59, 116, 0.1) 0%, rgba(86, 140, 194, 0.1) 100%,  rgba(255, 255, 255, 0.1),)`,
-              }}
-              className="bg-box"
-            >
-              <h3 className="text-4xl font-semibold">10+</h3>
-              <p className="text-primary-50">Top tech Tracks</p>
+          <div className="absolute bottom-2 left-2 flex gap-6">
+            <div className="rounded-[8px] bg-intern p-5">
+              <h3 className="text-4xl font-semibold text-white">10+</h3>
+              <p className="mt-2 text-sm text-primary-100">Top tech Tracks</p>
             </div>
 
-            <div
-              style={{
-                background: `linear-gradient(90deg, rgba(2, 59, 116, 0.1) 0%, rgba(86, 140, 194, 0.1) 100%,  rgba(255, 255, 255, 0.1),)`,
-              }}
-              className="bg-box"
-            >
-              <h3 className="text-4xl font-semibold">10+</h3>
-              <p className="text-primary-50">Top tech Tracks</p>
+            <div className="rounded-[8px] bg-intern p-5">
+              <h3 className="text-4xl font-semibold text-white">90%</h3>
+              <p className="mt-2 text-sm text-primary-100">Top tech Tracks</p>
             </div>
           </div>
         </figure>
-        <div>
-          <h3 className="">
+        <div className="mt-8 lg:mt-0">
+          <h3 className="mb-2 text-2xl text-white">
             We accept people who are ready to develop their skill.
           </h3>
-          <p className="">
+          <p className="text-base font-light leading-normal text-primary-200">
             Lorem ipsum dolor sit amet consectetur. Dignissim mus in risus ut
             bibendum pretium enim. Est feugiat pretium tempus sit ac lacus.
             Ultrices malesuada placerat vitae gravida velit. Nulla sit penatibus
@@ -76,10 +68,10 @@ const Internship = () => {
         </div>
       </div>
 
-      <div className="wrapper md:flex md:justify-between md:gap-3">
-        <div className="">
-          <h3 className="">How we run our program</h3>
-          <p className="">
+      <div className="wrapper mt-8 md:my-16 md:grid md:grid-cols-2 md:items-center md:justify-between md:gap-3">
+        <div className="text-center md:text-left">
+          <h3 className="mb-2 text-2xl text-white">How we run our program</h3>
+          <p className="text-base font-light leading-normal text-primary-200">
             Lorem ipsum dolor sit amet consectetur. Dignissim mus in risus ut
             bibendum pretium enim. Est feugiat pretium tempus sit ac lacus.
             Ultrices malesuada placerat vitae gravida velit. Nulla sit penatibus
@@ -88,40 +80,41 @@ const Internship = () => {
             etiam at.
           </p>
         </div>
-        <div className="">
-          <Image
-            src={InternImage}
-            alt="A woman resting on the wall while operating her laptop"
-            className="rounded-xl"
-          />
+        <div className="mt-6 md:mt-0">
+          <Image src={Roles} alt="A cursor " className="rounded-xl" />
         </div>
       </div>
 
-      <div className="wrapper md:flex md:justify-between md:gap-3">
+      <div className="wrapper mt-8 md:grid md:grid-cols-[1fr_1.3fr] md:justify-between md:gap-3">
         <div className="">
-          <h3 className="">Our Certifications</h3>
-          <p className="">
+          <h3 className="mb-2 text-2xl text-white">Our Certifications</h3>
+          <p className="text-base font-light leading-normal text-primary-200">
             Our mentorship programs are 99% hands-on. You get to design and
             build outstanding projects that can give you an edge in a hiring
             process.
           </p>
         </div>
-        <div className="">
-          <h3>Professional Certifications</h3>
+        <div className="mt-6 rounded-2xl border border-[#F4F4F414] p-6 md:mt-0">
+          <h3 className="mb-8 text-lg text-white">
+            Professional Certifications
+          </h3>
           <div className="">
-            <h4>Technical Certifications</h4>
-            <ul>
+            <h4 className="mb-3 text-base font-light text-white">
+              Technical Certifications
+            </h4>
+            <ul className="list-disc space-y-2 pl-5 text-base font-light leading-normal text-white">
               <li>Full-Stack Development (MERN Stack)</li>
               <li>Cloud Computing (AWS/Azure)</li>
               <li>Data Science & Machine Learning</li>
               <li> DevOps & CI/CD</li>
-              <li></li>
             </ul>
           </div>
 
-          <div className="">
-            <h4>Industry-Recognized Credentials</h4>
-            <ul>
+          <div className="mt-8">
+            <h4 className="mb-3 text-base font-light text-white">
+              Industry-Recognized Credentials
+            </h4>
+            <ul className="list-disc space-y-2 pl-5 text-base font-light leading-normal text-white">
               <li>Industry-Recognized Credentials</li>
               <li>Project Management Professional (PMP)</li>
               <li>Agile & Scrum Certification</li>
@@ -132,36 +125,47 @@ const Internship = () => {
         </div>
       </div>
 
-      <section className="wrapper">
-        <p>
+      <section className="wrapper mt-8">
+        <p className="font-dm-sans text-2xl font-normal leading-normal text-white">
           At Isentry, our mission is not just about providing training;
           it&apos;s about transforming lives and shaping the future of tech.
           Here&apos;s a glimpse into the impact we&apos;ve made
         </p>
 
-        <div className="bg-secondary-500 p-8">
-          <div>
-            <h3>
-              Love the simplicity of the service and the prompt customer
-              support. We can’t imagine working without it.
-            </h3>
+        <Carousel reviews={reviews} />
 
-            <div>
-              <Image
-                src={InternImage}
-                alt="A woman resting on the wall while operating her laptop"
-                className="h-10 w-10 rounded-full object-cover object-center"
-              />
-              <h4>Caitlyn King</h4>
-              <p>Head of Design, Layers</p>
+        {/* <div className="mt-10 bg-secondary-500 p-8">
+          <div className="no-scrollbar mx-auto w-[70%] overflow-hidden">
+            <div className="flex w-max space-x-5">
+              {reviews.map((item, index) => {
+                return (
+                  <div key={index} className="max-w-xl">
+                    <h3 className="text-center text-lg font-light leading-normal text-white">
+                      {item?.content}
+                    </h3>
+
+                    <div className="mt-6 flex flex-col items-center">
+                      <Image
+                        src={InternImage}
+                        alt="A woman resting on the wall while operating her laptop"
+                        className="h-10 w-10 rounded-full object-cover object-center"
+                      />
+                      <h4 className="text-sm text-white"> {item?.reviewer}</h4>
+                      <p className="text-xs text-primary-200">{item?.title}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* CTAT */}
-      <section className="wrapper">
-        <h3>Ready to take the next step in your career?</h3>
+      <section className="wrapper flex flex-col items-center py-20">
+        <h3 className="text-balance text-center text-2xl font-light leading-normal text-white">
+          Ready to take the next step in your career?
+        </h3>
 
         <Link href="/internship/enroll">
           <SmartButton
@@ -176,3 +180,24 @@ const Internship = () => {
 };
 
 export default Internship;
+
+const reviews = [
+  {
+    content:
+      " Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
+    reviewer: "Caitlyn King",
+    title: "Head of Design, Layers",
+  },
+  {
+    content:
+      " Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
+    reviewer: "King Caitlyn",
+    title: "Head of Design, Layers",
+  },
+  {
+    content:
+      " Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
+    reviewer: "Jason Bright",
+    title: "Head of Design, Layers",
+  },
+];
