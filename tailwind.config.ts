@@ -74,6 +74,8 @@ const config: Config = {
           "linear-gradient(180deg, rgba(250, 0, 0, 0.105) 0%, rgba(244, 0, 0, 0.07) 100%)",
         intern:
           "linear-gradient(90deg, rgba(2, 59, 116, 0.1) 0%, rgba(86, 140, 194, 0.1) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))",
+        price:
+          "linear-gradient(90deg, rgba(2, 59, 116, 0.1) 0%, rgba(86, 140, 194, 0.1) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))",
       },
       borderRadius: {
         lg: "var(--radius)",

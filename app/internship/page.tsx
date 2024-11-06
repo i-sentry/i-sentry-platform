@@ -6,6 +6,7 @@ import InternImage from "@/public/images/internship.jpeg";
 import Roles from "@/public/images/roles.png";
 import Carousel from "@/components/internship-comps/carousel";
 
+
 const Internship = () => {
   return (
     <>
