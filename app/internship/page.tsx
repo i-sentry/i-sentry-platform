@@ -33,7 +33,8 @@ const Internship = () => {
         </div>
       </section>
 
-      <div className="wrapper lg:grid lg:grid-cols-2 lg:justify-between lg:gap-3">
+      {/*  */}
+      <div className="wrapper py-16 lg:grid lg:grid-cols-2 lg:items-center lg:justify-between lg:gap-8">
         <figure className="relative">
           <Image
             src={InternImage}
@@ -41,7 +42,7 @@ const Internship = () => {
             className="rounded-xl object-cover object-center md:h-[300px]"
           />
 
-          <div className="absolute bottom-2 left-2 flex gap-6">
+          <div className="absolute bottom-2 left-2 flex gap-6 lg:-bottom-10 lg:left-6">
             <div className="rounded-[8px] bg-intern p-5">
               <h3 className="text-4xl font-semibold text-white">10+</h3>
               <p className="mt-2 text-sm text-primary-100">Top tech Tracks</p>
@@ -68,7 +69,8 @@ const Internship = () => {
         </div>
       </div>
 
-      <div className="wrapper mt-8 md:my-16 md:grid md:grid-cols-2 md:items-center md:justify-between md:gap-3">
+      {/*  */}
+      <div className="wrapper mt-8 md:my-16 md:grid md:grid-cols-2 md:items-center md:justify-between md:gap-3 lg:gap-8">
         <div className="text-center md:text-left">
           <h3 className="mb-2 text-2xl text-white">How we run our program</h3>
           <p className="text-base font-light leading-normal text-primary-200">
@@ -85,7 +87,8 @@ const Internship = () => {
         </div>
       </div>
 
-      <div className="wrapper mt-8 md:grid md:grid-cols-[1fr_1.3fr] md:justify-between md:gap-3">
+      {/*  */}
+      <div className="wrapper py-16 lg:grid lg:grid-cols-2 lg:justify-between lg:gap-8">
         <div className="">
           <h3 className="mb-2 text-2xl text-white">Our Certifications</h3>
           <p className="text-base font-light leading-normal text-primary-200">
@@ -94,7 +97,7 @@ const Internship = () => {
             process.
           </p>
         </div>
-        <div className="mt-6 rounded-2xl border border-[#F4F4F414] p-6 md:mt-0">
+        <div className="mt-6 rounded-2xl border border-[#F4F4F414] p-6 lg:mt-0">
           <h3 className="mb-8 text-lg text-white">
             Professional Certifications
           </h3>
@@ -125,8 +128,9 @@ const Internship = () => {
         </div>
       </div>
 
+      {/*  */}
       <section className="wrapper mt-8">
-        <p className="font-dm-sans text-2xl font-normal leading-normal text-white">
+        <p className="font-dm-sans text-2xl font-normal leading-normal text-white lg:mx-auto lg:max-w-4xl lg:text-center lg:text-xl lg:text-primary-100">
           At Isentry, our mission is not just about providing training;
           it&apos;s about transforming lives and shaping the future of tech.
           Here&apos;s a glimpse into the impact we&apos;ve made
@@ -163,8 +167,9 @@ const Internship = () => {
 
       {/* CTAT */}
       <section className="wrapper flex flex-col items-center py-20">
-        <h3 className="text-balance text-center text-2xl font-light leading-normal text-white">
-          Ready to take the next step in your career?
+        <h3 className="text-balance text-center text-2xl font-medium leading-normal text-white md:text-wrap md:text-4xl md:leading-tight">
+          Ready to take the next step in <br className="hidden md:block" /> your
+          career?
         </h3>
 
         <Link href="/internship/enroll">
