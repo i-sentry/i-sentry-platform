@@ -144,7 +144,12 @@ const config: Config = {
         addVariant(`nth-child-${i}`, `&:nth-child(${i})`);
       }
     },
-    function ({ addUtilities }) {
+    function ({
+      addUtilities,
+    }: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      addUtilities: (utilities: Record<string, any>) => void;
+    }) {
       addUtilities({
         ".no-scrollbar": {
           /* Hide scrollbar for Webkit-based browsers */
