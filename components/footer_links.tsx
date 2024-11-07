@@ -19,7 +19,7 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
             <Link
               key={index}
               href={item?.url}
-              className="font-inter text-base font-normal text-[#97A4B7]"
+              className="font-inter text-base font-normal text-[#97A4B7] duration-300 hover:text-secondary-400"
             >
               {item?.name}
             </Link>

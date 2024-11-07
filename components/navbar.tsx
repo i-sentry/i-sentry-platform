@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { navMenu } from "@/utils";
 import { useMobileMenuOverlay } from "@/stores/mobile_menu";
 import MobileSideMenu from "./mobile-sidemenu";
 import SmartButton from "./custom_button";
+import { Menu, X } from "lucide-react";
 
 type ComponentProps = {
   text?: string;
@@ -16,7 +16,7 @@ type ComponentProps = {
 
 const Navbar: React.FC<ComponentProps> = ({}) => {
   const pathname = usePathname();
-  const { setOpen } = useMobileMenuOverlay();
+  const { open, setOpen } = useMobileMenuOverlay();
   const [isSticky, setIsSticky] = useState(false);
 
   // Scroll handler
@@ -85,17 +85,31 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
               >
                 Login
               </Link>
-              <SmartButton variant="bright" buttonText="Join our Program" />
+              <SmartButton
+                variant="bright"
+                buttonText="Join our Program"
+                className="px-6 py-2.5 text-xs md:px-6 md:py-3 md:text-sm"
+              />
             </div>
 
-            {/* HAMBURGER ICON */}
-            <Button
-              onClick={setOpen}
-              className="cursor-pointer border-0 bg-transparent p-0 text-white hover:bg-transparent lg:hidden"
-            >
-              <HamburgerMenuIcon className="h-6 w-6" />
-              <span className="sr-only">Open mainmenu</span>
-            </Button>
+            {/* MOBILE MENU ICON */}
+            {open ? (
+              <span
+                onClick={setOpen}
+                className="inline-block cursor-pointer text-white"
+              >
+                <X size={24} />
+                <span className="sr-only">Close mainmenu</span>
+              </span>
+            ) : (
+              <Button
+                onClick={setOpen}
+                className="cursor-pointer border-0 bg-transparent p-0 text-white hover:bg-transparent lg:hidden"
+              >
+                <Menu size={24} />
+                <span className="sr-only">Open mainmenu</span>
+              </Button>
+            )}
           </div>
         </div>
       </nav>

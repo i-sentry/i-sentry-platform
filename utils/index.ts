@@ -46,45 +46,45 @@ export const navMenu = [
 export const solutions: LinkProps[] = [
   {
     name: "Custom Software",
-    url: "/",
+    url: "/custom-software",
   },
   {
     name: "Cloud Solutions",
-    url: "/",
+    url: "/cloud-solutions",
   },
   {
     name: "Tech Consultancy",
-    url: "/",
+    url: "/tech-consultancy",
   },
 ];
 
 export const programs: LinkProps[] = [
   {
     name: "Mentorship Programs",
-    url: "/",
+    url: "/mentorships",
   },
   {
     name: "Tech Internships",
-    url: "/",
+    url: "/internships",
   },
   {
     name: "Certification",
-    url: "/",
+    url: "/certification",
   },
 ];
 
 export const aboutUs: LinkProps[] = [
   {
     name: "Careers",
-    url: "/",
+    url: "/careers",
   },
   {
     name: "Contact",
-    url: "/",
+    url: "/contact",
   },
   {
-    name: "Help centre",
-    url: "/",
+    name: "Contact centre",
+    url: "/contact-center",
   },
 ];
 
