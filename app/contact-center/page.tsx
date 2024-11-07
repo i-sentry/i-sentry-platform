@@ -1,34 +1,27 @@
 import SmartButton from "@/components/custom_button";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import React from "react";
 import { BiEnvelope } from "react-icons/bi";
 
-export default function NotFound() {
+const ContactCenter = () => {
   return (
     <section className="pb-20 pt-28 lg:pt-40">
       <div className="wrapper md:mx-auto md:max-w-4xl xl:max-w-5xl">
         <div className="text-center md:mx-auto md:max-w-xl">
-          <h4 className="text-sm text-secondary-200">404 error</h4>
+          <h4 className="text-sm text-secondary-200">Contact Center</h4>
           <h1 className="my-4 text-3xl font-medium leading-[1.3] text-white sm:text-5xl sm:leading-snug">
-            Oops! Page Not Found
+            Let&apos;s Build Something
+            <br className="hidden sm:block" /> Amazing Together
           </h1>
           <p className="font-light leading-normal text-primary-200">
-            We&apos;re sorry, but the page you&apos;re looking for doesn&apos;t
-            seem to exist. It might have been moved, renamed, or deleted.
-            Let&apos;s get you back on track!
+            Ready to transform your ideas into reality? Whether you&apos;re
+            looking for digital solutions or interested in our mentorship
+            program, we&apos;re here to help.
           </p>
-
-          <Link href="/">
-            <SmartButton
-              showAnimatedIcon
-              variant="bright"
-              buttonText="Go back Home"
-              className="mt-6 px-6 py-3"
-            />
-          </Link>
         </div>
 
-        <div className="mt-28 grid gap-5 sm:grid sm:grid-cols-2 sm:gap-4 lg:gap-8">
+        <div className="mt-10 grid gap-5 sm:grid sm:grid-cols-2 sm:gap-4 lg:gap-8">
           <div className="rounded-xl bg-footer2 p-5">
             <div className="flex items-center gap-2">
               <span>
@@ -150,4 +143,6 @@ export default function NotFound() {
       </div>
     </section>
   );
-}
+};
+
+export default ContactCenter;

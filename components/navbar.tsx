@@ -39,11 +39,11 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
     <>
       <nav
         className={cn(
-          "fixed left-0 top-0 z-50 w-full duration-300",
+          "fixed left-0 top-0 z-50 w-full py-4 duration-300",
           isSticky ? "bg-primary-800/80 backdrop-blur-md" : "bg-transparent",
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+        <div className="wrapper flex items-center justify-between">
           {/* LOGO */}
           <Link href="/" className="text-white">
             Isentry

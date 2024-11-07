@@ -72,7 +72,10 @@ const config: Config = {
           "linear-gradient(180deg, rgba(250, 250, 250, 0.105) 0%, rgba(244, 244, 244, 0.07) 100%)",
         error:
           "linear-gradient(180deg, rgba(250, 0, 0, 0.105) 0%, rgba(244, 0, 0, 0.07) 100%)",
-        
+        intern:
+          "linear-gradient(90deg, rgba(2, 59, 116, 0.1) 0%, rgba(86, 140, 194, 0.1) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))",
+        price:
+          "linear-gradient(90deg, rgba(2, 59, 116, 0.1) 0%, rgba(86, 140, 194, 0.1) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -100,10 +103,28 @@ const config: Config = {
             transform: "translateY(calc(-100% - var(--gap)))",
           },
         },
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
       },
       animation: {
         marquee: "marquee var(--duration) infinite linear",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
@@ -124,6 +145,24 @@ const config: Config = {
       for (let i = 1; i <= 10; i++) {
         addVariant(`nth-child-${i}`, `&:nth-child(${i})`);
       }
+    },
+    function ({
+      addUtilities,
+    }: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      addUtilities: (utilities: Record<string, any>) => void;
+    }) {
+      addUtilities({
+        ".no-scrollbar": {
+          /* Hide scrollbar for Webkit-based browsers */
+          "-webkit-overflow-scrolling": "touch",
+          "scrollbar-width": "none" /* Firefox */,
+          "-ms-overflow-style": "none" /* IE 10+ */,
+          "&::-webkit-scrollbar": {
+            display: "none" /* Webkit-based browsers */,
+          },
+        },
+      });
     },
   ],
 };
