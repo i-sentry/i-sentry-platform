@@ -72,6 +72,7 @@ const config: Config = {
           "linear-gradient(180deg, rgba(250, 250, 250, 0.105) 0%, rgba(244, 244, 244, 0.07) 100%)",
         error:
           "linear-gradient(180deg, rgba(250, 0, 0, 0.105) 0%, rgba(244, 0, 0, 0.07) 100%)",
+        
       },
       borderRadius: {
         lg: "var(--radius)",
