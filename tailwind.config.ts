@@ -76,6 +76,10 @@ const config: Config = {
           "linear-gradient(90deg, rgba(2, 59, 116, 0.1) 0%, rgba(86, 140, 194, 0.1) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))",
         price:
           "linear-gradient(90deg, rgba(2, 59, 116, 0.1) 0%, rgba(86, 140, 194, 0.1) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))",
+        career:
+          "linear-gradient(180deg, rgba(250, 250, 250, 0.15) 0%, rgba(244, 244, 244, 0.1) 100%)",
+        stack:
+          "linear-gradient(180deg, rgba(3, 11, 27, 0) 36.5%, #030B1B 93.5%)",
       },
       borderRadius: {
         lg: "var(--radius)",
