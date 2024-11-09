@@ -5,9 +5,14 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { clients } from "@/utils";
 
-const Partners = () => {
+const Partners = ({ className }: { className?: string }) => {
   return (
-    <section className="relative border-y-[0.2px] border-[#f9f9f924] py-4">
+    <section
+      className={cn(
+        "relative border-y-[0.2px] border-[#f9f9f924] py-4",
+        className,
+      )}
+    >
       <div className="absolute left-0 top-0 z-10 h-full w-full bg-partners"></div>
       <div className="wrapper">
         <Marquee
