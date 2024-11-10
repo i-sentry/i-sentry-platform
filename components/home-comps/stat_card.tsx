@@ -16,7 +16,7 @@ const StatCard: React.FC<ComponentProps> = ({ percentage, title }) => {
       <SmartButton
         variant="dark"
         buttonText="Learn more"
-        className="mt-12 border-[#F4F4F40D] backdrop-blur-none hover:shadow-none"
+        className="mt-4 border-[#F4F4F40D] backdrop-blur-none hover:shadow-none"
         showAnimatedIcon
       />
     </div>
