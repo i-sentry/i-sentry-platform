@@ -139,3 +139,29 @@ export const caseStudies: IProject[] = [
     url: "/",
   },
 ];
+
+export type StatProps = {
+  percentage: string;
+  title: string;
+};
+
+/* 
+
+
+
+*/
+
+export const stats: StatProps[] = [
+  {
+    percentage: "1000+",
+    title: "Businesses Transformed \n Through our enterprise digital solutions",
+  },
+  {
+    percentage: "85%",
+    title: "Career Advancement Rate \n For our certified graduates",
+  },
+  {
+    percentage: "24/7",
+    title: "Technical Support & Expert Consultant services",
+  },
+];
