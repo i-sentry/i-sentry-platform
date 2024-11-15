@@ -37,6 +37,15 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${dmSans.variable} antialiased`}
     >
+      <head>
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </head>
+
       <body className="overflow-x-hidden font-dm-sans">
         {/* NAVBAR */}
         <Navbar />
