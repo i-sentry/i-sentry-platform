@@ -9,6 +9,8 @@ type ComponentProps = {
   showAnimatedIcon?: boolean;
   className?: string;
   type?: "button" | "submit";
+  onClick?: () => void;
+  url?: string;
 };
 
 const SmartButton: React.FC<ComponentProps> = ({
@@ -17,9 +19,11 @@ const SmartButton: React.FC<ComponentProps> = ({
   showAnimatedIcon = false,
   className,
   type = "button",
+  onClick,
 }) => {
   return (
     <Button
+      onClick={onClick}
       type={type}
       className={cn(
         "group h-auto cursor-pointer items-center gap-4 rounded-full px-8 py-3.5 font-dm-sans font-light text-white hover:shadow-lg hover:shadow-white/25",

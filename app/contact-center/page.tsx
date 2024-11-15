@@ -1,10 +1,14 @@
+"use client";
 import SmartButton from "@/components/custom_button";
+import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { BiEnvelope } from "react-icons/bi";
 
 const ContactCenter = () => {
+  const router = useRouter();
   return (
     <section className="pb-20 pt-28 lg:pt-40">
       <div className="wrapper md:mx-auto md:max-w-4xl xl:max-w-5xl">
@@ -40,6 +44,7 @@ const ContactCenter = () => {
               variant="dark"
               buttonText="Schedule a call"
               className="px-6 py-3"
+              onClick={() => router.push("tel:08000011100")}
             />
           </div>
 
@@ -54,14 +59,14 @@ const ContactCenter = () => {
               Share your product inquiries, report any issues you encounter, or
               leave your valuable feedback. Your input matters!
             </p>
-            <Link href="/faqs">
-              <SmartButton
-                showAnimatedIcon
-                variant="dark"
-                buttonText="Contact Support"
-                className="px-6 py-3"
-              />
-            </Link>
+
+            <SmartButton
+              showAnimatedIcon
+              variant="dark"
+              buttonText="Contact Support"
+              className="px-6 py-3"
+              onClick={() => router.push("/faqs")}
+            />
           </div>
         </div>
 
@@ -75,7 +80,7 @@ const ContactCenter = () => {
               aspiring developers.
             </p>
             <Link
-              href="/"
+              href="/mentorships"
               className="inline-flex items-center gap-2 text-base text-primary-200"
             >
               Explore programs{" "}
@@ -107,14 +112,19 @@ const ContactCenter = () => {
           <hr className="border-0 border-t border-[#F9F9F9]/10 sm:col-span-2" />
 
           <div className="p-5">
-            <h3 className="text-lg font-medium text-white">Documentation</h3>
+            <h3 className="flex items-center gap-2 text-lg font-medium text-white">
+              Documentation{" "}
+              <Badge className="rounded-full border-grey-50 p-1 px-3 py-1 text-xs font-light text-grey-50">
+                Coming soon
+              </Badge>
+            </h3>
             <p className="mb-8 mt-4 font-light text-white">
               Get an overview of I-Sentry&apos;s features, integrations, and how
               to use them.
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-base text-primary-200"
+              className="pointer-events-none inline-flex items-center gap-2 text-base text-primary-200"
             >
               I-Sentry Docs{" "}
               <span>
@@ -124,14 +134,19 @@ const ContactCenter = () => {
           </div>
 
           <div className="p-5">
-            <h3 className="text-lg font-medium text-white">Developers</h3>
+            <h3 className="flex items-center gap-2 text-lg font-medium text-white">
+              Developers
+              <Badge className="rounded-full border-grey-50 p-1 px-3 py-1 text-xs font-light text-grey-50">
+                Coming soon
+              </Badge>
+            </h3>
             <p className="mb-8 mt-4 font-light text-white">
               Learn how to use the GraphQL API and TypeScript SDK to extend
               Linear.
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-base text-primary-200"
+              className="pointer-events-none inline-flex items-center gap-2 text-base text-primary-200"
             >
               I-Sentry API{" "}
               <span>
