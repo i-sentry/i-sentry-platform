@@ -10,6 +10,7 @@ import MobileSideMenu from "./mobile-sidemenu";
 import SmartButton from "./custom_button";
 import { Menu, X } from "lucide-react";
 import { useRouter } from "next/navigation";
+import TransitionLink from "./widgets/transition_links";
 
 type ComponentProps = {
   text?: string;
@@ -55,7 +56,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
           <div className="hidden lg:flex lg:items-center lg:gap-4 xl:gap-6">
             {navMenu.map(
               (link: { name: string; url: string }, index: number) => (
-                <Link
+                <TransitionLink
                   href={link.url}
                   key={index}
                   className={cn(
@@ -73,7 +74,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
                   >
                     {link.name}
                   </span>
-                </Link>
+                </TransitionLink>
               ),
             )}
           </div>
@@ -85,7 +86,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
                 variant="bright"
                 buttonText="Join our Program"
                 className="px-6 py-2.5 text-xs md:px-6 md:py-3 md:text-sm"
-                onClick={()=>router.push("/mentorships")}
+                onClick={() => router.push("/mentorships")}
               />
             </div>
 
