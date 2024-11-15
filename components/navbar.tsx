@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
@@ -48,9 +47,9 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
       >
         <div className="wrapper flex items-center justify-between">
           {/* LOGO */}
-          <Link href="/" className="text-white">
+          <TransitionLink href="/" className="text-white">
             Isentry
-          </Link>
+          </TransitionLink>
 
           {/* NAV LINKS */}
           <div className="hidden lg:flex lg:items-center lg:gap-4 xl:gap-6">
