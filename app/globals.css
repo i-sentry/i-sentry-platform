@@ -14,8 +14,18 @@
     @apply scroll-smooth;
   }
 
+  /* body {
+    transition-property: opacity, transform, filter, background;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+  } */
+
+  .page-transition {
+    @apply translate-y-10 bg-primary-900 opacity-0 blur-[12px] filter;
+  }
+
   body {
-    @apply overflow-x-hidden bg-primary-900 antialiased;
+    @apply overflow-x-hidden bg-primary-900 antialiased transition-all duration-500 ease-in-out;
   }
 
   p {

@@ -1,8 +1,8 @@
 import { LinkProps } from "@/utils";
-import Link from "next/link";
 import React from "react";
 import { Badge } from "./ui/badge";
 import { cn } from "@/lib/utils";
+import TransitionLink from "./widgets/transition_links";
 
 type ComponentProps = {
   title: string;
@@ -23,7 +23,7 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
               key={index}
               className="inline-flex items-center justify-start gap-2"
             >
-              <Link
+              <TransitionLink
                 href={item?.comingSoon ? "" : item?.url}
                 className={cn(
                   "font-inter text-base font-normal text-[#97A4B7] duration-300 hover:text-secondary-400",
@@ -33,7 +33,7 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
                 )}
               >
                 {item?.name}
-              </Link>
+              </TransitionLink>
               {item?.comingSoon && (
                 <Badge className="rounded-full border-grey-50 p-1 px-3 py-1 text-xs font-light text-grey-50">
                   Coming soon
