@@ -9,6 +9,7 @@ import Bankify from "@/public/images/case-studies/bankify.png";
 export type LinkProps = {
   name: string;
   url: string;
+  comingSoon?: boolean;
 };
 
 export const clients = [
@@ -46,45 +47,49 @@ export const navMenu = [
 export const solutions: LinkProps[] = [
   {
     name: "Custom Software",
-    url: "/",
+    url: "/custom-software",
+    comingSoon: true,
   },
   {
     name: "Cloud Solutions",
-    url: "/",
+    url: "/cloud-solutions",
+    comingSoon: true,
   },
   {
     name: "Tech Consultancy",
-    url: "/",
+    url: "/tech-consultancy",
+    comingSoon: true,
   },
 ];
 
 export const programs: LinkProps[] = [
   {
     name: "Mentorship Programs",
-    url: "/",
+    url: "/mentorships",
   },
   {
     name: "Tech Internships",
-    url: "/",
+    url: "/internships",
   },
   {
     name: "Certification",
-    url: "/",
+    url: "/certification",
+    comingSoon: true,
   },
 ];
 
 export const aboutUs: LinkProps[] = [
   {
     name: "Careers",
-    url: "/",
+    url: "/careers",
   },
   {
     name: "Contact",
-    url: "/",
+    url: "/contact",
   },
   {
-    name: "Help centre",
-    url: "/",
+    name: "Contact centre",
+    url: "/contact-center",
   },
 ];
 
@@ -96,10 +101,6 @@ export const legal: LinkProps[] = [
   {
     name: "Privacy",
     url: "/privacy-policy",
-  },
-  {
-    name: "Settings",
-    url: "/settings",
   },
 ];
 
@@ -137,5 +138,31 @@ export const caseStudies: IProject[] = [
     tools: ["MongoDB", "ReactJS"],
     client: "Web Design",
     url: "/",
+  },
+];
+
+export type StatProps = {
+  percentage: string;
+  title: string;
+};
+
+/* 
+
+
+
+*/
+
+export const stats: StatProps[] = [
+  {
+    percentage: "1000+",
+    title: "Businesses Transformed \n Through our enterprise digital solutions",
+  },
+  {
+    percentage: "85%",
+    title: "Career Advancement Rate \n For our certified graduates",
+  },
+  {
+    percentage: "24/7",
+    title: "Technical Support & Expert Consultant services",
   },
 ];

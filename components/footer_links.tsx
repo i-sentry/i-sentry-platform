@@ -1,5 +1,8 @@
 import { LinkProps } from "@/utils";
 import Link from "next/link";
+import React from "react";
+import { Badge } from "./ui/badge";
+import { cn } from "@/lib/utils";
 
 type ComponentProps = {
   title: string;
@@ -16,13 +19,27 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
 
         <div className="mt-4 inline-flex flex-col gap-3">
           {links.map((item: LinkProps, index: number) => (
-            <Link
+            <div
               key={index}
-              href={item?.url}
-              className="font-inter text-base font-normal text-[#97A4B7]"
+              className="inline-flex items-center justify-start gap-2"
             >
-              {item?.name}
-            </Link>
+              <Link
+                href={item?.comingSoon ? "" : item?.url}
+                className={cn(
+                  "font-inter text-base font-normal text-[#97A4B7] duration-300 hover:text-secondary-400",
+                  item?.comingSoon
+                    ? "pointer-events-none cursor-not-allowed"
+                    : "pointer-events-auto cursor-pointer",
+                )}
+              >
+                {item?.name}
+              </Link>
+              {item?.comingSoon && (
+                <Badge className="rounded-full border-grey-50 p-1 px-3 py-1 text-xs font-light text-grey-50">
+                  Coming soon
+                </Badge>
+              )}
+            </div>
           ))}
         </div>
       </div>

@@ -1,13 +1,10 @@
 import { cn } from "@/lib/utils";
 import { useMobileMenuOverlay } from "@/stores/mobile_menu";
-import { navMenu } from "@/utils";
-import { X } from "lucide-react";
+import { legal, navMenu, programs } from "@/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import Image from "next/image";
-import Cone from "@/public/assets/svg/cone-pattern.svg";
-import SmartButton from "./custom_button";
+import FooterLink from "./footer_links";
 
 const MobileSideMenu = () => {
   const pathname = usePathname();
@@ -16,54 +13,32 @@ const MobileSideMenu = () => {
   return (
     <div
       className={cn(
-        "fixed top-0 z-50 h-full w-full duration-300 lg:hidden",
+        "fixed top-0 z-40 h-full w-full duration-300 lg:hidden",
         open ? "right-0" : "-right-full",
       )}
     >
       <div className="absolute right-0 top-0 h-full w-full bg-primary-900/50 backdrop-blur"></div>
-      <div className="absolute right-0 top-0 z-10 h-full w-full overflow-hidden bg-primary-900 p-5 sm:max-w-sm">
-        <Image
-          src={Cone}
-          alt="svg"
-          className="absolute -right-[5rem] top-0 z-0 scale-125 opacity-50"
-        />
-        <span
-          onClick={setOpen}
-          className="absolute right-5 top-5 z-10 cursor-pointer text-white"
-        >
-          <X size={24} />
-        </span>
-
-        <div className="relative z-10 mt-16 inline-flex flex-col justify-center gap-8">
+      <div className="absolute right-0 top-0 z-10 h-full w-full overflow-hidden bg-primary-900 pt-6">
+        <div className="relative z-10 mt-16 flex flex-col justify-center">
           {navMenu.map((link: { name: string; url: string }, index: number) => (
             <Link
               href={link.url}
               key={index}
               onClick={setOpen}
-              className={cn("text-2xl uppercase text-secondary-300")}
+              className={cn(
+                "bg-transparent px-4 py-3 font-inter text-primary-100 duration-300 hover:bg-footer2",
+                pathname?.endsWith(link.url) && "bg-footer2",
+              )}
             >
-              <span
-                className={cn(
-                  "inline-block rounded-full",
-                  pathname?.endsWith(link.url) &&
-                    "bg-grad bg-clip-text font-semibold text-transparent drop-shadow-[0_4px_2px_rgba(255,255,255,0.2)]",
-                )}
-              >
-                {link.name}
-              </span>
+              {link.name}
             </Link>
           ))}
         </div>
 
         {/* CTA BUTTONs */}
-        <div className="mt-10 flex flex-col items-start gap-6 border-t border-secondary-300/10 pt-8">
-          <Link
-            href="/login"
-            className="hidden px-8 font-dm-sans font-normal text-white drop-shadow-[0_7px_3px_rgba(255,255,255,0.3)] lg:inline-block"
-          >
-            Login
-          </Link>
-          <SmartButton variant="bright" buttonText="Join our Program" />
+        <div className="mt-10 flex items-start justify-start gap-10 border-t border-secondary-300/10 px-4 pt-8 sm:grid sm:grid-cols-2">
+          <FooterLink title="Programs" links={programs} />
+          <FooterLink title="Legals" links={legal} />
         </div>
       </div>
     </div>

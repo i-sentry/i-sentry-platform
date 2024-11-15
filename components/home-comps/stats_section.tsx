@@ -1,25 +1,6 @@
 import React from "react";
 import StatCard from "./stat_card";
-
-type StatProps = {
-  percentage: string;
-  title: string;
-};
-
-const stats: StatProps[] = [
-  {
-    percentage: "90%",
-    title: "reduction in deployment time",
-  },
-  {
-    percentage: "90%",
-    title: "reduction in deployment time",
-  },
-  {
-    percentage: "90%",
-    title: "reduction in deployment time",
-  },
-];
+import { StatProps, stats } from "@/utils";
 
 const Statistics = () => {
   return (

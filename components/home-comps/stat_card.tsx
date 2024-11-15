@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation";
 import SmartButton from "../custom_button";
 
 type ComponentProps = {
@@ -6,6 +8,8 @@ type ComponentProps = {
 };
 
 const StatCard: React.FC<ComponentProps> = ({ percentage, title }) => {
+  const router = useRouter();
+
   return (
     <div className="rounded-xl border border-[#FAFAFA1F] bg-stats p-6 backdrop-blur-lg">
       <h3 className="text-4xl text-white">{percentage}</h3>
@@ -16,8 +20,9 @@ const StatCard: React.FC<ComponentProps> = ({ percentage, title }) => {
       <SmartButton
         variant="dark"
         buttonText="Learn more"
-        className="mt-12 border-[#F4F4F40D] backdrop-blur-none hover:shadow-none"
+        className="mt-4 border-[#F4F4F40D] backdrop-blur-none hover:shadow-none"
         showAnimatedIcon
+        onClick={() => router.push("/about")}
       />
     </div>
   );
