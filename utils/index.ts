@@ -74,6 +74,7 @@ export const programs: LinkProps[] = [
   {
     name: "Certification",
     url: "/certification",
+    comingSoon: true,
   },
 ];
 

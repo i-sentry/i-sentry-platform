@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
@@ -9,8 +10,11 @@ import Team from "@/public/assets/mentees/Photo - Timilehin Abegunde.png";
 import KingIBK from "@/public/images/team/3.png";
 import Bamgbade from "@/public/images/team/bamgbade.jpg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { useRouter } from "next/navigation";
 
 const About = () => {
+  const router = useRouter();
+
   return (
     <>
       {/* HEADING */}
@@ -321,6 +325,7 @@ const About = () => {
               showAnimatedIcon
               buttonText="Explore Oppotunities"
               className="mt-8 py-3"
+              onClick={() => router.push("/careers")}
             />
           </div>
           <Image

@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import SmartButton from "../custom_button";
+import { useRouter } from "next/navigation";
 
 type ComponentProps = {
   showList?: boolean;
@@ -10,6 +11,7 @@ type ComponentProps = {
   description: string;
   buttonText?: string;
   listItems?: string[];
+  url?: string;
 };
 
 const AboutCard: React.FC<ComponentProps> = ({
@@ -20,7 +22,10 @@ const AboutCard: React.FC<ComponentProps> = ({
   title,
   description,
   buttonText,
+  url,
 }) => {
+  const router = useRouter();
+
   return (
     <>
       <div className="rounded-2xl border border-[#FAFAFA1F] bg-box p-6">
@@ -50,7 +55,16 @@ const AboutCard: React.FC<ComponentProps> = ({
         {showList && (
           <>
             <ul className="list list-disc pl-4 font-inter text-sm font-extralight text-[#C2C2C2] sm:text-base">
-              {listItems?.map((list: string) => <li key={list}>{list}</li>)}
+              {listItems?.map((list: string, index: number) => (
+                <li
+                  key={list}
+                  className={cn(
+                    url === "/services" && index === 2 && "opacity-0",
+                  )}
+                >
+                  {list}
+                </li>
+              ))}
             </ul>
 
             <SmartButton
@@ -58,6 +72,7 @@ const AboutCard: React.FC<ComponentProps> = ({
               buttonText={`${buttonText}`}
               className="mt-12 border-[#F4F4F40D] bg-grad-alt backdrop-blur-none hover:shadow-none"
               showAnimatedIcon
+              onClick={() => router.push(url || "")}
             />
           </>
         )}

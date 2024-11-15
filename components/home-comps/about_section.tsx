@@ -11,6 +11,7 @@ type ValueProp = {
   images?: StaticImageData[];
   buttonText?: string;
   listItems?: string[];
+  url?: string;
 };
 
 const coreValues: ValueProp[] = [
@@ -19,7 +20,8 @@ const coreValues: ValueProp[] = [
     description:
       "Transform ideas into reality with our cutting-edge development capabilities. From concept to deployment, we craft revolutionary digital solutions that set new industry standards.",
     buttonText: "Explore Our Products",
-    listItems: ["Custom Software Development", "IoT Solutions"],
+    listItems: ["Custom Software Development", "IoT Solutions", ""],
+    url: "/services",
   },
   {
     title: "Global Tech Talent Incubator",
@@ -31,6 +33,7 @@ const coreValues: ValueProp[] = [
       "Expert Mentorship",
       "Career Development",
     ],
+    url: "/mentorships",
   },
   {
     title: "Expert Consultancy",

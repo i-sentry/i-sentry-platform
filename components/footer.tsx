@@ -1,18 +1,21 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { aboutUs, legal, programs, solutions } from "@/utils";
 import FooterLink from "./footer_links";
 import SmartButton from "./custom_button";
 import {
-  FaDribbble,
   FaFacebook,
   FaGithub,
   FaLinkedin,
-  FaTwitch,
+  FaMedium,
   FaXTwitter,
 } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+  const router = useRouter();
+
   return (
     <footer>
       <section className="border-t border-[#C2C2C21A] bg-footer1 px-4 py-10 backdrop-blur-md">
@@ -35,8 +38,13 @@ const Footer = () => {
                 variant="dark"
                 buttonText="Talk to our team"
                 className="border-[#F4F4F40D] backdrop-blur-none"
+                onClick={() => router.push("/contact")}
               />
-              <SmartButton variant="bright" buttonText="Join our Program" />
+              <SmartButton
+                variant="bright"
+                buttonText="Join our Program"
+                onClick={() => router.push("/mentorships")}
+              />
             </div>
           </div>
 
@@ -84,13 +92,7 @@ const Footer = () => {
                 href="https://dribble.com/"
                 className="cursor-pointer text-[#98A2B3]"
               >
-                <FaTwitch size={20} />
-              </Link>
-              <Link
-                href="https://dribble.com/"
-                className="cursor-pointer text-[#98A2B3]"
-              >
-                <FaDribbble size={20} />
+                <FaMedium size={20} />
               </Link>
             </div>
           </div>
