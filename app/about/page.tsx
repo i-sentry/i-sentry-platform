@@ -2,12 +2,14 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import Placeholder from "@/public/images/placeholder.png";
+// import Placeholder from "@/public/images/placeholder.png";
 import AboutImg from "@/public/images/about-us.png";
 import EachElement from "@/components/widgets/list_rendering";
 import SmartButton from "@/components/custom_button";
 import Team from "@/public/assets/mentees/Photo - Timilehin Abegunde.png";
 import KingIBK from "@/public/images/team/3.png";
+import Williams from "@/public/images/team/williams.webp";
+import Akanimo from "@/public/images/team/Akanimo.webp";
 import Bamgbade from "@/public/images/team/bamgbade.jpg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { useRouter } from "next/navigation";
@@ -391,7 +393,7 @@ const coreTeam: MemberProps[] = [
   {
     name: "Idorenyin Williams",
     title: "Co-Founder & Lead Frontend",
-    photo: Placeholder,
+    photo: Williams,
   },
   {
     name: "Bamgbade Oluwaseun",
@@ -404,9 +406,9 @@ const coreTeam: MemberProps[] = [
     photo: KingIBK,
   },
   {
-    name: "Akanimo",
+    name: "Akanimo Ekong",
     title: "Co-Founder",
-    photo: Placeholder,
+    photo: Akanimo,
   },
   {
     name: "Abegunde Timilehin",
