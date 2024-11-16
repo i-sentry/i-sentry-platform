@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import CareerImg from "@/public/images/career-home.jpeg";
+import CareerImg from "@/public/images/career-home.webp";
 import { ChevronRight } from "lucide-react";
 
 const Career = () => {
@@ -65,11 +65,11 @@ const Career = () => {
 
           <div>
             <Image
-              className="h-full w-full rounded-md object-cover object-center"
+              className="h-full w-full rounded-[12px] object-cover object-center"
               src={CareerImg}
               alt="placeholder"
-              width={200}
-              height={200}
+              width={1000}
+              height={3000}
             />
           </div>
         </div>

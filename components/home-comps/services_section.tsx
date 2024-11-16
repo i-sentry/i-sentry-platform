@@ -1,6 +1,7 @@
 import React from "react";
 import ServiceCard from "./service_card";
 import SmartButton from "../custom_button";
+import { useRouter } from "next/navigation";
 
 type ServiceProp = {
   title: string;
@@ -8,6 +9,7 @@ type ServiceProp = {
 };
 
 const Services = () => {
+  const router = useRouter();
   return (
     <>
       <section className="py-10">
@@ -27,6 +29,7 @@ const Services = () => {
               variant="bright"
               buttonText="Join our Program"
               className="mt-12 border-[#F4F4F40D]"
+              onClick={() => router.push("/mentorships")}
             />
           </div>
 
@@ -48,6 +51,7 @@ const Services = () => {
                 buttonText="Learn more"
                 className="mt-12 border-[#F4F4F40D] bg-grad-alt backdrop-blur-0 hover:shadow-none"
                 showAnimatedIcon
+                onClick={() => router.push("/mentorships")}
               />
             </div>
             <div

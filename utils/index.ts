@@ -9,6 +9,7 @@ import Bankify from "@/public/images/case-studies/bankify.png";
 export type LinkProps = {
   name: string;
   url: string;
+  comingSoon?: boolean;
 };
 
 export const clients = [
@@ -47,14 +48,17 @@ export const solutions: LinkProps[] = [
   {
     name: "Custom Software",
     url: "/custom-software",
+    comingSoon: true,
   },
   {
     name: "Cloud Solutions",
     url: "/cloud-solutions",
+    comingSoon: true,
   },
   {
     name: "Tech Consultancy",
     url: "/tech-consultancy",
+    comingSoon: true,
   },
 ];
 
@@ -70,6 +74,7 @@ export const programs: LinkProps[] = [
   {
     name: "Certification",
     url: "/certification",
+    comingSoon: true,
   },
 ];
 
@@ -96,10 +101,6 @@ export const legal: LinkProps[] = [
   {
     name: "Privacy",
     url: "/privacy-policy",
-  },
-  {
-    name: "Settings",
-    url: "/settings",
   },
 ];
 

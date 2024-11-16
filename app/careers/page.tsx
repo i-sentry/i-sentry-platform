@@ -1,3 +1,4 @@
+"use client";
 import SmartButton from "@/components/custom_button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -12,8 +13,11 @@ import React from "react";
 import ReactCountryFlag from "react-country-flag";
 import CareerImg from "@/public/images/career.jpeg";
 import Stacks from "@/public/images/pictures-stack.png";
+import { useRouter } from "next/navigation";
 
 const Career = () => {
+  const router = useRouter();
+
   return (
     <>
       <section className="pb-20 pt-28 lg:pt-40">
@@ -29,10 +33,11 @@ const Career = () => {
               variant="bright"
               buttonText="See open positions"
               className="mt-10"
+              onClick={() => router.push("#positions")}
             />
           </div>
           <div className="relative">
-            <div className="bg-stack absolute -bottom-2 left-0 h-full w-full"></div>
+            <div className="absolute -bottom-2 left-0 h-full w-full bg-stack"></div>
             <Image src={Stacks} alt="image mansory" className="w-full" />
           </div>
         </div>
@@ -82,7 +87,7 @@ const Career = () => {
         </div>
       </section>
 
-      <section className="bg-footer2 py-10">
+      <section id="positions" className="bg-footer2 py-16 md:pt-24">
         <div className="wrapper">
           <div className="mb-6 sm:grid sm:grid-cols-[1.5fr_1fr] sm:items-start sm:justify-between sm:gap-6">
             <div className="">
@@ -129,11 +134,11 @@ const Career = () => {
                     Product Designer
                   </h4>
                   <div className="flex items-center gap-2 lg:grow lg:justify-between">
-                    <Badge className="bg-career inline-flex items-center gap-2 rounded-[6px] px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
+                    <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#2E90FA]"></span>{" "}
                       Design
                     </Badge>
-                    <Badge className="bg-career inline-flex items-center gap-2 rounded-[6px] px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
+                    <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
                       <span className="inline-block h-4 w-4 rounded-full text-primary-50">
                         <ReactCountryFlag
                           svg
@@ -189,11 +194,11 @@ const Career = () => {
                     Backend Engineer
                   </h4>
                   <div className="flex items-center gap-2 lg:grow lg:justify-between">
-                    <Badge className="bg-career inline-flex items-center gap-2 rounded-[6px] px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
+                    <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#2E90FA]"></span>{" "}
                       Design
                     </Badge>
-                    <Badge className="bg-career inline-flex items-center gap-2 rounded-[6px] px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
+                    <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
                       <span className="inline-block h-4 w-4 rounded-full text-primary-50">
                         <ReactCountryFlag
                           svg

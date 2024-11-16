@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
@@ -9,6 +8,8 @@ import { useMobileMenuOverlay } from "@/stores/mobile_menu";
 import MobileSideMenu from "./mobile-sidemenu";
 import SmartButton from "./custom_button";
 import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import TransitionLink from "./widgets/transition_links";
 
 type ComponentProps = {
   text?: string;
@@ -18,6 +19,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
   const pathname = usePathname();
   const { open, setOpen } = useMobileMenuOverlay();
   const [isSticky, setIsSticky] = useState(false);
+  const router = useRouter();
 
   // Scroll handler
 
@@ -45,15 +47,15 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
       >
         <div className="wrapper flex items-center justify-between">
           {/* LOGO */}
-          <Link href="/" className="text-white">
+          <TransitionLink href="/" className="text-white">
             Isentry
-          </Link>
+          </TransitionLink>
 
           {/* NAV LINKS */}
           <div className="hidden lg:flex lg:items-center lg:gap-4 xl:gap-6">
             {navMenu.map(
               (link: { name: string; url: string }, index: number) => (
-                <Link
+                <TransitionLink
                   href={link.url}
                   key={index}
                   className={cn(
@@ -71,7 +73,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
                   >
                     {link.name}
                   </span>
-                </Link>
+                </TransitionLink>
               ),
             )}
           </div>
@@ -79,16 +81,11 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
           <div className="inline-flex items-center gap-3">
             {/* CTA BUTTONs */}
             <div className="inline-flex items-center">
-              <Link
-                href="/login"
-                className="hidden px-8 font-dm-sans font-normal text-white drop-shadow-[0_7px_3px_rgba(255,255,255,0.3)] lg:inline-block"
-              >
-                Login
-              </Link>
               <SmartButton
                 variant="bright"
                 buttonText="Join our Program"
                 className="px-6 py-2.5 text-xs md:px-6 md:py-3 md:text-sm"
+                onClick={() => router.push("/mentorships")}
               />
             </div>
 

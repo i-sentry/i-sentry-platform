@@ -1,9 +1,12 @@
+"use client";
 import SmartButton from "@/components/custom_button";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { BiEnvelope } from "react-icons/bi";
 
 export default function NotFound() {
+  const router = useRouter();
   return (
     <section className="pb-20 pt-28 lg:pt-40">
       <div className="wrapper md:mx-auto md:max-w-4xl xl:max-w-5xl">
@@ -18,14 +21,15 @@ export default function NotFound() {
             Let&apos;s get you back on track!
           </p>
 
-          <Link href="/">
-            <SmartButton
-              showAnimatedIcon
-              variant="bright"
-              buttonText="Go back Home"
-              className="mt-6 px-6 py-3"
-            />
-          </Link>
+          {/* <Link href="/"> */}
+          <SmartButton
+            showAnimatedIcon
+            variant="bright"
+            buttonText="Go back Home"
+            className="mt-6 px-6 py-3"
+            onClick={() => router.push("/")}
+          />
+          {/* </Link> */}
         </div>
 
         <div className="mt-28 grid gap-5 sm:grid sm:grid-cols-2 sm:gap-4 lg:gap-8">
