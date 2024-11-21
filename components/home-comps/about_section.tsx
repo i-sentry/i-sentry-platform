@@ -4,6 +4,7 @@ import Consult3 from "@/public/images/consult-3.jpeg";
 import Cloud from "@/public/images/cloud-solutions.jpeg";
 import { StaticImageData } from "next/image";
 import AboutCard from "./about_card";
+import { sanityClient } from "@/sanity";
 
 type ValueProp = {
   title: string;
@@ -49,7 +50,22 @@ const coreValues: ValueProp[] = [
   },
 ];
 
-const About = () => {
+const query = `*[_type == "about"][0]{
+  // title,
+  values[]{
+    title,
+    description,
+    listItems,
+    button,
+    images[]{asset->{_id, url}}
+  }
+}`;
+
+const About = async () => {
+  const data: ValueProp[] = await sanityClient.fetch(query);
+
+  console.log(data, "about list box");
+
   return (
     <>
       <section className="py-10">
