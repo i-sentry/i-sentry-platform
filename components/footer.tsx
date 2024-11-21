@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <section className="border-t border-[#C2C2C21A] bg-footer1 px-4 py-10 backdrop-blur-md">
+      <section className="border-t border-[#C2C2C21A] bg-footer1 px-4 pt-10 backdrop-blur-md">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 lg:grid lg:grid-cols-2 lg:items-start">
             <div className="">
