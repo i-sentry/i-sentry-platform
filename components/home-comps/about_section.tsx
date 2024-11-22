@@ -4,7 +4,47 @@ import Consult3 from "@/public/images/consult-3.jpeg";
 import Cloud from "@/public/images/cloud-solutions.jpeg";
 import { StaticImageData } from "next/image";
 import AboutCard from "./about_card";
-import { sanityClient } from "@/sanity";
+import { fetchAbout } from "@/sanity/lib/fetchDatas";
+import { useEffect, useState } from "react";
+
+const About = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [data, setData] = useState<any>();
+
+  console.log(data, "about list box");
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const fetchedAbout = await fetchAbout();
+        setData(fetchedAbout);
+      } catch (err) {
+        // setError("Error loading data");
+        console.error(err);
+      } finally {
+        // setLoading(false);
+      }
+    };
+
+    getData();
+  }, []);
+
+  return (
+    <>
+      <section className="py-10">
+        <div className="wrapper">
+          <div className="grid gap-6 md:grid-cols-2">
+            {coreValues.map((item: ValueProp, index: number) => (
+              <AboutCard {...item} key={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default About;
 
 type ValueProp = {
   title: string;
@@ -49,36 +89,3 @@ const coreValues: ValueProp[] = [
     images: [Cloud],
   },
 ];
-
-const query = `*[_type == "about"][0]{
-  // title,
-  values[]{
-    title,
-    description,
-    listItems,
-    button,
-    images[]{asset->{_id, url}}
-  }
-}`;
-
-const About = async () => {
-  const data: ValueProp[] = await sanityClient.fetch(query);
-
-  console.log(data, "about list box");
-
-  return (
-    <>
-      <section className="py-10">
-        <div className="wrapper">
-          <div className="grid gap-6 md:grid-cols-2">
-            {coreValues.map((item: ValueProp, index: number) => (
-              <AboutCard {...item} key={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default About;

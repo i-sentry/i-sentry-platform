@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SmartButton from "../custom_button";
 import AnimatedCircle from "../animate_circles";
 import { useRouter } from "next/navigation";
@@ -13,9 +13,28 @@ const fetchHero = async () => {
   const section = await sanityClient.fetch(query);
   return section;
 };
-const Hero = async () => {
+const Hero = () => {
   const router = useRouter();
-  const data = await fetchHero();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [data, setData] = useState<any>();
+
+  console.log(data, "Hero list box");
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const fetchedAbout = await fetchHero();
+        setData(fetchedAbout);
+      } catch (err) {
+        // setError("Error loading data");
+        console.error(err);
+      } finally {
+        // setLoading(false);
+      }
+    };
+
+    getData();
+  }, []);
 
   return (
     <>
