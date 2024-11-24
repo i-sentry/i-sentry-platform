@@ -153,6 +153,7 @@ export type IProject = {
   tools: string[];
   client: string;
   url: string;
+  industry: string;
 };
 
 export const caseStudies: IProject[] = [
@@ -166,6 +167,7 @@ export const caseStudies: IProject[] = [
     tools: ["MongoDB", "ReactJS", "AWS"],
     client: "Web Design",
     url: "/",
+    industry: "Ecommerce, Agriculture",
   },
   {
     id: "1",
@@ -177,6 +179,7 @@ export const caseStudies: IProject[] = [
     tools: ["MongoDB", "ReactJS"],
     client: "Web Design",
     url: "/",
+    industry: "Fintech",
   },
 ];
 
