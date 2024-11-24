@@ -192,29 +192,29 @@ const About = () => {
       <section className="wrapper">
         <div className="mt-10 gap-16 lg:grid lg:grid-cols-[1fr_2fr] xl:grid-cols-[0.8fr_2fr]">
           <h2 className="mb-2 font-dm-sans text-2xl font-medium text-primary-50 lg:text-3xl">
-            We&apos;re passionate about building excellent product
+            We&apos;re passionate about building transformative solutions
           </h2>
           <div className="space-y-3 xl:ml-32">
             <p className="text-base font-light text-primary-100">
-              At I-Sentry, we are a team of passionate individuals dedicated to
+              At I-Sentry, we are a team of passionate innovators dedicated to
               transforming complex challenges into seamless digital solutions.
               Founded with a vision to innovate, we specialize in creating
-              custom software that propels businesses forward, and enhances user
-              experiences, all while nurturing future tech leaders.
+              custom software that propels businesses forward, while nurturing
+              the next generation of tech leaders through our comprehensive
+              training programs.
             </p>
             <p className="text-base font-light text-primary-100">
-              With a client-first approach, we focus on understanding your
-              unique needs and delivering tailored software that meets your
-              goals. Whether you&apos;re a startup looking to scale or an
-              established enterprise seeking efficiency, our solutions are
-              designed to empower your business through technology.
+              With our client-first approach, we deliver tailored solutions that
+              drive real business impact. Our expertise spans: Custom Enterprise
+              Software Development, Cloud-Based Solutions, Digital
+              Transformation Consulting, Technical Training & Mentorship
             </p>
             <p className="text-base font-light text-primary-100">
-              With a client-first approach, we prioritize understanding your
-              unique needs and delivering tailored software that aligns your
-              goals. Whether you&apos;re a startup aiming to scale or an
-              established enterprise seeking efficiency, our solutions are
-              designed to empower your business through technology.
+              Whether you&apos;re a startup aiming to scale or an established
+              enterprise seeking efficiency, we provide the technological
+              foundation for your success. Our dual focus on software excellence
+              and talent development creates a unique ecosystem that benefits
+              both businesses and aspiring tech professionals.
             </p>
           </div>
         </div>
@@ -235,18 +235,19 @@ const About = () => {
                   Our Vision
                 </h3>
                 <p className="text-base font-light text-primary-100">
-                  At Isentry, we are passionate about using technology to
-                  empower your business to thrive and innovate. business.
+                  At Isentry, our mission is to drive technological advancement
+                  through two key pillars: delivering innovative software
+                  solutions and nurturing tech talent.
                 </p>
                 <p className="text-base font-light text-primary-100">
-                  We envision a Future where every business regardless of
-                  it&apos;s size and sectors can harness the full potential of
-                  technology to achieve it&apos;s goals and make a positive
-                  impact on the world.
+                  We aim to foster growth and efficiency by providing
+                  state-of-the-art digital solutions while maintaining our
+                  commitment to excellence, integrity, and client success.
                 </p>
                 <p className="text-base font-light text-primary-100">
-                  Be at the forefront of your industry with a seamless
-                  integration between innovative technology and business.
+                  We strive to be the bridge between current business needs and
+                  future tech capabilities, transforming both organizations and
+                  individuals through technology.
                 </p>
               </div>
 

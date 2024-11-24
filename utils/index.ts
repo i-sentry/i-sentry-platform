@@ -60,6 +60,16 @@ export const solutions: LinkProps[] = [
     url: "/tech-consultancy",
     comingSoon: true,
   },
+  {
+    name: "Expert guidance & strategy",
+    url: "/expert-guidance-and-strategy",
+    comingSoon: true,
+  },
+  {
+    name: "Custom Enterprise Software",
+    url: "/custom-enterprise-software",
+    comingSoon: true,
+  },
 ];
 
 export const programs: LinkProps[] = [
@@ -76,7 +86,20 @@ export const programs: LinkProps[] = [
     url: "/certification",
     comingSoon: true,
   },
+  {
+    name: "Professional Training",
+    url: "#",
+    comingSoon: true,
+  },
+  {
+    name: "Corporate Training",
+    url: "#",
+    comingSoon: true,
+  },
 ];
+
+// "Professional Training";
+// Add: "";
 
 export const aboutUs: LinkProps[] = [
   {
@@ -91,6 +114,14 @@ export const aboutUs: LinkProps[] = [
     name: "Contact centre",
     url: "/contact-center",
   },
+  {
+    name: "Our Impact",
+    url: "/our-impact",
+  },
+  {
+    name: "Success Stories",
+    url: "/success-stories",
+  },
 ];
 
 export const legal: LinkProps[] = [
@@ -101,6 +132,14 @@ export const legal: LinkProps[] = [
   {
     name: "Privacy",
     url: "/privacy-policy",
+  },
+  {
+    name: "Security",
+    url: "/security",
+  },
+  {
+    name: "Compliance",
+    url: "/compliance",
   },
 ];
 
