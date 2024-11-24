@@ -1,14 +1,18 @@
 import { cn } from "@/lib/utils";
-import { useMobileMenuOverlay } from "@/stores/mobile_menu";
 import { legal, navMenu, programs } from "@/utils";
 import { usePathname } from "next/navigation";
 import React from "react";
 import FooterLink from "./footer_links";
 import TransitionLink from "./widgets/transition_links";
 
-const MobileSideMenu = () => {
+const MobileSideMenu = ({
+  open,
+  setOpen,
+}: {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const pathname = usePathname();
-  const { open, setOpen } = useMobileMenuOverlay();
 
   return (
     <div
@@ -24,7 +28,7 @@ const MobileSideMenu = () => {
             <TransitionLink
               href={link.url}
               key={index}
-              onClick={setOpen}
+              onClick={() => setOpen(false)}
               className={cn(
                 "bg-transparent px-4 py-3 font-inter text-primary-100 duration-300 hover:bg-footer2",
                 pathname?.endsWith(link.url) && "bg-footer2",

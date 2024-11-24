@@ -203,7 +203,7 @@ const Projects = () => {
           </div>
 
           {/* CASE STUDIES */}
-          <div className="mt-10 grid gap-6 md:mt-24 md:grid-cols-2">
+          <div className="mt-10 gap-6 space-y-6 md:mt-24 md:grid md:grid-cols-2 md:space-y-0">
             <EachElement
               of={caseStudies}
               render={(item: IProject, index: number) => {
