@@ -91,32 +91,32 @@ const services: ServiceProp[] = [
   },
 
   {
-    title: "Program Foundation Building",
+    title: "Practical Application",
     listItems: [
-      "Technical skill assessment and personalized learning path",
-      "Core technology stack immersion",
-      "Industry best practices and standards",
-      "Weekly one-on-one mentoring sessions",
+      "Real-world project assignments",
+      "Collaborative development experience",
+      "Code review and feedback sessions",
+      "Technical documentation practice",
     ],
   },
 
   {
-    title: "Program Foundation Building",
+    title: "Professional Development",
     listItems: [
-      "Technical skill assessment and personalized learning path",
-      "Core technology stack immersion",
-      "Industry best practices and standards",
-      "Weekly one-on-one mentoring sessions",
+      "Career path planning and guidance",
+      "Industry networking opportunities",
+      "Mock technical interviews",
+      "Portfolio development support",
     ],
   },
 
   {
-    title: "Program Foundation Building",
+    title: "Industry Integration",
     listItems: [
-      "Technical skill assessment and personalized learning path",
-      "Core technology stack immersion",
-      "Industry best practices and standards",
-      "Weekly one-on-one mentoring sessions",
+      "Client project participation",
+      "Team collaboration experience",
+      "Professional certification preparation",
+      "Job placement assistance",
     ],
   },
 ];
