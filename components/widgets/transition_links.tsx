@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 interface ILink extends LinkProps {
   children: ReactNode;
   href: string;
-  className: string;
+  className?: string;
 }
 
 function sleep(ms: number): Promise<void> {
