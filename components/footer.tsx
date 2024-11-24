@@ -26,10 +26,11 @@ const Footer = () => {
                 Let&apos;s work <br className="hidden lg:block" /> together
               </h3>
               <p className="font-extralight leading-8 text-[#97A4B7]">
-                At I-Sentry Technologies, we stand at the vanguard of
-                technological advancement. Our cutting-edge solutions and global
-                expertise empower businesses to navigate and thrive in the
-                digital landscape of tomorrow.
+                At I-Sentry Technologies, we combine cutting-edge software
+                solutions with expert training to empower businesses and
+                individuals in the digital age. Our dual focus on enterprise
+                solutions and technology education creates a unique ecosystem
+                for growth and innovation.
               </p>
             </div>
 
