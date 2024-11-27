@@ -12,11 +12,8 @@ import Williams from "@/public/images/team/williams.webp";
 import Akanimo from "@/public/images/team/Akanimo.webp";
 import Bamgbade from "@/public/images/team/bamgbade.jpg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { useRouter } from "next/navigation";
 
 const About = () => {
-  const router = useRouter();
-
   return (
     <>
       {/* HEADING */}
@@ -328,7 +325,8 @@ const About = () => {
               showAnimatedIcon
               buttonText="Explore Oppotunities"
               className="mt-8 py-3"
-              onClick={() => router.push("/careers")}
+              url="/careers"
+              isLink
             />
           </div>
           <Image
@@ -339,7 +337,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="wrapper py-16">
+      <section className="wrapper py-16 md:mt-24" id="team">
         <h3 className="mb-16 font-dm-sans text-2xl font-medium text-primary-50 md:text-3xl lg:text-center lg:text-4xl">
           Meet the core innovators behind
           <br className="hidden md:block" /> our success
