@@ -1,11 +1,8 @@
 import React from "react";
 import SmartButton from "../custom_button";
 import AnimatedCircle from "../animate_circles";
-import { useRouter } from "next/navigation";
 
 const Hero = () => {
-  const router = useRouter();
-
   return (
     <>
       <section className="relative min-h-[30vh] w-full overflow-hidden py-36 lg:flex lg:h-screen lg:items-center lg:justify-center lg:py-20">
@@ -24,14 +21,16 @@ const Hero = () => {
 
             <div className="flex items-center gap-2">
               <SmartButton
+                isLink
+                url="/services"
                 variant="dark"
                 buttonText="Our Services"
-                onClick={() => router.push("/services")}
               />
               <SmartButton
+                isLink
+                url="/mentorships"
                 variant="bright"
                 buttonText="Join our Program"
-                onClick={() => router.push("/mentorships")}
               />
             </div>
           </div>

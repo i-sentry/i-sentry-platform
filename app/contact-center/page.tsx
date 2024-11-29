@@ -3,12 +3,10 @@ import SmartButton from "@/components/custom_button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React from "react";
 import { BiEnvelope } from "react-icons/bi";
 
 const ContactCenter = () => {
-  const router = useRouter();
   return (
     <section className="pb-20 pt-28 lg:pt-40">
       <div className="wrapper md:mx-auto md:max-w-4xl xl:max-w-5xl">
@@ -44,7 +42,8 @@ const ContactCenter = () => {
               variant="dark"
               buttonText="Schedule a call"
               className="px-6 py-3"
-              onClick={() => router.push("tel:08000011100")}
+              isLink
+              url="https://calendly.com/isentrytechnologies"
             />
           </div>
 
@@ -65,7 +64,8 @@ const ContactCenter = () => {
               variant="dark"
               buttonText="Contact Support"
               className="px-6 py-3"
-              onClick={() => router.push("/faqs")}
+              url="/faqs"
+              isLink
             />
           </div>
         </div>

@@ -11,14 +11,11 @@ import {
   FaMedium,
   FaXTwitter,
 } from "react-icons/fa6";
-import { useRouter } from "next/navigation";
 
 const Footer = () => {
-  const router = useRouter();
-
   return (
     <footer>
-      <section className="border-t border-[#C2C2C21A] bg-footer1 px-4 py-10 backdrop-blur-md">
+      <section className="border-t border-[#C2C2C21A] bg-footer1 px-4 pt-10 backdrop-blur-md">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 lg:grid lg:grid-cols-2 lg:items-start">
             <div className="">
@@ -26,10 +23,11 @@ const Footer = () => {
                 Let&apos;s work <br className="hidden lg:block" /> together
               </h3>
               <p className="font-extralight leading-8 text-[#97A4B7]">
-                At I-Sentry Technologies, we stand at the vanguard of
-                technological advancement. Our cutting-edge solutions and global
-                expertise empower businesses to navigate and thrive in the
-                digital landscape of tomorrow.
+                At I-Sentry Technologies, we combine cutting-edge software
+                solutions with expert training to empower businesses and
+                individuals in the digital age. Our dual focus on enterprise
+                solutions and technology education creates a unique ecosystem
+                for growth and innovation.
               </p>
             </div>
 
@@ -38,12 +36,14 @@ const Footer = () => {
                 variant="dark"
                 buttonText="Talk to our team"
                 className="border-[#F4F4F40D] backdrop-blur-none"
-                onClick={() => router.push("/contact")}
+                url="/contact"
+                isLink
               />
               <SmartButton
                 variant="bright"
                 buttonText="Join our Program"
-                onClick={() => router.push("/mentorships")}
+                url="/mentorships"
+                isLink
               />
             </div>
           </div>

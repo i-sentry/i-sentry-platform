@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 // import Placeholder from "@/public/images/placeholder.png";
 import AboutImg from "@/public/images/about-us.png";
+import AboutLearn from "@/public/images/learn-about.webp";
 import EachElement from "@/components/widgets/list_rendering";
 import SmartButton from "@/components/custom_button";
 import Team from "@/public/assets/mentees/Photo - Timilehin Abegunde.png";
@@ -12,11 +13,10 @@ import Williams from "@/public/images/team/williams.webp";
 import Akanimo from "@/public/images/team/Akanimo.webp";
 import Bamgbade from "@/public/images/team/bamgbade.jpg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { BsLinkedin, BsTwitterX } from "react-icons/bs";
 
 const About = () => {
-  const router = useRouter();
-
   return (
     <>
       {/* HEADING */}
@@ -192,29 +192,29 @@ const About = () => {
       <section className="wrapper">
         <div className="mt-10 gap-16 lg:grid lg:grid-cols-[1fr_2fr] xl:grid-cols-[0.8fr_2fr]">
           <h2 className="mb-2 font-dm-sans text-2xl font-medium text-primary-50 lg:text-3xl">
-            We&apos;re passionate about building excellent product
+            We&apos;re passionate about building transformative solutions
           </h2>
           <div className="space-y-3 xl:ml-32">
             <p className="text-base font-light text-primary-100">
-              At I-Sentry, we are a team of passionate individuals dedicated to
+              At I-Sentry, we are a team of passionate innovators dedicated to
               transforming complex challenges into seamless digital solutions.
               Founded with a vision to innovate, we specialize in creating
-              custom software that propels businesses forward, and enhances user
-              experiences, all while nurturing future tech leaders.
+              custom software that propels businesses forward, while nurturing
+              the next generation of tech leaders through our comprehensive
+              training programs.
             </p>
             <p className="text-base font-light text-primary-100">
-              With a client-first approach, we focus on understanding your
-              unique needs and delivering tailored software that meets your
-              goals. Whether you&apos;re a startup looking to scale or an
-              established enterprise seeking efficiency, our solutions are
-              designed to empower your business through technology.
+              With our client-first approach, we deliver tailored solutions that
+              drive real business impact. Our expertise spans: Custom Enterprise
+              Software Development, Cloud-Based Solutions, Digital
+              Transformation Consulting, Technical Training & Mentorship
             </p>
             <p className="text-base font-light text-primary-100">
-              With a client-first approach, we prioritize understanding your
-              unique needs and delivering tailored software that aligns your
-              goals. Whether you&apos;re a startup aiming to scale or an
-              established enterprise seeking efficiency, our solutions are
-              designed to empower your business through technology.
+              Whether you&apos;re a startup aiming to scale or an established
+              enterprise seeking efficiency, we provide the technological
+              foundation for your success. Our dual focus on software excellence
+              and talent development creates a unique ecosystem that benefits
+              both businesses and aspiring tech professionals.
             </p>
           </div>
         </div>
@@ -235,18 +235,19 @@ const About = () => {
                   Our Vision
                 </h3>
                 <p className="text-base font-light text-primary-100">
-                  At Isentry, we are passionate about using technology to
-                  empower your business to thrive and innovate. business.
+                  At Isentry, our mission is to drive technological advancement
+                  through two key pillars: delivering innovative software
+                  solutions and nurturing tech talent.
                 </p>
                 <p className="text-base font-light text-primary-100">
-                  We envision a Future where every business regardless of
-                  it&apos;s size and sectors can harness the full potential of
-                  technology to achieve it&apos;s goals and make a positive
-                  impact on the world.
+                  We aim to foster growth and efficiency by providing
+                  state-of-the-art digital solutions while maintaining our
+                  commitment to excellence, integrity, and client success.
                 </p>
                 <p className="text-base font-light text-primary-100">
-                  Be at the forefront of your industry with a seamless
-                  integration between innovative technology and business.
+                  We strive to be the bridge between current business needs and
+                  future tech capabilities, transforming both organizations and
+                  individuals through technology.
                 </p>
               </div>
 
@@ -300,26 +301,61 @@ const About = () => {
       </section>
 
       <section className="bg-secondary-900/25 py-20">
-        <div className="wrapper lg:grid lg:grid-cols-2 lg:gap-x-32 xl:gap-x-64">
+        <div className="wrapper lg:grid lg:grid-cols-2 lg:gap-x-32">
           <div>
             <h3 className="mb-2 font-dm-sans text-2xl font-medium text-primary-50 md:text-3xl lg:text-4xl lg:leading-[54px]">
-              Learn, innovation and build with real-life projects
+              Learn, Innovate, and <br className="hidden md:block" />
+              Build Your Tech Career
             </h3>
             <p className="text-base font-light text-primary-100">
-              Enhance your career path with our intensive year-long mentorship
-              program at I-Sentry Technologies. We don&apos;t just teach; we
-              immerse you in real-world projects, connect you with industry
-              experts, and guide you from an aspiring developer to a
-              professional in the tech field
+              Enhance your career path with our intensive six month mentorship
+              program at I-Sentry Technologies. We combine hands-on learning
+              with real-world projects, connecting you directly with industry
+              experts. Our comprehensive program transforms aspiring developers
+              into sought-after tech professionals through:
             </p>
+            <ul className="mt-1 list-disc pl-4 text-base font-light text-primary-100">
+              <li>Personalized mentorship from industry veterans</li>
+              <li>Real client project experience</li>
+              <li>Professional networking opportunities</li>
+              <li>Career guidance and placement support</li>
+            </ul>
           </div>
           <div className="mt-2 lg:mt-0">
             <ul className="list-disc pl-5 text-base font-light text-primary-100">
-              <li>Web Development (HTML, CSS, JavaScript frameworks)</li>
-              <li>Mobile App Development (React Native, Flutter, Swift)</li>
-              <li>Cloud Computing (AWS, Azure, Google Cloud)</li>
-              <li>DevOps & CI/CD (Docker, Kubernetes, Jenkins)</li>
-              <li>Software Testing & QA (Selenium, Jest, Unit Testing)</li>
+              <li>
+                Web Development
+                <ul className="list-disc pl-5">
+                  <li>Frontend: HTML5, CSS3, JavaScript (React, Vue.js)</li>
+                  <li>Backend: Node.js, Python, Java</li>
+                  <li>Frameworks: Angular, Express.js</li>
+                </ul>
+              </li>
+              <li>
+                Mobile App Development
+                <ul className="list-disc pl-5">
+                  <li> React Native</li>
+                  <li>Flutter</li>
+                  <li>Swift</li>
+                  <li>Kotlin</li>
+                </ul>
+              </li>
+              <li>
+                Cloud Computing
+                <ul className="list-disc pl-5">
+                  <li>Cloud Platforms: AWS, Azure, Google Cloud</li>
+                  <li>DevOps Tools: Docker, Kubernetes, Jenkins</li>
+                  <li>CI/CD Pipeline Implementation</li>
+                </ul>
+              </li>
+              <li>
+                Quality Assurance
+                <ul className="list-disc pl-5">
+                  <li>Automated Testing: Selenium, Jest</li>
+                  <li>Unit Testing & Integration Testing</li>
+                  <li>Performance Testing</li>
+                </ul>
+              </li>
             </ul>
 
             <SmartButton
@@ -327,18 +363,19 @@ const About = () => {
               showAnimatedIcon
               buttonText="Explore Oppotunities"
               className="mt-8 py-3"
-              onClick={() => router.push("/careers")}
+              url="/careers"
+              isLink
             />
           </div>
           <Image
-            src={AboutImg}
-            alt="Placeholder"
+            src={AboutLearn}
+            alt="A team discussing"
             className="mt-6 h-[400px] w-full rounded-xl object-cover object-center lg:col-span-2"
           />
         </div>
       </section>
 
-      <section className="wrapper py-16">
+      <section className="wrapper py-16 md:mt-24" id="team">
         <h3 className="mb-16 font-dm-sans text-2xl font-medium text-primary-50 md:text-3xl lg:text-center lg:text-4xl">
           Meet the core innovators behind
           <br className="hidden md:block" /> our success
@@ -361,6 +398,20 @@ const About = () => {
                     <p className="font-inter capitalize text-primary-200">
                       {member.title}
                     </p>
+                    <div className="mt-3 inline-flex items-center gap-3">
+                      <Link
+                        href=""
+                        className="text-secondary-50 duration-300 hover:text-secondary-400"
+                      >
+                        <BsLinkedin size={18} />
+                      </Link>
+                      <Link
+                        href=""
+                        className="text-secondary-50 duration-300 hover:text-secondary-400"
+                      >
+                        <BsTwitterX size={18} />
+                      </Link>
+                    </div>
                   </div>
                 </>
               );

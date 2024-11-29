@@ -48,16 +48,26 @@ export const solutions: LinkProps[] = [
   {
     name: "Custom Software",
     url: "/custom-software",
-    comingSoon: true,
-  },
-  {
-    name: "Cloud Solutions",
-    url: "/cloud-solutions",
-    comingSoon: true,
+    // comingSoon: true,
   },
   {
     name: "Tech Consultancy",
     url: "/tech-consultancy",
+    // comingSoon: true,
+  },
+  {
+    name: "Expert guidance & strategy",
+    url: "/expert-guidance-and-strategy",
+    // comingSoon: true,
+  },
+  {
+    name: "Custom Enterprise Software",
+    url: "/custom-enterprise-software",
+    // comingSoon: true,
+  },
+  {
+    name: "Cloud Solutions",
+    url: "/cloud-solutions",
     comingSoon: true,
   },
 ];
@@ -74,9 +84,22 @@ export const programs: LinkProps[] = [
   {
     name: "Certification",
     url: "/certification",
+    // comingSoon: true,
+  },
+  {
+    name: "Professional Training",
+    url: "#",
+    // comingSoon: true,
+  },
+  {
+    name: "Corporate Training",
+    url: "#",
     comingSoon: true,
   },
 ];
+
+// "Professional Training";
+// Add: "";
 
 export const aboutUs: LinkProps[] = [
   {
@@ -91,6 +114,14 @@ export const aboutUs: LinkProps[] = [
     name: "Contact centre",
     url: "/contact-center",
   },
+  {
+    name: "Our Impact",
+    url: "/our-impact",
+  },
+  {
+    name: "Success Stories",
+    url: "/success-stories",
+  },
 ];
 
 export const legal: LinkProps[] = [
@@ -101,6 +132,14 @@ export const legal: LinkProps[] = [
   {
     name: "Privacy",
     url: "/privacy-policy",
+  },
+  {
+    name: "Security",
+    url: "/security",
+  },
+  {
+    name: "Compliance",
+    url: "/compliance",
   },
 ];
 
@@ -114,6 +153,7 @@ export type IProject = {
   tools: string[];
   client: string;
   url: string;
+  industry: string;
 };
 
 export const caseStudies: IProject[] = [
@@ -127,6 +167,7 @@ export const caseStudies: IProject[] = [
     tools: ["MongoDB", "ReactJS", "AWS"],
     client: "Web Design",
     url: "/",
+    industry: "Ecommerce, Agriculture",
   },
   {
     id: "1",
@@ -138,6 +179,7 @@ export const caseStudies: IProject[] = [
     tools: ["MongoDB", "ReactJS"],
     client: "Web Design",
     url: "/",
+    industry: "Fintech",
   },
 ];
 

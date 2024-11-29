@@ -2,11 +2,9 @@
 import SmartButton from "@/components/custom_button";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { BiEnvelope } from "react-icons/bi";
 
 export default function NotFound() {
-  const router = useRouter();
   return (
     <section className="pb-20 pt-28 lg:pt-40">
       <div className="wrapper md:mx-auto md:max-w-4xl xl:max-w-5xl">
@@ -27,7 +25,8 @@ export default function NotFound() {
             variant="bright"
             buttonText="Go back Home"
             className="mt-6 px-6 py-3"
-            onClick={() => router.push("/")}
+            isLink
+            url="/"
           />
           {/* </Link> */}
         </div>
@@ -51,6 +50,8 @@ export default function NotFound() {
               variant="dark"
               buttonText="Schedule a call"
               className="px-6 py-3"
+              isLink
+              url="https://calendly.com/isentrytechnologies"
             />
           </div>
 
@@ -65,14 +66,15 @@ export default function NotFound() {
               Share your product inquiries, report any issues you encounter, or
               leave your valuable feedback. Your input matters!
             </p>
-            <Link href="/faqs">
-              <SmartButton
-                showAnimatedIcon
-                variant="dark"
-                buttonText="Contact Support"
-                className="px-6 py-3"
-              />
-            </Link>
+
+            <SmartButton
+              showAnimatedIcon
+              variant="dark"
+              buttonText="Contact Support"
+              className="px-6 py-3"
+              isLink
+              url="/faqs"
+            />
           </div>
         </div>
 
