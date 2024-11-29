@@ -35,7 +35,7 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
                 {item?.name}
               </TransitionLink>
               {item?.comingSoon && (
-                <Badge className="rounded-full border-[#ABEFC64D] bg-[#06764780] p-1 px-2 py-1 text-[9px] font-light text-[#34C759]">
+                <Badge className="rounded-full border-[#ABEFC64D] bg-[#06764780] p-1 px-1 py-1 text-[9px] font-light text-[#34C759]">
                   Coming soon
                 </Badge>
               )}

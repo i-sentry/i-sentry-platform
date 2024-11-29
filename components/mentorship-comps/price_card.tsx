@@ -46,6 +46,8 @@ const PriceCard = ({ list }: { list: PriceListProp }) => {
         variant="bright"
         buttonText="Enroll Now"
         className="mt-8 w-full"
+        isLink
+        url="/intership/enroll"
       />
     </div>
   );

@@ -14,10 +14,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Minus, Plus } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 const Services = () => {
-  const router = useRouter();
   return (
     <>
       <section className="pb-20 pt-28 lg:pt-40">
@@ -175,7 +173,8 @@ const Services = () => {
             variant="bright"
             buttonText="Explore opportunities"
             className="mt-6"
-            onClick={() => router.push("/careers")}
+            url="/careers"
+            isLink
           />
         </div>
         <div className="">

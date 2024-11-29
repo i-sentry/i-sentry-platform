@@ -51,7 +51,7 @@ export default function NotFound() {
               buttonText="Schedule a call"
               className="px-6 py-3"
               isLink
-              url="/"
+              url="https://calendly.com/isentrytechnologies"
             />
           </div>
 

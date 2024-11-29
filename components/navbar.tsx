@@ -7,7 +7,6 @@ import { navMenu } from "@/utils";
 import MobileSideMenu from "./mobile-sidemenu";
 import SmartButton from "./custom_button";
 import { Menu, X } from "lucide-react";
-import { useRouter } from "next/navigation";
 import TransitionLink from "./widgets/transition_links";
 import Logo from "@/public/images/isentry.svg";
 import Image from "next/image";
@@ -20,7 +19,6 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const router = useRouter();
 
   // Scroll handler
 
@@ -90,7 +88,8 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
                 variant="bright"
                 buttonText="Join our Program"
                 className="px-6 py-2.5 text-xs md:px-6 md:py-3 md:text-sm"
-                onClick={() => router.push("/mentorships")}
+                url="/mentorships"
+                isLink
               />
             </div>
 

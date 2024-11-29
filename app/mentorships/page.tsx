@@ -80,7 +80,13 @@ const Mentorships = () => {
 
             <div className="mt-12 flex items-center justify-center gap-2">
               <SmartButton variant="bright" buttonText="Mentorship" />
-              <SmartButton variant="dark" buttonText="Tech Internship" />
+              <SmartButton
+                variant="dark"
+                buttonText="Tech Internship"
+                showAnimatedIcon
+                isLink
+                url="/intership"
+              />
             </div>
           </div>
         </div>
@@ -148,13 +154,17 @@ const Mentorships = () => {
           </p>
         </div>
 
-        <div className="grid gap-16 md:grid-cols-2 md:mt-12">
+        <div className="grid gap-16 md:mt-12 md:grid-cols-2">
           <div className="mt-16 space-y-7 md:mt-0">
             {solutions.map((item: SolutionProp, index: number) => {
               return <SolutionCard item={item} key={index} />;
             })}
           </div>
-          <Image src={InternImage} alt="A cursor " className="rounded-xl self-stretch" />
+          <Image
+            src={InternImage}
+            alt="A cursor "
+            className="self-stretch rounded-xl"
+          />
         </div>
       </section>
     </>
@@ -202,10 +212,12 @@ const SolutionCard = ({ item }: { item: SolutionProp }) => {
           {item?.description}
         </p>
         <SmartButton
-          variant="dark"
           showAnimatedIcon
-          className="mt-5 px-6 py-3"
-          buttonText="Schedule a call "
+          variant="dark"
+          buttonText="Schedule a call"
+          className="px-6 py-3"
+          isLink
+          url="https://calendly.com/isentrytechnologies"
         />
       </div>
     </div>
