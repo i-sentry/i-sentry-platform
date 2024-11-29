@@ -61,6 +61,8 @@ const Career = () => {
             buttonText="Meet the Team"
             showAnimatedIcon
             className="mt-4 px-4 py-2 text-xs md:mt-10"
+            url="/about#team"
+            isLink
           />
         </div>
 

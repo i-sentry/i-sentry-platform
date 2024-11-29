@@ -48,26 +48,26 @@ export const solutions: LinkProps[] = [
   {
     name: "Custom Software",
     url: "/custom-software",
-    comingSoon: true,
-  },
-  {
-    name: "Cloud Solutions",
-    url: "/cloud-solutions",
-    comingSoon: true,
+    // comingSoon: true,
   },
   {
     name: "Tech Consultancy",
     url: "/tech-consultancy",
-    comingSoon: true,
+    // comingSoon: true,
   },
   {
     name: "Expert guidance & strategy",
     url: "/expert-guidance-and-strategy",
-    comingSoon: true,
+    // comingSoon: true,
   },
   {
     name: "Custom Enterprise Software",
     url: "/custom-enterprise-software",
+    // comingSoon: true,
+  },
+  {
+    name: "Cloud Solutions",
+    url: "/cloud-solutions",
     comingSoon: true,
   },
 ];
@@ -84,12 +84,12 @@ export const programs: LinkProps[] = [
   {
     name: "Certification",
     url: "/certification",
-    comingSoon: true,
+    // comingSoon: true,
   },
   {
     name: "Professional Training",
     url: "#",
-    comingSoon: true,
+    // comingSoon: true,
   },
   {
     name: "Corporate Training",

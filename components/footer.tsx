@@ -11,11 +11,8 @@ import {
   FaMedium,
   FaXTwitter,
 } from "react-icons/fa6";
-import { useRouter } from "next/navigation";
 
 const Footer = () => {
-  const router = useRouter();
-
   return (
     <footer>
       <section className="border-t border-[#C2C2C21A] bg-footer1 px-4 pt-10 backdrop-blur-md">
@@ -39,12 +36,14 @@ const Footer = () => {
                 variant="dark"
                 buttonText="Talk to our team"
                 className="border-[#F4F4F40D] backdrop-blur-none"
-                onClick={() => router.push("/contact")}
+                url="/contact"
+                isLink
               />
               <SmartButton
                 variant="bright"
                 buttonText="Join our Program"
-                onClick={() => router.push("/mentorships")}
+                url="/mentorships"
+                isLink
               />
             </div>
           </div>

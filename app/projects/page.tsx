@@ -8,7 +8,6 @@ import { caseStudies, clients, IProject } from "@/utils";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "usehooks-ts";
 import SmartButton from "@/components/custom_button";
-import TransitionLink from "@/components/widgets/transition_links";
 
 const Projects = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -212,9 +211,12 @@ const Projects = () => {
             />
 
             <div className="col-span-2 mt-10 flex items-center justify-center">
-              <TransitionLink href="/projects/archive">
-                <SmartButton variant="bright" buttonText="View all projects" />
-              </TransitionLink>
+              <SmartButton
+                variant="bright"
+                url="/projects/archive"
+                buttonText="View all projects"
+                isLink
+              />
             </div>
           </div>
 

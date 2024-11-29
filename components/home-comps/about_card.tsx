@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import SmartButton from "../custom_button";
-import { useRouter } from "next/navigation";
 
 type ComponentProps = {
   showList?: boolean;
@@ -24,8 +23,6 @@ const AboutCard: React.FC<ComponentProps> = ({
   buttonText,
   url,
 }) => {
-  const router = useRouter();
-
   return (
     <>
       <div className="rounded-2xl border border-[#FAFAFA1F] bg-box p-6">
@@ -68,11 +65,12 @@ const AboutCard: React.FC<ComponentProps> = ({
             </ul>
 
             <SmartButton
+              url={url}
+              isLink
               variant="dark"
               buttonText={`${buttonText}`}
               className="mt-12 border-[#F4F4F40D] bg-grad-alt backdrop-blur-none hover:shadow-none"
               showAnimatedIcon
-              onClick={() => router.push(url || "")}
             />
           </>
         )}
