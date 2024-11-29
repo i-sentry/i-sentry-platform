@@ -11,6 +11,7 @@ export type PriceListProp = {
   description: string;
   features: string[];
   badge: string;
+  
 };
 
 const priceList: PriceListProp[] = [
@@ -31,7 +32,7 @@ const priceList: PriceListProp[] = [
   },
   {
     package: "Professional Growth",
-    duration: "3 Months",
+    duration: "6 Months",
     description: "Lorem Ipsum",
     features: [
       "Bi-weekly 1-on-1 sessions",
@@ -46,7 +47,7 @@ const priceList: PriceListProp[] = [
   },
   {
     package: "Expert Track",
-    duration: "3 Months",
+    duration: "12 Months",
     description: "Lorem Ipsum",
     features: [
       "Weekly 1-on-1 sessions",
@@ -57,7 +58,7 @@ const priceList: PriceListProp[] = [
       "Industry connections",
       "Certification guidance",
     ],
-    badge: "",
+    badge: "coming soon",
   },
 ];
 

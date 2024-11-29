@@ -3,6 +3,7 @@ import SmartButton from "@/components/custom_button";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
 import { PriceListProp } from "@/app/mentorships/page";
+import { cn } from "@/lib/utils";
 
 const PriceCard = ({ list }: { list: PriceListProp }) => {
   return (
@@ -45,8 +46,13 @@ const PriceCard = ({ list }: { list: PriceListProp }) => {
       <SmartButton
         variant="bright"
         buttonText="Enroll Now"
-        className="mt-8 w-full"
-        isLink
+        className={cn(
+          "mt-8 w-full items-center justify-center text-center",
+          list?.badge !== "coming soon"
+            ? "grayscale-0"
+            : "cursor-default opacity-30 grayscale-[50] hover:shadow-none",
+        )}
+        isLink={list?.badge !== "coming soon"}
         url="/intership/enroll"
       />
     </div>
