@@ -12,6 +12,7 @@ const ContactUs = () => {
           alt="svg"
           className="absolute -right-[10rem] top-0 z-0 opacity-30"
         />
+        
         <div className="wrapper relative z-10 md:grid lg:grid-cols-2">
           <div className="mb-10 space-y-8 lg:mb-0">
             <h1 className="font-dm-sans text-2xl font-semibold text-white md:text-[2rem]">
