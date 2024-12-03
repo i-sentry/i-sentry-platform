@@ -45,10 +45,11 @@ const Hero = () => {
           </>
           <div className="relative z-10 mx-auto flex flex-col items-center md:max-w-2xl lg:max-w-4xl">
             <h1 className="text-center text-[28px] font-semibold text-white sm:text-3xl md:text-5xl lg:text-6xl">
-              {data?.title}
+              {data?.title || "Pioneering the Digital Frontier"}
             </h1>
             <p className="mb-8 mt-4 text-center text-sm font-extralight leading-6 text-[#C2C2C2CC] sm:mx-auto sm:w-[80%] lg:max-w-xl lg:text-lg">
-              {data?.description}
+              {data?.description ||
+                "Our cutting-edge solutions and global expertise empower businesses to navigate and thrive in the digital landscape of tomorrow."}
             </p>
 
             <div className="flex items-center gap-2">
