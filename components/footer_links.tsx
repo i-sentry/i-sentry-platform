@@ -26,7 +26,7 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
               <TransitionLink
                 href={item?.comingSoon ? "" : item?.url}
                 className={cn(
-                  "font-inter text-base font-normal text-[#97A4B7] duration-300 hover:text-secondary-400",
+                  "inline-flex items-end font-inter text-base font-normal text-[#97A4B7] duration-300 hover:text-secondary-400",
                   item?.comingSoon
                     ? "pointer-events-none cursor-not-allowed"
                     : "pointer-events-auto cursor-pointer",
@@ -35,7 +35,7 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
                 {item?.name}
               </TransitionLink>
               {item?.comingSoon && (
-                <Badge className="rounded-full border-grey-50 p-1 px-3 py-1 text-xs font-light text-grey-50">
+                <Badge className="rounded-full border-[#ABEFC64D] bg-[#06764780] p-0 px-[2px] text-[9px] font-light text-[#34C759]">
                   Coming soon
                 </Badge>
               )}

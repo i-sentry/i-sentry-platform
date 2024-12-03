@@ -1,7 +1,6 @@
 import React from "react";
 import ServiceCard from "./service_card";
 import SmartButton from "../custom_button";
-import { useRouter } from "next/navigation";
 
 type ServiceProp = {
   title: string;
@@ -9,7 +8,6 @@ type ServiceProp = {
 };
 
 const Services = () => {
-  const router = useRouter();
   return (
     <>
       <section className="py-10">
@@ -29,7 +27,8 @@ const Services = () => {
               variant="bright"
               buttonText="Join our Program"
               className="mt-12 border-[#F4F4F40D]"
-              onClick={() => router.push("/mentorships")}
+              url="/mentorships"
+              isLink
             />
           </div>
 
@@ -51,7 +50,8 @@ const Services = () => {
                 buttonText="Learn more"
                 className="mt-12 border-[#F4F4F40D] bg-grad-alt backdrop-blur-0 hover:shadow-none"
                 showAnimatedIcon
-                onClick={() => router.push("/mentorships")}
+                url="/mentorships"
+                isLink
               />
             </div>
             <div
@@ -91,32 +91,32 @@ const services: ServiceProp[] = [
   },
 
   {
-    title: "Program Foundation Building",
+    title: "Practical Application",
     listItems: [
-      "Technical skill assessment and personalized learning path",
-      "Core technology stack immersion",
-      "Industry best practices and standards",
-      "Weekly one-on-one mentoring sessions",
+      "Real-world project assignments",
+      "Collaborative development experience",
+      "Code review and feedback sessions",
+      "Technical documentation practice",
     ],
   },
 
   {
-    title: "Program Foundation Building",
+    title: "Professional Development",
     listItems: [
-      "Technical skill assessment and personalized learning path",
-      "Core technology stack immersion",
-      "Industry best practices and standards",
-      "Weekly one-on-one mentoring sessions",
+      "Career path planning and guidance",
+      "Industry networking opportunities",
+      "Mock technical interviews",
+      "Portfolio development support",
     ],
   },
 
   {
-    title: "Program Foundation Building",
+    title: "Industry Integration",
     listItems: [
-      "Technical skill assessment and personalized learning path",
-      "Core technology stack immersion",
-      "Industry best practices and standards",
-      "Weekly one-on-one mentoring sessions",
+      "Client project participation",
+      "Team collaboration experience",
+      "Professional certification preparation",
+      "Job placement assistance",
     ],
   },
 ];

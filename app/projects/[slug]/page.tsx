@@ -115,6 +115,8 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
 
               <SmartButton
                 variant="dark"
+                isLink
+                url="/"
                 className="mt-8 border-opacity-75 bg-link hover:shadow-white/5"
                 buttonText={
                   <>

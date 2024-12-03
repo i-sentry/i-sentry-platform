@@ -33,9 +33,12 @@ const Talents = () => {
                     placeholder="Email address"
                   />
                   <SmartButton
-                    variant="bright"
-                    buttonText="Schedule meeting"
-                    className="self-end hover:shadow-white/5"
+                    showAnimatedIcon
+                    variant="dark"
+                    buttonText="Schedule a call"
+                    className="px-6 py-3"
+                    isLink
+                    url="https://calendly.com/isentrytechnologies"
                   />
                 </div>
               </form>

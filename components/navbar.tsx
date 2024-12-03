@@ -4,12 +4,12 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { navMenu } from "@/utils";
-import { useMobileMenuOverlay } from "@/stores/mobile_menu";
 import MobileSideMenu from "./mobile-sidemenu";
 import SmartButton from "./custom_button";
 import { Menu, X } from "lucide-react";
-import { useRouter } from "next/navigation";
 import TransitionLink from "./widgets/transition_links";
+import Logo from "@/public/images/isentry.svg";
+import Image from "next/image";
 
 type ComponentProps = {
   text?: string;
@@ -17,9 +17,8 @@ type ComponentProps = {
 
 const Navbar: React.FC<ComponentProps> = ({}) => {
   const pathname = usePathname();
-  const { open, setOpen } = useMobileMenuOverlay();
+  const [open, setOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const router = useRouter();
 
   // Scroll handler
 
@@ -48,7 +47,11 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
         <div className="wrapper flex items-center justify-between">
           {/* LOGO */}
           <TransitionLink href="/" className="text-white">
-            Isentry
+            <Image
+              src={Logo}
+              alt="ISentry Technologies"
+              className="w-[120px] md:w-[150px]"
+            />
           </TransitionLink>
 
           {/* NAV LINKS */}
@@ -85,14 +88,15 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
                 variant="bright"
                 buttonText="Join our Program"
                 className="px-6 py-2.5 text-xs md:px-6 md:py-3 md:text-sm"
-                onClick={() => router.push("/mentorships")}
+                url="/mentorships"
+                isLink
               />
             </div>
 
             {/* MOBILE MENU ICON */}
             {open ? (
               <span
-                onClick={setOpen}
+                onClick={() => setOpen(false)}
                 className="inline-block cursor-pointer text-white"
               >
                 <X size={24} />
@@ -100,7 +104,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
               </span>
             ) : (
               <Button
-                onClick={setOpen}
+                onClick={() => setOpen(true)}
                 className="cursor-pointer border-0 bg-transparent p-0 text-white hover:bg-transparent lg:hidden"
               >
                 <Menu size={24} />
@@ -111,7 +115,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
         </div>
       </nav>
 
-      <MobileSideMenu />
+      <MobileSideMenu open={open} setOpen={setOpen} />
     </>
   );
 };
