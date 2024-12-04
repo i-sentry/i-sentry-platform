@@ -29,7 +29,7 @@
   }
 
   p {
-    @apply font-inter;
+    @apply font-inter font-light leading-normal;
   }
 
   .wrapper {

@@ -1,33 +1,31 @@
 // components/AnimatedCircle.js
 import { useEffect } from "react";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";sss
 
 const AnimatedCircle = () => {
   useEffect(() => {
     // GSAP animations for the SVG gradients
-    gsap.to("#paint0_linear", {
-      attr: { x1: "1000", x2: "1200" }, // Animate x-axis positions
-      yoyo: true,
-      repeat: -1,
-      duration: 3,
-      ease: "sine.inOut",
-    });
-
-    gsap.to("#paint1_linear", {
-      attr: { x1: "940", x2: "1140" },
-      yoyo: true,
-      repeat: 1,
-      duration: 3,
-      ease: "sine.inOut",
-    });
-
-    gsap.to("#paint2_linear", {
-      attr: { x1: "980", x2: "1180" },
-      yoyo: true,
-      repeat: -1,
-      duration: 3,
-      ease: "sine.inOut",
-    });
+    // gsap.to("#paint0_linear", {
+    //   attr: { x1: "1000", x2: "1200" }, // Animate x-axis positions
+    //   yoyo: true,
+    //   repeat: -1,
+    //   duration: 3,
+    //   ease: "sine.inOut",
+    // });
+    // gsap.to("#paint1_linear", {
+    //   attr: { x1: "940", x2: "1140" },
+    //   yoyo: true,
+    //   repeat: 1,
+    //   duration: 3,
+    //   ease: "sine.inOut",
+    // });
+    // gsap.to("#paint2_linear", {
+    //   attr: { x1: "980", x2: "1180" },
+    //   yoyo: true,
+    //   repeat: -1,
+    //   duration: 3,
+    //   ease: "sine.inOut",
+    // });
   }, []);
 
   return (
