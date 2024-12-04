@@ -132,7 +132,7 @@ const Footer = () => {
 
           <h1
             ref={textRef}
-            className="relative origin-top-left whitespace-nowrap bg-gradient-to-r from-[#6FA1D2] to-[#C2D9F0] bg-clip-text text-[5rem] font-extrabold uppercase leading-[1] text-transparent md:scale-[1.7_!important] md:text-[12rem] lg:scale-[1.9]"
+            className="relative origin-top-left whitespace-nowrap bg-gradient-to-r from-[#6FA1D2] to-[#C2D9F0] bg-clip-text text-[5rem] font-extrabold uppercase leading-[1] text-transparent md:scale-[1.7_!important] md:text-[12rem] lg:scale-[1.9_!important]"
           >
             ISentry Technologies
           </h1>

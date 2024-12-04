@@ -28,6 +28,10 @@ const AboutCard: React.FC<ComponentProps> = ({
   return (
     <>
       <div
+        data-aos="fade-down"
+        data-aos-easing="ease"
+        data-aos-duration="1000"
+        data-aos-delay={`${400 * index}`}
         className={cn(
           "rounded-2xl border border-[#FAFAFA1F] bg-box p-6",
           "aboutCard-" + (index + 1),

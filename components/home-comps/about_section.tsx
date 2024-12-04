@@ -7,12 +7,6 @@ import AboutCard from "./about_card";
 import { fetchAbout } from "@/sanity/lib/fetchDatas";
 import { useEffect, useState } from "react";
 
-import gsap from "gsap";
-// import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const About = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [data, setData] = useState<any>();
@@ -34,39 +28,6 @@ const About = () => {
 
     getData();
   }, []);
-
-  useEffect(() => {
-    gsap.from(".aboutCard", {
-      // this will animate ALL boxes
-      x: 300,
-      scrollTrigger: {
-        trigger: ".aboutCard", // this will use the first box as the trigger
-        scrub: true,
-      },
-      touchAction: "play reverse play reverse",
-    });
-  });
-
-  // useGSAP(() => {
-  //   gsap.from(".aboutCard", {
-  //     duration: 1,
-  //     scale: 0.99,
-  //     y: 40,
-  //     ease: "power1.inOut",
-  //     stagger: {
-  //       grid: [2, 2],
-  //       from: "start",
-  //       ease: "power2.in",
-  //       amount: 1,
-  //     },
-
-  //     // scrollTrigger: {
-  //     //   trigger: "aboutCard",
-  //     //   scrub: true,
-  //     // },
-  //   });
-  // }, []);
-
   return (
     <>
       <section className="py-10">
