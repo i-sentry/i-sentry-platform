@@ -6,6 +6,10 @@ import { StaticImageData } from "next/image";
 import AboutCard from "./about_card";
 import { fetchAbout } from "@/sanity/lib/fetchDatas";
 import { useEffect, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -28,6 +32,73 @@ const About = () => {
 
     getData();
   }, []);
+
+  // useGSAP(() => {
+  //   gsap.from([".aboutCard-1", ".aboutCard-2"], {
+  //     y: 300,
+  //     opacity: 0,
+  //     duration: 3,
+  //     stagger: {
+  //       amount: 0.5,
+  //       from: "start",
+  //     },
+  //     ease: "power2.inOut",
+
+  //     scrollTrigger: [".aboutCard-1", ".aboutCard-2"],
+  //   });
+  // }, []);
+
+  useGSAP(() => {
+    // Select the two cards
+    const cards = [".aboutCard-1", ".aboutCard-2"];
+    const cards2 = [".aboutCard-3", ".aboutCard-4"];
+
+    // Animate the cards with GSAP
+    gsap.fromTo(
+      cards,
+      {
+        x: (index) => (index === 0 ? -300 : 300), // Initial position: left for 1st card, right for 2nd
+        opacity: 0, // Initial opacity
+      },
+      {
+        x: 0, // Final position
+        opacity: 1, // Final opacity
+        duration: 1,
+        stagger: 1, // Stagger delay between cards
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: cards,
+          start: "top 80%", // Start animation when cards are 80% into the viewport
+          end: "bottom 20%", // End animation when cards are 20% out of the viewport
+          toggleActions: "play play play play", // Play when in view, reverse when out
+          markers: false, // Set to true if you want to see scroll markers
+        },
+      },
+    );
+
+    gsap.fromTo(
+      cards2,
+      {
+        x: (index) => (index === 0 ? -300 : 300), // Initial position: left for 1st card, right for 2nd
+        opacity: 0, // Initial opacity
+      },
+      {
+        x: 0, // Final position
+        opacity: 1, // Final opacity
+        duration: 1.5,
+        stagger: 1, // Stagger delay between cards
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: cards2,
+          start: "top 80%", // Start animation when cards are 80% into the viewport
+          end: "bottom 20%", // End animation when cards are 20% out of the viewport
+          toggleActions: "play reverse play reverse", // Play when in view, reverse when out
+          markers: false, // Set to true if you want to see scroll markers
+        },
+      },
+    );
+  }, []);
+
   return (
     <>
       <section className="py-10">

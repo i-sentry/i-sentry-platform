@@ -7,28 +7,35 @@ import Testimonials from "@/components/home-comps/testimonials";
 import MenteeSection from "@/components/home-comps/mentees_section";
 import Career from "@/components/home-comps/career_section";
 import Partners from "@/components/home-comps/partners_section";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { gsap } from "gsap";
+import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
+import { useEffect } from "react";
+
+gsap.registerPlugin(ScrollSmoother);
 
 export default function Home() {
-  AOS.init({
-    // offset: 120, // offset (in px) from the original trigger point
-    // delay: 0, // values from 0 to 3000, with step 50ms
-    duration: 500, // values from 0 to 3000, with step 50ms
-    easing: "ease", // default easing for AOS animations
-    // once: false, // whether animation should happen only once - while scrolling down
-    // mirror: false, // whether elements should animate out while scrolling past them
-  });
+  useEffect(() => {
+    if (typeof window !== "undefined" && !ScrollSmoother.get()) {
+      ScrollSmoother.create({
+        wrapper: "#wrapper",
+        content: "#content",
+        smooth: 1, // Smoothness level
+        effects: true, // Enables effects like parallax
+      });
+    }
+  }, []);
   return (
-    <>
-      <Hero />
-      <Partners />
-      <About />
-      <Services />
-      <Statistics />
-      <MenteeSection />
-      <Testimonials />
-      <Career />
-    </>
+    <main id="wrapper">
+      <div id="content">
+        <Hero />
+        <Partners />
+        <About />
+        <Services />
+        <Statistics />
+        <MenteeSection />
+        <Testimonials />
+        <Career />
+      </div>
+    </main>
   );
 }
