@@ -33,7 +33,7 @@
   }
 
   .wrapper {
-    @apply mx-auto w-full px-4 sm:max-w-7xl;
+    @apply relative z-10 mx-auto w-full px-4 sm:max-w-7xl;
   }
 
   .circle-container {
