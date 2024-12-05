@@ -26,7 +26,7 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
               <TransitionLink
                 href={item?.comingSoon ? "" : item?.url}
                 className={cn(
-                  "inline-flex items-end font-inter text-base font-normal text-[#97A4B7] duration-300 hover:text-secondary-400",
+                  "inline-flex items-end font-inter text-base font-light text-[#97A4B7] duration-300 hover:text-secondary-400",
                   item?.comingSoon
                     ? "pointer-events-none cursor-not-allowed"
                     : "pointer-events-auto cursor-pointer",

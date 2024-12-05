@@ -11,6 +11,7 @@ type ComponentProps = {
   buttonText?: string;
   listItems?: string[];
   url?: string;
+  index: number;
 };
 
 const AboutCard: React.FC<ComponentProps> = ({
@@ -22,10 +23,16 @@ const AboutCard: React.FC<ComponentProps> = ({
   description,
   buttonText,
   url,
+  index,
 }) => {
   return (
     <>
-      <div className="rounded-2xl border border-[#FAFAFA1F] bg-box p-6">
+      <div
+        className={cn(
+          "rounded-2xl border border-[#FAFAFA1F] bg-box p-6",
+          "aboutCard-" + (index + 1),
+        )}
+      >
         {showImages && (
           <div
             className={cn(
