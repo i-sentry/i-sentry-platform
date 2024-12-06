@@ -29,15 +29,17 @@ export const fetchAbout = async () => {
 
 // CORE TEAMS
 export const fetchCoreTeam = async () => {
-  const query = `*[_type == "coreTeam"]{
+  const query = `*[_type == "coreTeam"][0]{
     members[] {
-      photo {
-        asset -> {
-          url
-        }
-      },
+      // photo {
+      //   asset -> {
+      //     url
+      //   }
+      // },
+      "photo": photo.asset->url,
       name,
-      title
+      title,
+      url
     }
   }`;
 

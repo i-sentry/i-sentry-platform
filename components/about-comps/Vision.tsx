@@ -9,11 +9,11 @@ const Vision = () => {
     <>
       <section className="py-10">
         <div className="wrapper">
-          <div className="mt-8 gap-5 space-y-8 md:grid md:grid-cols-[1.5fr_2fr] md:space-y-0">
+          <div className="mt-8 gap-5 space-y-8 md:space-y-0 lg:grid lg:grid-cols-[1.5fr_2fr]">
             <Image
               src={AboutImg}
               alt="Placeholder"
-              className="hidden w-full self-stretch rounded-xl object-cover object-center md:block md:h-auto md:max-h-[750px]"
+              className="hidden w-full self-stretch rounded-xl object-cover object-center md:mb-4 md:block md:h-[200px] lg:h-full"
             />
 
             <div className="divide-y-[1px] divide-primary-50/20 rounded-[8px] border border-primary-50/20 bg-box p-5">
