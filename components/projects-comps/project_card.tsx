@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
       <figure className="relative h-[300px] overflow-hidden rounded-[8px] md:h-[350px] xl:h-[400px]">
         <div className="relative z-10 p-6">
           {/* COMING SOON BADGE */}
-          {!data?.isLunched && (
+          {!data?.isLaunched && (
             <Badge className="mb-6 inline-block rounded-full border border-[#FAFAFA1F] bg-secondary-700 px-6 py-2 font-dm-sans font-light text-white hover:bg-secondary-700">
               Coming Soon
             </Badge>
