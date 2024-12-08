@@ -14,9 +14,11 @@ type ComponentProps = {
 
 const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
+  console.log(data.slug, "slug");
+
   return (
     <Link
-      href={`/projects/${data?.slug}`}
+      href={`/projects/${data?.slug?.current}`}
       className="block rounded-[16px] bg-box p-4 lg:p-6"
     >
       <figure className="relative h-[300px] overflow-hidden rounded-[8px] md:h-[350px] xl:h-[400px]">
@@ -31,7 +33,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
           {/* TAGS */}
           <div className="flex flex-wrap gap-3">
             <EachElement
-              of={data?.tags}
+              of={data?.services}
               render={(tag: string, index: number) => {
                 if (isMobile) {
                   if (index === 0) {
@@ -69,7 +71,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
         </div>
         <div className="absolute left-0 top-0 z-[2] h-full w-full bg-primary-900/10" />
         <Image
-          src={data?.image}
+          src={data?.image[0]?.asset?.url}
           alt={data?.title}
           width="1000"
           height="1000"

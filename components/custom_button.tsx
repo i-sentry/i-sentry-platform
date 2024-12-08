@@ -11,7 +11,7 @@ type SmartLinkButtonProps = {
   variant: "bright" | "dark";
   showAnimatedIcon?: boolean;
   className?: string;
-  type?: "button" | "submit";
+  type?: "button" | "submit" | "reset";
   onClick?: () => void;
   url?: string;
   isLink?: boolean;

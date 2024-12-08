@@ -34,8 +34,9 @@ const ContactCenter = () => {
               </h3>
             </div>
             <p className="mb-8 mt-4 font-light text-white">
-              Share your product inquiries, report any issues you encounter, or
-              leave your valuable feedback. Your input matters!
+              Share your product requirements, report any issues, or provide
+              valuable feedback. We&apos;re here to listen and turn your vision
+              into tangible results.
             </p>
             <SmartButton
               showAnimatedIcon
@@ -52,11 +53,14 @@ const ContactCenter = () => {
               <span>
                 <MessageCircle size={24} color="#fff" />
               </span>
-              <h3 className="text-lg font-medium text-white">Help & support</h3>
+              <h3 className="text-lg font-medium text-white">
+                Customer support
+              </h3>
             </div>
             <p className="mb-8 mt-4 font-light text-white">
-              Share your product inquiries, report any issues you encounter, or
-              leave your valuable feedback. Your input matters!
+              Need assistance with our products or services? Our friendly team
+              is available 24/7 to address your questions and ensure your
+              complete satisfaction.
             </p>
 
             <SmartButton
@@ -76,8 +80,10 @@ const ContactCenter = () => {
               Mentorship Program
             </h3>
             <p className="mb-8 mt-4 font-light text-white">
-              Learn about our workshop opportunities and application process for
-              aspiring developers.
+              Aspiring developers, this is your chance to learn from the best.
+              Our structured internship program offers hands-on experience,
+              mentorship, and a pathway to grow your skills and elevate your
+              career in tech.
             </p>
             <Link
               href="/mentorships"
@@ -95,17 +101,18 @@ const ContactCenter = () => {
               Technical Consultation
             </h3>
             <p className="mb-8 mt-4 font-light text-white">
-              Get expert advice on software development, product design, and
-              technical architecture.
+              Leverage our team of experienced architects, engineers and product
+              specialists to overcome your toughest challenges. Get personalized
+              guidance on software development, cloud architecture, and more.
             </p>
             <Link
-              href="mailto:info@isentrytechnologies.com"
+              href="mailto:programs@isentrytechnologies.com"
               className="inline-flex items-center gap-2 text-base text-primary-200"
             >
               <span>
                 <BiEnvelope size={20} />
               </span>{" "}
-              info@isentrytechnologies.com
+              programs@isentrytechnologies.com
             </Link>
           </div>
 
@@ -113,14 +120,16 @@ const ContactCenter = () => {
 
           <div className="p-5">
             <h3 className="flex items-center gap-2 text-lg font-medium text-white">
-              Documentation{" "}
+              Community Resources
               <Badge className="rounded-full border-grey-50 p-1 px-3 py-1 text-xs font-light text-grey-50">
                 Coming soon
               </Badge>
             </h3>
             <p className="mb-8 mt-4 font-light text-white">
-              Get an overview of I-Sentry&apos;s features, integrations, and how
-              to use them.
+              Stay up-to-date with the latest I-Sentry news, product updates,
+              and best practices by tapping into our growing community.
+              Collaborate with fellow developers, share insights, and learn from
+              the experiences of others.
             </p>
             <Link
               href="/"
@@ -135,14 +144,16 @@ const ContactCenter = () => {
 
           <div className="p-5">
             <h3 className="flex items-center gap-2 text-lg font-medium text-white">
-              Developers
+              Developer Resources
               <Badge className="rounded-full border-grey-50 p-1 px-3 py-1 text-xs font-light text-grey-50">
                 Coming soon
               </Badge>
             </h3>
             <p className="mb-8 mt-4 font-light text-white">
-              Learn how to use the GraphQL API and TypeScript SDK to extend
-              Linear.
+              Dive into our extensive documentation, APIs, and SDK to unlock the
+              full potential of I-Sentry&apos;s platform. Build seamless
+              integrations, create custom applications, and extend our solutions
+              to fit your unique needs.
             </p>
             <Link
               href="/"

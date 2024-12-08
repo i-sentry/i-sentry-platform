@@ -2,12 +2,13 @@
 import React, { useEffect, useState } from "react";
 import PlaceHolder from "@/public/images/placeholder.png";
 import Image from "next/image";
-import { caseStudies, IProject } from "@/utils";
+import { IProject } from "@/utils";
 import EachElement from "@/components/widgets/list_rendering";
 import { Badge } from "@/components/ui/badge";
 import SmartButton from "@/components/custom_button";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import ProjectCard from "@/components/projects-comps/project_card";
+import { fetchCaseStudies } from "@/sanity/lib/fetchDatas";
 type ComponentProps = {
   params: {
     slug: string;
@@ -17,19 +18,46 @@ type ComponentProps = {
 
 const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
   const [project, setProject] = useState<IProject>();
+  const [projects, setProjects] = useState<IProject>();
+  const [loading, setLoading] = useState<boolean>();
 
   console.log(params, "params", params?.id);
 
   useEffect(() => {
-    setProject(caseStudies.find((item) => item?.slug === params?.slug));
+    const getData = async () => {
+      setLoading(true);
+      try {
+        const data = await fetchCaseStudies();
+        console.log(data, "case");
+
+        setProject(
+          data.find(
+            (item: { slug: { current: string } }) =>
+              item?.slug?.current === params?.slug,
+          ),
+        );
+        setProjects(
+          data.filter(
+            (item: { slug: { current: string } }) =>
+              item?.slug?.current !== params?.slug,
+          ),
+        );
+      } catch (error) {
+        console.error("Error fetching core team data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
   }, [params?.slug]);
+  console.log(project, "tema");
   return (
     <>
       <section className="py-28">
         <div className="wrapper">
           {/* PROJECT THUMBNAIL */}
           <Image
-            src={project?.image || PlaceHolder}
+            src={project?.image[0]?.asset?.url}
             alt="placeholder"
             className="h-[300px] w-full rounded-lg object-cover object-center sm:h-[400px] md:h-[500px] lg:h-[650px]"
           />
@@ -47,11 +75,11 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                 </h2>
                 <div className="flex flex-wrap items-center gap-3">
                   <EachElement
-                    of={project?.tags}
+                    of={project?.services}
                     render={(tag: string) => (
                       <Badge
                         key={tag}
-                        className="text-primary-900 inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal hover:bg-white"
+                        className="inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal text-primary-900 hover:bg-white"
                       >
                         {tag}
                       </Badge>
@@ -70,7 +98,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                     render={(tool: string) => (
                       <Badge
                         key={tool}
-                        className="text-primary-900 inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal hover:bg-white"
+                        className="inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal text-primary-900 hover:bg-white"
                       >
                         {tool}
                       </Badge>
@@ -85,7 +113,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                   Client
                 </h2>
                 <div className="flex items-center gap-3">
-                  <Badge className="text-primary-900 inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal hover:bg-white">
+                  <Badge className="inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal text-primary-900 hover:bg-white">
                     {project?.client}
                   </Badge>
                 </div>
@@ -97,20 +125,9 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                 Our approach
               </h3>
               <p className="font-inter font-light leading-normal text-white">
-                The amazing team at Porkerhut came to us to build their
-                e-commerce website for selling pork meat and farm produce. We
-                focused on quickly setting up key pages and working closely with
-                them to add more features and enhancements. We built the site
-                using React, contributing to the creative direction and
-                animations to ensure it stayed true to the brand&apos;s visual
-                identity. Our approach The amazing team at Porkerhut came to us
-                to build their e-commerce website for selling pork meat and farm
-                produce. We focused on quickly setting up key pages and working
-                closely with them to add more features and enhancements.
+                {project?.descriptions[0]}
                 <br /> <br />
-                We built the site using React, contributing to the creative
-                direction and animations to ensure it stayed true to the
-                brand&apos;s visual identity.
+                {project?.descriptions[1]}
               </p>
 
               <SmartButton
@@ -158,7 +175,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
             </h4>
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               <EachElement
-                of={caseStudies}
+                of={projects}
                 render={(item: IProject, index: number) => {
                   return <ProjectCard key={item?.title + index} data={item} />;
                 }}

@@ -74,24 +74,25 @@ export const fetchInterns = async () => {
 
 // CASE STUDIES
 export const fetchCaseStudies = async () => {
-  const query = `*[_type == "caseStudy"]{
-    id,
-    title,
-    isLunched,
-    tags,
-    image {
-      asset -> {
-        url
-      }
-    },
-    slug,
-    tools,
-    client,
-    url,
-    description1,
-    description2
+  const query = `*[_type == "caseStudies"][0]{
+    projects[] {
+      id,
+      title,
+      isLaunched,
+      services,
+      image[]{
+        asset -> {
+          url
+        }
+      },
+      slug,
+      tools,
+      client,
+      url,
+      descriptions
+    }
   }`;
 
   const result = await sanityClient.fetch(query);
-  return result;
+  return result?.projects || [];
 };
