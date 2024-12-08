@@ -133,7 +133,7 @@ const ContactCenter = () => {
             </p>
             <Link
               href="/"
-              className="pointer-events-none inline-flex items-center gap-2 text-base text-primary-200"
+              className="pointer-events-none inline-flex items-center gap-2 text-base text-primary-200 opacity-30"
             >
               I-Sentry Docs{" "}
               <span>
@@ -157,7 +157,7 @@ const ContactCenter = () => {
             </p>
             <Link
               href="/"
-              className="pointer-events-none inline-flex items-center gap-2 text-base text-primary-200"
+              className="pointer-events-none inline-flex items-center gap-2 text-base text-primary-200 opacity-30"
             >
               I-Sentry API{" "}
               <span>

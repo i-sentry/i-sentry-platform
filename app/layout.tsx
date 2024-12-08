@@ -49,7 +49,7 @@ export default function RootLayout({
       <body className="overflow-x-hidden font-dm-sans">
         {/* NAVBAR */}
         <Navbar />
-        <main className="w-full overflow-x-clip">{children}</main>
+        <main className="w-full overflow-x-clip contain-paint">{children}</main>
         {/* FOOTER */}
         <Footer />
       </body>
