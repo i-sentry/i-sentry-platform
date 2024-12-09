@@ -1,10 +1,13 @@
 import SmartButton from "@/components/custom_button";
 import PriceCard from "@/components/mentorship-comps/price_card";
-import { Zap } from "lucide-react";
 import React from "react";
 import InternImage from "@/public/images/internship.jpeg";
 import Image from "next/image";
 import BannerIllustration from "@/components/BannerIllustration";
+import EachElement from "@/components/widgets/list_rendering";
+import SolutionCard from "@/components/mentorship-comps/solution_card";
+import { Cloud, Code2, MessageCircle } from "lucide-react";
+import { SolutionProp } from "@/utils";
 
 export type PriceListProp = {
   package: string;
@@ -149,19 +152,6 @@ const Mentorships = () => {
               Join us to earn credentials that employers trust.
             </p>
           </div>
-
-          {/* <div className="mt-8">
-            <h4 className="mb-3 text-base font-light text-white">
-              Industry-Recognized Credentials
-            </h4>
-            <ul className="list-disc space-y-2 pl-5 text-base font-light leading-normal text-white">
-              <li>Industry-Recognized Credentials</li>
-              <li>Project Management Professional (PMP)</li>
-              <li>Agile & Scrum Certification</li>
-              <li>Cybersecurity Fundamentals</li>
-              <li>UI/UX Design</li>
-            </ul>
-          </div> */}
         </div>
       </section>
 
@@ -182,14 +172,17 @@ const Mentorships = () => {
 
         <div className="grid gap-16 md:mt-12 md:grid-cols-2">
           <div className="mt-16 space-y-7 md:mt-0">
-            {solutions.map((item: SolutionProp, index: number) => {
-              return <SolutionCard item={item} key={index} />;
-            })}
+            <EachElement
+              of={solutions}
+              render={(item: SolutionProp, index: number) => (
+                <SolutionCard item={item} key={index} />
+              )}
+            />
           </div>
           <Image
             src={InternImage}
             alt="A cursor "
-            className="self-stretch rounded-xl"
+            className="self-stretch rounded-xl object-cover object-[right_center]"
           />
         </div>
       </section>
@@ -199,62 +192,39 @@ const Mentorships = () => {
 
 export default Mentorships;
 
-type SolutionProp = {
-  icon: React.JSX.Element;
-  title: string;
-  description: string;
-};
-
 const solutions: SolutionProp[] = [
   {
-    icon: <Zap />,
+    icon: <Code2 />,
     title: "Custom Software Development",
     description:
       "From ideation to deployment, we craft bespoke software solutions that seamlessly integrate with your existing systems. With a focus on scalability, security, and flexibility, we help your business grow and adapt to ever-changing needs.",
+    keyFeatures: [
+      "End-to-end development tailored to your goals.",
+      "Scalable solutions to future-proof your business.",
+      "Expert integration with existing platforms.",
+    ],
   },
+
   {
-    icon: <Zap />,
+    icon: <Cloud />,
     title: "Cloud Solutions",
     description:
       "Leverage the power of the cloud to enhance efficiency and reduce operational costs. Whether it's storage, computing power, or SaaS applications, our solutions are designed to align with your business objectives and maximize performance.",
+    keyFeatures: [
+      "Secure and scalable cloud infrastructure.",
+      "Cost-efficient solutions tailored to your needs.",
+      "Expertise in leading cloud platforms like AWS, Azure, and Google Cloud.",
+    ],
   },
   {
-    icon: <Zap />,
+    icon: <MessageCircle />,
     title: "Tech Consultancy",
     description:
       "Empower your business with strategic technology planning and execution. From initial consultation to implementation, we ensure that your digital transformation aligns perfectly with your business goals, giving you a competitive edge.",
+    keyFeatures: [
+      "Comprehensive digital roadmaps for growth.",
+      "Expert guidance in emerging technologies.",
+      "Continuous support for seamless implementation.",
+    ],
   },
 ];
-
-const SolutionCard = ({ item }: { item: SolutionProp }) => {
-  return (
-    <div className="grid grid-cols-[48px_1fr] items-start gap-4">
-      <span className="flex h-12 w-12 items-center justify-center rounded-full border-[8px] border-solid border-[#F9F5FF] bg-[#F4EBFF] text-[#7F56D9]">
-        {item?.icon}
-      </span>
-      <div>
-        <h3 className="mb-2 font-dm-sans text-lg text-white">{item?.title}</h3>
-        <p className="font-inter text-sm font-light text-primary-100 md:text-base">
-          {item?.description}
-        </p>
-
-        <div className="mt-2">
-          <h4 className="font-medium text-white">Key Features</h4>
-          <ul className="list-disc pl-3.5 text-sm font-light leading-normal text-white">
-            <li className="text-primary-100">
-              Comprehensive digital roadmaps for growth.
-            </li>
-          </ul>
-        </div>
-        <SmartButton
-          showAnimatedIcon
-          variant="dark"
-          buttonText="Schedule a call"
-          className="mt-4 object-cover object-center px-6 py-3"
-          isLink
-          url="https://calendly.com/isentrytechnologies"
-        />
-      </div>
-    </div>
-  );
-};

@@ -2,6 +2,7 @@ import PorkerHut from "@/public/assets/partners/porkerhut.svg";
 import TTfcx from "@/public/assets/partners/ttfcx.svg";
 import Dataphyte from "@/public/assets/partners/Dataphyte.svg";
 import Ri from "@/public/assets/partners/ri-softwares.svg";
+
 // import { StaticImageData } from "next/image";
 // import PorkerHutWeb from "@/public/images/case-studies/porkerhut.png";
 // import Bankify from "@/public/images/case-studies/bankify.png";
@@ -209,3 +210,11 @@ export const stats: StatProps[] = [
     title: "Technical Support & Expert Consultant services",
   },
 ];
+
+// MENTORSHIP
+export type SolutionProp = {
+  icon: React.JSX.Element;
+  title: string;
+  description: string;
+  keyFeatures: string[];
+};

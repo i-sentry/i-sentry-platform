@@ -58,12 +58,12 @@ const PriceCard = ({ list }: { list: PriceListProp }) => {
         buttonText="Enroll Now"
         className={cn(
           "mt-8 w-full items-center justify-center text-center",
-          list?.badge !== "coming soon"
+          !list.comingSoon
             ? "grayscale-0"
-            : "cursor-default opacity-30 grayscale-[50] hover:shadow-none",
+            : "cursor-default bg-primary-400/35 opacity-30 grayscale-[50] hover:shadow-none",
         )}
-        isLink={list?.badge !== "coming soon"}
-        url="/intership/enroll"
+        isLink={!list.comingSoon}
+        url="/internship/enroll"
       />
     </div>
   );
