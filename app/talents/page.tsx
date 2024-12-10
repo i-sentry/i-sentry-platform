@@ -39,6 +39,7 @@ const Talents = () => {
                     className="px-6 py-3"
                     isLink
                     url="https://calendly.com/isentrytechnologies"
+                    target="_blank"
                   />
                 </div>
               </form>

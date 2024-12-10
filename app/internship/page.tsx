@@ -6,7 +6,6 @@ import InternImage from "@/public/images/internship.jpeg";
 import Roles from "@/public/images/roles.png";
 import Carousel from "@/components/internship-comps/carousel";
 
-
 const Internship = () => {
   return (
     <>
@@ -23,13 +22,14 @@ const Internship = () => {
               build outstanding projects that can give you an edge in a hiring
               process.
             </p>
-            <Link href="/internship/enroll">
-              <SmartButton
-                variant="bright"
-                buttonText="Enroll for free"
-                className="mt-10"
-              />
-            </Link>
+
+            <SmartButton
+              variant="bright"
+              buttonText="Enroll for free"
+              className="mt-10"
+              isLink
+              url="/internship/enroll"
+            />
           </div>
         </div>
       </section>

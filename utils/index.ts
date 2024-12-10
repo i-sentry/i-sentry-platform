@@ -80,11 +80,11 @@ export const programs: LinkProps[] = [
   },
   {
     name: "Tech Internships",
-    url: "/internships",
+    url: "/internship",
   },
   {
     name: "Certification",
-    url: "/certification",
+    url: "#",
     // comingSoon: true,
   },
   {
@@ -98,9 +98,6 @@ export const programs: LinkProps[] = [
     comingSoon: true,
   },
 ];
-
-// "Professional Training";
-// Add: "";
 
 export const aboutUs: LinkProps[] = [
   {
@@ -117,11 +114,11 @@ export const aboutUs: LinkProps[] = [
   },
   {
     name: "Our Impact",
-    url: "/our-impact",
+    url: "#",
   },
   {
     name: "Success Stories",
-    url: "/success-stories",
+    url: "#",
   },
 ];
 
@@ -136,11 +133,11 @@ export const legal: LinkProps[] = [
   },
   {
     name: "Security",
-    url: "/security",
+    url: "#",
   },
   {
     name: "Compliance",
-    url: "/compliance",
+    url: "#",
   },
 ];
 
