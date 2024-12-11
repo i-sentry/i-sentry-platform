@@ -36,6 +36,7 @@ const SolutionCard = ({ item }: { item: SolutionProp }) => {
           className="mt-4 px-6 py-3"
           isLink
           url="https://calendly.com/isentrytechnologies"
+          target="_blank"
         />
       </div>
     </div>

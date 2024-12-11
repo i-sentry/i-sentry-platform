@@ -27,8 +27,8 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
                 href={item?.comingSoon ? "" : item?.url}
                 className={cn(
                   "inline-flex items-end font-inter text-base font-light text-[#97A4B7] duration-300 hover:text-secondary-400",
-                  item?.comingSoon
-                    ? "pointer-events-none cursor-not-allowed"
+                  item?.comingSoon || item?.url === "#"
+                    ? "pointer-events-none opacity-60"
                     : "pointer-events-auto cursor-pointer",
                 )}
               >

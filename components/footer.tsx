@@ -4,13 +4,7 @@ import Link from "next/link";
 import { aboutUs, legal, programs, solutions } from "@/utils";
 import FooterLink from "./footer_links";
 import SmartButton from "./custom_button";
-import {
-  FaFacebook,
-  FaGithub,
-  FaLinkedin,
-  FaMedium,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaMedium, FaXTwitter } from "react-icons/fa6";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger);
@@ -89,31 +83,31 @@ const Footer = () => {
 
               <div className="inline-flex items-center gap-5">
                 <Link
-                  href="https://x.com/"
+                  href="https://x.com/ISentryTech/"
                   className="cursor-pointer text-[#98A2B3]"
                 >
                   <FaXTwitter size={20} />
                 </Link>
                 <Link
-                  href="https://linkedin.com/in"
+                  href="https://www.linkedin.com/company/isentry-technologies/"
                   className="cursor-pointer text-[#98A2B3]"
                 >
                   <FaLinkedin size={20} />
                 </Link>
-                <Link
+                {/* <Link
                   href="https://facebook.com/"
                   className="cursor-pointer text-[#98A2B3]"
                 >
                   <FaFacebook size={20} />
-                </Link>
+                </Link> */}
                 <Link
-                  href="https://github.com/"
+                  href="https://github.com/i-sentry"
                   className="cursor-pointer text-[#98A2B3]"
                 >
                   <FaGithub size={20} />
                 </Link>
                 <Link
-                  href="https://dribble.com/"
+                  href="https://medium.com/@isentrytechnologies"
                   className="cursor-pointer text-[#98A2B3]"
                 >
                   <FaMedium size={20} />

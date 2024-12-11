@@ -98,13 +98,19 @@ const Mentorships = () => {
             </p>
 
             <div className="mt-12 flex items-center justify-center gap-2">
-              <SmartButton variant="bright" buttonText="Mentorship" />
+              <SmartButton
+                variant="bright"
+                isLink
+                url="https://calendly.com/isentrytechnologies"
+                target="_blank"
+                buttonText="Schedule a call"
+              />
               <SmartButton
                 variant="dark"
                 buttonText="Tech Internship"
                 showAnimatedIcon
                 isLink
-                url="/intership"
+                url="/internship"
               />
             </div>
           </div>

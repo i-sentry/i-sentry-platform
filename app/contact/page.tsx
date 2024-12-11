@@ -32,6 +32,7 @@ const ContactUs = () => {
                 <Link
                   href="https://calendly.com/isentrytechnologies"
                   className="text-secondary-200 underline"
+                  target="_blank"
                 >
                   account manager
                 </Link>
