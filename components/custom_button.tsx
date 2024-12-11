@@ -15,6 +15,7 @@ type SmartLinkButtonProps = {
   onClick?: () => void;
   url?: string;
   isLink?: boolean;
+  target?: string;
 };
 
 const sleep = (ms: number): Promise<void> =>
@@ -29,6 +30,7 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
   onClick,
   url,
   isLink = false,
+  target,
 }) => {
   const router = useRouter();
 
@@ -62,9 +64,10 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
     return (
       <Link
         href={url}
-        onClick={handleTransition}
+        onClick={target ? () => null : handleTransition}
         className={commonStyles}
         passHref
+        target={target}
       >
         <>
           {buttonText}
