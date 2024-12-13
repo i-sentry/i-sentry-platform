@@ -6,19 +6,16 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 const Statistics = () => {
-  const time = [1500, 3000, 3000];
-
   useGSAP(() => {
     gsap.from(".stat", {
-      y: 200,
+      y: 90,
       opacity: 0,
-      duration: 2,
+      duration: 1,
       stagger: {
         amount: 0.5,
         from: "start",
       },
       ease: "power2.inOut",
-
       scrollTrigger: ".stat",
     });
   }, []);
@@ -36,7 +33,7 @@ const Statistics = () => {
             <StatCard
               key={index}
               {...stat}
-              duration={time[index]}
+              duration={[1500, 3000, 8000][index]}
               steps={[10, 1, 1][index]}
             />
           ))}

@@ -38,20 +38,20 @@ const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const Testimonials = () => {
-  useGSAP(() => {
-    gsap.from(".stat", {
-      y: 200,
-      backgroundColor: "",
-      duration: 2,
-      stagger: {
-        amount: 0.5,
-        from: "start",
-      },
-      ease: "power2.inOut",
+  // useGSAP(() => {
+  //   gsap.from(".stat", {
+  //     y: 200,
+  //     backgroundColor: "",
+  //     duration: 2,
+  //     stagger: {
+  //       amount: 0.5,
+  //       from: "start",
+  //     },
+  //     ease: "power2.inOut",
 
-      scrollTrigger: ".stat",
-    });
-  }, []);
+  //     scrollTrigger: ".stat",
+  //   });
+  // }, []);
   return (
     <section className="py-16">
       <div className="wrapper">

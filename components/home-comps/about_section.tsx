@@ -33,71 +33,61 @@ const About = () => {
     getData();
   }, []);
 
+  useGSAP(() => {
+    const card1 = [".aboutCard-1", ".aboutCard-2"];
+    const card2 = [".aboutCard-3", ".aboutCard-4"];
+
+    gsap.from(card1, {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+      ease: "power2.inOut",
+
+      scrollTrigger: { trigger: card1, start: "top 50%", end: "bottom 20%" },
+    });
+
+    gsap.from(card2, {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+      ease: "power2.inOut",
+
+      scrollTrigger: {
+        trigger: card2,
+        start: "top 80%",
+        end: "bottom 20%",
+      },
+    });
+  }, []);
+
   // useGSAP(() => {
-  //   gsap.from([".aboutCard-1", ".aboutCard-2"], {
-  //     y: 300,
+  //   const card2 = [".aboutCard-3", ".aboutCard-4"];
+
+  //   gsap.from(card2, {
+  //     x: 100,
   //     opacity: 0,
-  //     duration: 3,
+  //     duration: 1,
   //     stagger: {
   //       amount: 0.5,
   //       from: "start",
   //     },
   //     ease: "power2.inOut",
 
-  //     scrollTrigger: [".aboutCard-1", ".aboutCard-2"],
+  //     scrollTrigger: {
+  //       trigger: card1,
+  //       start: "top 80%",
+  //       end: "bottom 20%",
+  //     },
   //   });
   // }, []);
-
-  useGSAP(() => {
-    // Select the two cards
-    const cards = [".aboutCard-1", ".aboutCard-2"];
-    const cards2 = [".aboutCard-3", ".aboutCard-4"];
-
-    // Animate the cards with GSAP
-    gsap.fromTo(
-      cards,
-      {
-        x: (index) => (index === 0 ? -300 : 300), // Initial position: left for 1st card, right for 2nd
-        opacity: 0, // Initial opacity
-      },
-      {
-        x: 0, // Final position
-        opacity: 1, // Final opacity
-        duration: 1,
-        stagger: 1, // Stagger delay between cards
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: cards,
-          start: "top 80%", // Start animation when cards are 80% into the viewport
-          end: "bottom 20%", // End animation when cards are 20% out of the viewport
-          // toggleActions: "play pause pause pause", // Play when in view, reverse when out
-          markers: false, // Set to true if you want to see scroll markers
-        },
-      },
-    );
-
-    gsap.fromTo(
-      cards2,
-      {
-        x: (index) => (index === 0 ? -300 : 300), // Initial position: left for 1st card, right for 2nd
-        opacity: 0, // Initial opacity
-      },
-      {
-        x: 0, // Final position
-        opacity: 1, // Final opacity
-        duration: 1.5,
-        stagger: 1, // Stagger delay between cards
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: cards2,
-          start: "top 80%", // Start animation when cards are 80% into the viewport
-          end: "bottom 20%", // End animation when cards are 20% out of the viewport
-          toggleActions: "play reverse play reverse", // Play when in view, reverse when out
-          markers: false, // Set to true if you want to see scroll markers
-        },
-      },
-    );
-  }, []);
 
   return (
     <>

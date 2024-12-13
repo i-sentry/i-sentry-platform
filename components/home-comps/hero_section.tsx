@@ -29,16 +29,16 @@ const Hero = () => {
 
   useGSAP(() => {
     gsap.from(["#hero-title", "#sub-text", ".btn-1", ".btn-2"], {
-      y: 300,
+      y: 100,
       opacity: 0,
-      duration: 1.5,
+      duration: 0.7,
       // touchAction: "play reverse play reverse",
       stagger: {
         // implemeting the stagger effect
         amount: 1,
         from: "start",
       },
-      ease: "power2.inOut",
+      ease: "power1",
     });
   }, []);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
