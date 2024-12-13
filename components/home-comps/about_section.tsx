@@ -70,7 +70,7 @@ const About = () => {
           trigger: cards,
           start: "top 80%", // Start animation when cards are 80% into the viewport
           end: "bottom 20%", // End animation when cards are 20% out of the viewport
-          toggleActions: "play play play play", // Play when in view, reverse when out
+          // toggleActions: "play pause pause pause", // Play when in view, reverse when out
           markers: false, // Set to true if you want to see scroll markers
         },
       },

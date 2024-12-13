@@ -31,7 +31,7 @@ const Hero = () => {
     gsap.from(["#hero-title", "#sub-text", ".btn-1", ".btn-2"], {
       y: 300,
       opacity: 0,
-      duration: 2,
+      duration: 1.5,
       // touchAction: "play reverse play reverse",
       stagger: {
         // implemeting the stagger effect

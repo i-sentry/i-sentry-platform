@@ -2,6 +2,10 @@ import React from "react";
 import Marquee from "../ui/marquee";
 import ReviewCard from "./review_card";
 import Placeholder from "@/public/images/placeholder.png";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 const reviews = [
   {
@@ -34,6 +38,20 @@ const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const Testimonials = () => {
+  useGSAP(() => {
+    gsap.from(".stat", {
+      y: 200,
+      backgroundColor: "",
+      duration: 2,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+      ease: "power2.inOut",
+
+      scrollTrigger: ".stat",
+    });
+  }, []);
   return (
     <section className="py-16">
       <div className="wrapper">

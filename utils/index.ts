@@ -189,22 +189,26 @@ export type IProject = {
 // ];
 
 export type StatProps = {
-  percentage: string;
+  percentage: number;
   title: string;
+  symbol: string;
 };
 
 export const stats: StatProps[] = [
   {
-    percentage: "1000+",
+    percentage: 1000,
     title: "Businesses Transformed \n Through our enterprise digital solutions",
+    symbol: "+",
   },
   {
-    percentage: "85%",
+    percentage: 85,
     title: "Career Advancement Rate \n For our certified graduates",
+    symbol: "%",
   },
   {
-    percentage: "24/7",
+    percentage: 24,
     title: "Technical Support & Expert Consultant services",
+    symbol: "/7",
   },
 ];
 
