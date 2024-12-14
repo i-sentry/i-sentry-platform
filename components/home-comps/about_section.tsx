@@ -40,20 +40,24 @@ const About = () => {
     gsap.from(card1, {
       x: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.7,
       stagger: {
         amount: 0.5,
         from: "start",
       },
       ease: "power2.inOut",
 
-      scrollTrigger: { trigger: card1, start: "top 50%", end: "bottom 20%" },
+      scrollTrigger: {
+        trigger: card1,
+        // start: "top 30%",
+        // end: "bottom 80%",
+      },
     });
 
     gsap.from(card2, {
       x: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.7,
       stagger: {
         amount: 0.5,
         from: "start",
@@ -62,8 +66,6 @@ const About = () => {
 
       scrollTrigger: {
         trigger: card2,
-        start: "top 80%",
-        end: "bottom 20%",
       },
     });
   }, []);

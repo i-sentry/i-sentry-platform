@@ -8,8 +8,25 @@ import Wangui from "@/public/assets/mentees/Wangui.jpg";
 import Taiwo from "@/public/assets/mentees/Taiwo_Oyewale.jpg";
 import { StaticImageData } from "next/image";
 import Marquee from "../ui/marquee";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 const MenteeSection = () => {
+  useGSAP(() => {
+    gsap.from(".mentee", {
+      x: 190,
+      opacity: 0,
+      duration: 1,
+      stagger: {
+        amount: 0.8,
+        from: "start",
+      },
+      ease: "power2.inOut",
+      scrollTrigger: ".mentee",
+    });
+  }, []);
   return (
     <section className="py-10">
       <div className="px-4">

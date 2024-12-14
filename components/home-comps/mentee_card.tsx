@@ -15,7 +15,7 @@ const MenteeCard = ({
   links: ILinks;
 }) => {
   return (
-    <div className="relative h-[300px] w-[300px] overflow-hidden rounded-3xl">
+    <div className="mentee relative h-[300px] w-[300px] overflow-hidden rounded-3xl">
       <Image
         src={image || Placeholder}
         alt="placeholder"

@@ -2,12 +2,12 @@ import React from "react";
 import Marquee from "../ui/marquee";
 import ReviewCard from "./review_card";
 import Placeholder from "@/public/images/placeholder.png";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+// import { useGSAP } from "@gsap/react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/all";
+// gsap.registerPlugin(ScrollTrigger);
 
-const reviews = [
+const reviews = [ 
   {
     name: "Maurice",
     username: "ReactJs, NextJs",
