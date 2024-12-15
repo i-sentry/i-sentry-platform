@@ -2,12 +2,12 @@ import React from "react";
 import Marquee from "../ui/marquee";
 import ReviewCard from "./review_card";
 import Placeholder from "@/public/images/placeholder.png";
-// import { useGSAP } from "@gsap/react";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/all";
-// gsap.registerPlugin(ScrollTrigger);
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
-const reviews = [ 
+const reviews = [
   {
     name: "Maurice",
     username: "ReactJs, NextJs",
@@ -38,33 +38,45 @@ const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const Testimonials = () => {
-  // useGSAP(() => {
-  //   gsap.from(".stat", {
-  //     y: 200,
-  //     backgroundColor: "",
-  //     duration: 2,
-  //     stagger: {
-  //       amount: 0.5,
-  //       from: "start",
-  //     },
-  //     ease: "power2.inOut",
+  useGSAP(() => {
+    gsap.from(".review-title", {
+      opacity: 0,
+      duration: 2,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+      ease: "power2.inOut",
 
-  //     scrollTrigger: ".stat",
-  //   });
-  // }, []);
+      scrollTrigger: ".review-title",
+    });
+
+    gsap.from(".testimonials", {
+      y: 100,
+      backgroundColor: "",
+      duration: 2,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+      ease: "power2.inOut",
+
+      scrollTrigger: ".testimonials",
+    });
+  }, []);
   return (
     <section className="py-16">
       <div className="wrapper">
         <div className="mb-16 space-y-6 text-center">
-          <h2 className="text-center text-2xl font-semibold text-white md:text-4xl md:leading-tight">
+          <h2 className="review-title text-center text-2xl font-semibold text-white md:text-4xl md:leading-tight">
             Testimonial
           </h2>
-          <p className="text-sm font-extralight text-[#C2C2C2] md:text-base">
+          <p className="review-title text-sm font-extralight text-[#C2C2C2] md:text-base">
             From past mentees
           </p>
         </div>
 
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+        <div className="testimonials relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
           <Marquee pauseOnHover className="[--duration:20s]">
             {firstRow.map((review, index) => (
               <ReviewCard

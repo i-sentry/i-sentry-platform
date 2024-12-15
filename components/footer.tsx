@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { aboutUs, legal, programs, solutions } from "@/utils";
 import FooterLink from "./footer_links";
@@ -11,26 +10,6 @@ import Marquee from "./ui/marquee";
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  const textRef = useRef(null);
-
-  useEffect(() => {
-    const element = textRef.current;
-
-    gsap.fromTo(
-      element,
-      { x: "-50px" }, // Start Position
-      {
-        x: "100px", // End position
-        scrollTrigger: {
-          trigger: element,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-          markers: false, // to debug set true
-        },
-      },
-    );
-  }, []);
   return (
     <>
       <footer className="bg-footer1">
@@ -121,18 +100,18 @@ const Footer = () => {
         <div className="pt-10">
           <Marquee pauseOnHover className="items-center [--duration:20s]">
             <div className="flex items-center gap-4">
-              <h1 className="to-[#C2D9F0] bg-clip-text font-dm-sans text-[3rem] font-extrabold capitalize leading-[1] text-[#6FA1D2] text-transparent">
-                Tomorrow&apos;s Tech, Today
+              <h1 className="font-dm-sans text-[3rem] font-medium uppercase leading-[1] tracking-widest text-[#6FA1D2]">
+               Isentry Technologies
               </h1>
-              <span className="inline-block h-4 w-4 rounded-full bg-[#C2D9F0] text-[#6FA1D2]"></span>
+              <span className="inline-block h-3 w-3 rounded-full bg-[#6FA1D2]"></span>
             </div>
           </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:20s]">
+          <Marquee reverse pauseOnHover className="[--duration:30s]">
             <div className="flex items-center gap-4">
-              <h1 className="to-[#C2D9F0] bg-clip-text text-[3rem] font-extrabold capitalize leading-[1] text-[#6FA1D2] text-transparent">
+              <h1 className="font-dm-sans text-[3rem] font-medium uppercase leading-[1] tracking-widest text-[#6FA1D2]">
                 Tomorrow&apos;s Tech, Today
               </h1>
-              <span className="inline-block h-4 w-4 rounded-full to-[#C2D9F0] text-[#6FA1D2]"></span>
+              <span className="inline-block h-3 w-3 rounded-full bg-[#6FA1D2]"></span>
             </div>
           </Marquee>
         </div>

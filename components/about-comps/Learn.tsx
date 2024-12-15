@@ -28,41 +28,46 @@ const Learn = () => {
             </ul>
           </div>
           <div className="mt-2 lg:mt-0">
-            <ul className="list-disc pl-5 text-base font-light text-primary-100">
-              <li>
-                Web Development
+            <div className="space-y-2 pl-5 text-base font-light text-primary-100">
+              <div>
+                <h3 className="font-normal text-white">Web Development</h3>
                 <ul className="list-disc pl-5">
                   <li>Frontend: HTML5, CSS3, JavaScript (React, Vue.js)</li>
                   <li>Backend: Node.js, Python, Java</li>
                   <li>Frameworks: Angular, Express.js</li>
                 </ul>
-              </li>
-              <li>
-                Mobile App Development
+              </div>
+              <div>
+                <h3 className="font-normal text-white">
+                  Mobile App Development
+                </h3>
+
                 <ul className="list-disc pl-5">
                   <li> React Native</li>
                   <li>Flutter</li>
                   <li>Swift</li>
                   <li>Kotlin</li>
                 </ul>
-              </li>
-              <li>
-                Cloud Computing
+              </div>
+              <div>
+                <h3 className="font-normal text-white">Cloud Computing</h3>
+
                 <ul className="list-disc pl-5">
                   <li>Cloud Platforms: AWS, Azure, Google Cloud</li>
                   <li>DevOps Tools: Docker, Kubernetes, Jenkins</li>
                   <li>CI/CD Pipeline Implementation</li>
                 </ul>
-              </li>
-              <li>
-                Quality Assurance
+              </div>
+              <div>
+                <h3 className="font-normal text-white">Quality Assurance</h3>
+
                 <ul className="list-disc pl-5">
                   <li>Automated Testing: Selenium, Jest</li>
                   <li>Unit Testing & Integration Testing</li>
                   <li>Performance Testing</li>
                 </ul>
-              </li>
-            </ul>
+              </div>
+            </div>
 
             <SmartLinkButton
               variant="dark"

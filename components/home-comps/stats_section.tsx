@@ -7,6 +7,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Statistics = () => {
   useGSAP(() => {
+    gsap.from(".stat-header", {
+      // y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+      ease: "power2.inOut",
+      scrollTrigger: ".service-header",
+    });
+
     gsap.from(".stat", {
       y: 90,
       opacity: 0,
@@ -23,7 +35,7 @@ const Statistics = () => {
   return (
     <section className="bg-[#01234540] py-[100px]">
       <div className="wrapper">
-        <h2 className="text-center text-2xl font-semibold text-white md:text-4xl md:leading-tight">
+        <h2 className="stat-header text-center text-2xl font-semibold text-white md:text-4xl md:leading-tight">
           Empowering Digital Excellence <br className="hidden md:block" />{" "}
           Through Software & Skills
         </h2>

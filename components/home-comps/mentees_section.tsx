@@ -27,6 +27,7 @@ const MenteeSection = () => {
       scrollTrigger: ".mentee",
     });
   }, []);
+  
   return (
     <section className="py-10">
       <div className="px-4">

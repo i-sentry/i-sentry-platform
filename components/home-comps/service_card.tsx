@@ -6,7 +6,7 @@ type ComponentProps = {
 
 const ServiceCard: React.FC<ComponentProps> = ({ index, title, listItems }) => {
   return (
-    <div className="space-y-4">
+    <div className="service-card space-y-4">
       <span className="font-dm-sans text-sm text-white">{`0${index + 1}`}</span>
       <div className="flex items-center gap-1.5">
         <span className="inline-block h-2 w-2 rounded-full bg-grad"></span>
