@@ -1,6 +1,10 @@
 import React from "react";
 import ServiceCard from "./service_card";
 import SmartButton from "../custom_button";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 type ServiceProp = {
   title: string;
@@ -8,16 +12,41 @@ type ServiceProp = {
 };
 
 const Services = () => {
+  useGSAP(() => {
+    gsap.from(".service-header", {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+      ease: "power2.inOut",
+      scrollTrigger: ".service-header",
+    });
+
+    gsap.from(".service-card", {
+      // y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: {
+        amount: 0.8,
+        from: "start",
+      },
+      ease: "power2.inOut",
+      scrollTrigger: ".service-card",
+    });
+  }, []);
   return (
     <>
       <section className="py-10">
         <div className="wrapper">
           <div className="space-y-6 text-center md:mx-auto md:max-w-xl">
-            <h2 className="text-2xl font-semibold text-white md:text-4xl md:leading-tight">
+            <h2 className="service-header text-2xl font-semibold text-white md:text-4xl md:leading-tight">
               Innovative Solutions for a<br className="hidden md:block" />{" "}
               Rapidly Evolving World
             </h2>
-            <p className="font-inter text-sm font-extralight leading-6 text-[#C2C2C2] md:text-base">
+            <p className="service-header font-inter text-sm font-extralight leading-6 text-[#C2C2C2] md:text-base">
               At I-Sentry Technologies, we stand at the vanguard of
               technological advancement. Our cutting-edge solutions and global
               expertise empower businesses to navigate and thrive in the digital
@@ -26,15 +55,15 @@ const Services = () => {
             <SmartButton
               variant="bright"
               buttonText="Join our Program"
-              className="mt-12 border-[#F4F4F40D]"
+              className="service-header mt-12 border-[#F4F4F40D]"
               url="/mentorships"
               isLink
             />
           </div>
 
           <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
-            <div className="space-y-6">
-              <h3 className="text-base font-normal text-[#C2C2C2] md:text-lg">
+            <div className="service-card space-y-4">
+              <h3 className="text-base font-medium text-white md:text-lg">
                 Our Mentorship Program
               </h3>
               <p className="text-sm font-extralight leading-6 text-[#C2C2C2] md:text-base md:leading-6">

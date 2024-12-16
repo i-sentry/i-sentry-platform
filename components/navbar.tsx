@@ -34,7 +34,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
     };
   }, [setIsSticky]);
 
-  console.log(isSticky);
+ 
 
   return (
     <>

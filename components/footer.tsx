@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { aboutUs, legal, programs, solutions } from "@/utils";
 import FooterLink from "./footer_links";
@@ -7,29 +6,10 @@ import SmartButton from "./custom_button";
 import { FaGithub, FaLinkedin, FaMedium, FaXTwitter } from "react-icons/fa6";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import Marquee from "./ui/marquee";
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  const textRef = useRef(null);
-
-  useEffect(() => {
-    const element = textRef.current;
-
-    gsap.fromTo(
-      element,
-      { x: "-50px" }, // Start Position
-      {
-        x: "100px", // End position
-        scrollTrigger: {
-          trigger: element,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-          markers: false, // to debug set true
-        },
-      },
-    );
-  }, []);
   return (
     <>
       <footer className="bg-footer1">
@@ -117,19 +97,23 @@ const Footer = () => {
           </div>
         </section>
 
-        <div className="relative flex h-[30vh] items-center justify-start overflow-hidden py-10">
-          {/* Hide the bottom half */}
-          {/* <div
-            className="pointer-events-none absolute inset-0 bottom-0 top-auto z-10 bg-black"
-            style={{ height: "50%" }}
-          ></div> */}
-
-          <h1
-            ref={textRef}
-            className="relative origin-top-left whitespace-nowrap bg-gradient-to-r from-[#6FA1D2] to-[#C2D9F0] bg-clip-text text-[5rem] font-extrabold uppercase leading-[1] text-transparent md:scale-[1.7_!important] md:text-[12rem] lg:scale-[1.9_!important]"
-          >
-            ISentry Technologies
-          </h1>
+        <div className="pt-10">
+          <Marquee pauseOnHover className="items-center [--duration:20s]">
+            <div className="flex items-center gap-4">
+              <h1 className="font-dm-sans text-[3rem] font-medium uppercase leading-[1] tracking-widest text-[#6FA1D2]">
+               Isentry Technologies
+              </h1>
+              <span className="inline-block h-3 w-3 rounded-full bg-[#6FA1D2]"></span>
+            </div>
+          </Marquee>
+          <Marquee reverse pauseOnHover className="[--duration:30s]">
+            <div className="flex items-center gap-4">
+              <h1 className="font-dm-sans text-[3rem] font-medium uppercase leading-[1] tracking-widest text-[#6FA1D2]">
+                Tomorrow&apos;s Tech, Today
+              </h1>
+              <span className="inline-block h-3 w-3 rounded-full bg-[#6FA1D2]"></span>
+            </div>
+          </Marquee>
         </div>
       </footer>
     </>

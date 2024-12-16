@@ -122,7 +122,7 @@ const ContactCenter = () => {
           <div className="p-5">
             <h3 className="flex items-center gap-2 text-lg font-medium text-white">
               Community Resources
-              <Badge className="rounded-full border-grey-50 p-1 px-3 py-1 text-xs font-light text-grey-50">
+              <Badge className="rounded-full border-secondary-300 p-1 px-3 py-1 text-xs font-light text-secondary-300">
                 Coming soon
               </Badge>
             </h3>
@@ -146,7 +146,7 @@ const ContactCenter = () => {
           <div className="p-5">
             <h3 className="flex items-center gap-2 text-lg font-medium text-white">
               Developer Resources
-              <Badge className="rounded-full border-grey-50 p-1 px-3 py-1 text-xs font-light text-grey-50">
+              <Badge className="rounded-full border-secondary-300 p-1 px-3 py-1 text-xs font-light text-secondary-300">
                 Coming soon
               </Badge>
             </h3>

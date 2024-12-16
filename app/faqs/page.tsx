@@ -60,7 +60,7 @@ const Faqs = () => {
           </div>
         </div>
         <p className="mx-auto mt-14 max-w-3xl text-balance text-center font-light leading-normal text-primary-200">
-          Please let me know if you have any other questions! Our team is here
+          Please let us know if you have any other questions! Our team is here
           to provide the guidance and support you need.
         </p>
       </section>

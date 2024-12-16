@@ -1,65 +1,24 @@
-import React, { useEffect, useState } from "react";
 import SmartButton from "../custom_button";
 import AnimatedCircle from "../animate_circles";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
-import { sanityClient } from "@/sanity";
 
-const fetchHero = async () => {
-  const query = `*[_type == "hero"][0]{
-  title,
-  description
-  }`;
-
-  const section = await sanityClient.fetch(query);
-  return section;
-};
 const Hero = () => {
-  // useGSAP(() => {
-  //   gsap.from("#hero-title", {
-  //     y: -100,
-  //     duration: 2.5,
-  //     opacity: 0,
-  //     ease: "power2.inOut",
-  //   });
-  // }, []);
-
   useGSAP(() => {
     gsap.from(["#hero-title", "#sub-text", ".btn-1", ".btn-2"], {
-      y: 300,
+      y: 100,
       opacity: 0,
-      duration: 2,
+      duration: 0.7,
       // touchAction: "play reverse play reverse",
       stagger: {
         // implemeting the stagger effect
         amount: 1,
         from: "start",
       },
-      ease: "power2.inOut",
+      ease: "power1",
     });
-  }, []);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [data, setData] = useState<any>();
-
-  console.log(data, "Hero list box");
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const fetchedAbout = await fetchHero();
-        setData(fetchedAbout);
-      } catch (err) {
-        // setError("Error loading data");
-        console.error(err);
-      } finally {
-        // setLoading(false);
-      }
-    };
-
-    getData();
   }, []);
 
   return (

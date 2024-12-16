@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import Placeholder from "@/public/images/placeholder.png";
 import MenteeCard from "./mentee_card";
 import Ariyo from "@/public/assets/mentees/Ariyo_O.B.png";
@@ -6,10 +6,51 @@ import Emem from "@/public/assets/mentees/Emem-Peace.jpg";
 import Victor from "@/public/assets/mentees/Victor-udo.jpeg";
 import Wangui from "@/public/assets/mentees/Wangui.jpg";
 import Taiwo from "@/public/assets/mentees/Taiwo_Oyewale.jpg";
+import Gideon from "@/public/assets/mentees/gideon.webp";
 import { StaticImageData } from "next/image";
 import Marquee from "../ui/marquee";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { fetchInterns } from "@/sanity/lib/fetchDatas";
+gsap.registerPlugin(ScrollTrigger);
 
 const MenteeSection = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [data, setData] = useState<any[]>();
+
+  console.log(data, "interns");
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const fetchedInterns = await fetchInterns();
+        setData(fetchedInterns);
+      } catch (err) {
+        // setError("Error loading data");
+        console.error(err);
+      } finally {
+        // setLoading(false);
+      }
+    };
+
+    getData();
+  }, []);
+
+  useGSAP(() => {
+    gsap.from(".mentee", {
+      x: 190,
+      opacity: 0,
+      duration: 1,
+      stagger: {
+        amount: 0.8,
+        from: "start",
+      },
+      ease: "power2.inOut",
+      scrollTrigger: ".mentee",
+    });
+  }, []);
+
   return (
     <section className="py-10">
       <div className="px-4">
@@ -140,6 +181,21 @@ const professionals: IMentee[] = [
       linkedin:
         "https://www.linkedin.com/in/taiwo-oyewale199?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       email: "oyewaletaiwo1803@gmail.com",
+    },
+  },
+  {
+    name: "Gideon Sunday",
+    alias: "Gideon S.",
+    skill: "Project Manager",
+    tools: "Click-up",
+    photo: Gideon,
+    comment:
+      " Am Gideon Sunday, a project management intern at I-Sentry. I-Sentry is committed to nurturing future tech leaders and my experience has been to help create seamless and efficient project workflows. This includes assisting in project planning, tracking progress, and ensuring timely delivery. Am glad to be part of a community whose mission is to lead technological advancement, creating a world where businesses and individuals can thrive through innovation.",
+    links: {
+      portfolio: "https://my-portfolio-app-eight.vercel.app/",
+      github: "https://github.com/TaiwoSaidat",
+      linkedin: "https://www.linkedin.com/in/gideon-sunday",
+      email: "sundaygideon73@gmail.com",
     },
   },
 ];

@@ -14,7 +14,6 @@ type ComponentProps = {
 
 const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  console.log(data.slug, "slug");
 
   return (
     <SmartLinkButton

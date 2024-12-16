@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import EachElement from "@/components/widgets/list_rendering";
-// import Team from "@/public/assets/mentees/Photo - Timilehin Abegunde.png";
-// import KingIBK from "@/public/images/team/3.png";
-// import Williams from "@/public/images/team/williams.webp";
-// import Akanimo from "@/public/images/team/Akanimo.webp";
-// import Bamgbade from "@/public/images/team/bamgbade.jpg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
-import { BsLinkedin } from "react-icons/bs";
+import { BsLinkedin, BsTwitterX } from "react-icons/bs";
 import Image from "next/image";
 import { fetchCoreTeam } from "@/sanity/lib/fetchDatas";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -21,7 +16,6 @@ const CoreTeam = () => {
       setLoading(true);
       try {
         const data = await fetchCoreTeam();
-        console.log(data?.members, "tema");
 
         setData(data?.members);
       } catch (error) {
@@ -31,7 +25,6 @@ const CoreTeam = () => {
       }
     };
     getData();
-    // console.log(getData, "tema");
   }, []);
 
   return (
@@ -70,19 +63,19 @@ const CoreTeam = () => {
                           {member.title}
                         </p>
                       </div>
-                      <div className="mt-2 inline-flex items-center gap-3">
+                      <div className="mt-2 flex w-full items-center gap-3">
                         <Link
                           href={member.url}
                           className="flex h-9 w-9 items-center justify-center rounded-full border border-primary-50/10 bg-grad-alt text-white duration-300 hover:border-transparent hover:bg-grad"
                         >
                           <BsLinkedin size={16} />
                         </Link>
-                        {/* <Link
-                          href=""
-                          className="text-secondary-50 duration-300 hover:text-secondary-400"
+                        <Link
+                          href="https://x.com"
+                          className="flex h-9 w-9 items-center justify-center rounded-full border border-primary-50/10 bg-grad-alt text-white duration-300 hover:border-transparent hover:bg-grad"
                         >
                           <BsTwitterX size={18} />
-                        </Link> */}
+                        </Link>
                       </div>
                     </div>
                   </>

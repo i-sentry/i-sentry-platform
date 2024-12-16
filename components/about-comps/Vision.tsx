@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import AboutImg from "@/public/images/about-us.png";
+import AboutImg from "@/public/images/isentry-ab.webp";
 import EachElement from "../widgets/list_rendering";
 import { Badge } from "../ui/badge";
 
@@ -9,12 +9,14 @@ const Vision = () => {
     <>
       <section className="py-10">
         <div className="wrapper">
-          <div className="mt-8 gap-5 space-y-8 md:space-y-0 lg:grid lg:grid-cols-[1.5fr_2fr]">
-            <Image
-              src={AboutImg}
-              alt="Placeholder"
-              className="hidden w-full self-stretch rounded-xl object-cover object-center md:mb-4 md:block md:h-[200px] lg:h-full"
-            />
+          <div className="mt-8 items-start gap-5 space-y-8 md:h-auto md:space-y-0 lg:grid lg:h-auto lg:grid-cols-[1.5fr_2fr]">
+            <div className="relative lg:h-full">
+              <Image
+                src={AboutImg}
+                alt="Placeholder"
+                className="hidden w-full rounded-xl object-cover object-center md:mb-4 md:block md:h-[300px] lg:absolute lg:left-0 lg:top-0 lg:m-0 lg:h-full"
+              />
+            </div>
 
             <div className="divide-y-[1px] divide-primary-50/20 rounded-[8px] border border-primary-50/20 bg-box p-5">
               {/* OUR VISION */}

@@ -1,11 +1,30 @@
+"use client";
 import React from "react";
 import Marquee from "../ui/marquee";
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { clients } from "@/utils";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 const Partners = ({ className }: { className?: string }) => {
+  useGSAP(() => {
+    gsap.from(".partner", {
+      y: 50,
+      x: 50,
+      opacity: 0,
+      duration: 1.2,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+      },
+      ease: "power2.inOut",
+      scrollTrigger: ".partner",
+    });
+  }, []);
   return (
     <section
       className={cn(
@@ -25,7 +44,7 @@ const Partners = ({ className }: { className?: string }) => {
               src={client?.brand}
               alt={client?.name}
               className={cn(
-                "aspect-[9/4] w-[100px]",
+                "partner aspect-[9/4] w-[100px]",
                 client?.name === "Porker Hut" && "scale-[1.3]",
               )}
             />
