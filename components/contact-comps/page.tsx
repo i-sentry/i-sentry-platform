@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { useState } from "react";
+import PhoneInputField from "../widgets/phone_input";
 
 const contactFormData = [
   {
@@ -45,15 +47,17 @@ const schema = yup.object().shape({
   email: yup.string().email("Input a valid email").required("Input your email"),
   phone: yup.string().required("Input your phone number"),
   message: yup.string().required("Input your message"),
-  agreeToPolicy: yup.boolean().required("You need to agree to privacy policy"),
+  // agreeToPolicy: yup.boolean().required("You need to agree to privacy policy"),
 });
 
 const ContactForm = () => {
+  const [isChecked, setIsChecked] = useState(false);
   const {
     handleSubmit,
     formState: { errors },
     reset,
     register,
+    control,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } = useForm<any>({
     resolver: yupResolver(schema),
@@ -120,6 +124,14 @@ const ContactForm = () => {
                     )}
                   </div>
                 );
+              } else if (data.name === "phone") {
+                return (
+                  <PhoneInputField
+                    errors={errors}
+                    data={data}
+                    control={control}
+                  />
+                );
               }
 
               return (
@@ -160,18 +172,15 @@ const ContactForm = () => {
         </div>
         <div className="mb-8 mt-6 space-x-3">
           <input
-            {...register("agreeToPolicy")}
             id="agreeToPolicy"
             type="checkbox"
-            defaultChecked={true}
+            checked={isChecked}
+            onChange={(e) => setIsChecked(e.target.checked)}
             className="form-checkbox cursor-pointer rounded-[6px] border border-grey-100 checked:bg-secondary-300 checked:hover:bg-secondary-300 focus:ring-0 focus:ring-offset-0 checked:focus:bg-secondary-300 checked:focus:ring-0"
           />
 
           <label htmlFor="agreeToPolicy" className="text-sm text-primary-200">
-            {errors?.agreeToPolicy
-              ? `${errors.agreeToPolicy.message}`
-              : "You agree to our friendly "}
-            &nbsp;
+            You agree to our friendly&nbsp;
             <Link href="/privacy-policy" className="underline">
               privacy policy
             </Link>
@@ -180,7 +189,8 @@ const ContactForm = () => {
         </div>
         <Button
           type="submit"
-          className="group inline-flex h-auto cursor-pointer items-center gap-4 rounded-full bg-grad px-8 py-3.5 font-dm-sans font-light text-white hover:shadow-lg hover:shadow-white/25"
+          disabled={!isChecked}
+          className="group inline-flex h-auto cursor-pointer items-center gap-4 rounded-full bg-grad px-8 py-3.5 font-dm-sans font-light text-white hover:shadow-lg hover:shadow-white/25 disabled:opacity-35"
         >
           Send message
         </Button>

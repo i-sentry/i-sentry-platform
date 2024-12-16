@@ -41,8 +41,6 @@ const StatCard: React.FC<ComponentProps> = ({
     return () => observer.disconnect();
   }, []);
 
-  console.log("steps:", steps, "perce", percentage);
-
   useEffect(() => {
     if (isVisible) {
       const time = duration;

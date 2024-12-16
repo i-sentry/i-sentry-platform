@@ -54,7 +54,7 @@ const Testimonials = () => {
     gsap.from(".testimonials", {
       y: 100,
       backgroundColor: "",
-      duration: 2,
+      duration: 1,
       stagger: {
         amount: 0.5,
         from: "start",
@@ -91,7 +91,7 @@ const Testimonials = () => {
               <ReviewCard
                 key={review.username + index}
                 {...review}
-                className="w-[450px]"
+                className="w-[400px]"
               />
             ))}
           </Marquee>
@@ -100,7 +100,7 @@ const Testimonials = () => {
               <ReviewCard
                 key={review.username + index + "0"}
                 {...review}
-                className="w-[300px]"
+                className="w-[400px]"
               />
             ))}
           </Marquee>

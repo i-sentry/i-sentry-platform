@@ -15,7 +15,6 @@ const CaseStudies = () => {
       setLoading(true);
       try {
         const data = await fetchCaseStudies();
-        console.log(data, "case");
 
         setData(data);
       } catch (error) {
@@ -25,7 +24,6 @@ const CaseStudies = () => {
       }
     };
     getData();
-    // console.log(getData, "tema");
   }, []);
   return (
     <>

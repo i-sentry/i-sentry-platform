@@ -69,6 +69,18 @@
     top: 100px;
     left: 500px;
   }
+
+  input:-internal-autofill-selected {
+    background-color: transparent !important;
+  }
+
+  input[type="tel"] {
+    @apply focus:border-none focus:ring-0 focus:ring-offset-0;
+  }
+
+  .PhoneInputCountry .PhoneInputCountrySelectArrow {
+    --PhoneInputCountrySelectArrow-color: #fff !important;
+  }
 }
 
 .transition-enter {

@@ -40,14 +40,6 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
               item?.slug?.current !== params?.slug,
           ),
         );
-
-        console.log(
-          data.filter(
-            (item: { slug: { current: string } }) =>
-              item?.slug?.current !== params?.slug,
-          ),
-          "Hellooooo",
-        );
       } catch (error) {
         console.error("Error fetching core team data:", error);
       } finally {
@@ -56,7 +48,6 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
     };
     getData();
   }, [params?.slug]);
-  console.log(projects, "tema", project);
   return (
     <>
       <section className="py-28">

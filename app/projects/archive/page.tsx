@@ -24,7 +24,7 @@ const ProjectArchive = () => {
       setLoading(true);
       try {
         const data = await fetchCaseStudies();
-        console.log(data, "case");
+  
 
         setData(data);
       } catch (error) {
@@ -35,7 +35,6 @@ const ProjectArchive = () => {
     };
     getData();
   }, []);
-  console.log(data, "tema", loading);
   return (
     <>
       <section className="py-16 md:py-24">

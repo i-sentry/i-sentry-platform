@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import AboutImg from "@/public/images/about-us.png";
+import AboutImg from "@/public/images/isentry-ab.webp";
 import EachElement from "../widgets/list_rendering";
 import { Badge } from "../ui/badge";
 
