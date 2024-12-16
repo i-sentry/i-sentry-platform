@@ -19,12 +19,13 @@ const ProjectArchive = () => {
   const [data, setData] = useState<any>({});
   const [loading, setLoading] = useState<boolean>(false);
 
+  console.log(loading);
+
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
       try {
         const data = await fetchCaseStudies();
-  
 
         setData(data);
       } catch (error) {
