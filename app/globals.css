@@ -81,6 +81,15 @@
   .PhoneInputCountry .PhoneInputCountrySelectArrow {
     --PhoneInputCountrySelectArrow-color: #fff !important;
   }
+
+  .forum .react-tweet-theme {
+    --tweet-body-font-size: 0.875rem;
+    --tweet-body-font-weight: 300;
+  }
+
+  .forum .react-tweet-theme {
+    @apply m-0 max-w-full bg-transparent hover:bg-transparent;
+  }
 }
 
 .transition-enter {

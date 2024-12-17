@@ -1,12 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Marquee from "../ui/marquee";
 import ReviewCard from "./review_card";
 import Placeholder from "@/public/images/placeholder.png";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
 
 const reviews = [
   {
@@ -24,13 +20,13 @@ const reviews = [
   {
     name: "Maurice",
     username: "ReactJs, NextJs",
-    body: "before i got into flutter, mobile app development felt like a huge mountain to climb. i knew basic programming, but translating that into a mobile app was overwhelming. during the mentorship, i learned the fundamentals of flutter and dart, and what really helped was how project-oriented the sessions were. we worked on a complete app from scratch, from designing the ui to connecting it to a backend. my mentor’s guidance helped me understand not only how to code, but how to think through the entire app development process. today, i can proudly say i’ve built apps that are live on the play store.",
+    body: "before i got into flutter, mobile app development felt like a huge mountain to climb. i knew basic programming, but translating that into a mobile app was overwhelming. during the mentorship, i learned the fundamentals of flutter and dart.",
     img: Placeholder,
   },
   {
     name: "Maurice",
     username: "ReactJs, NextJs",
-    body: "my biggest challenge before the mentorship was understanding how to set up continuous integration and delivery pipelines. the hands-on approach made it clear how devops tools fit together in the real world. i now understand how to automate processes and create a scalable infrastructure, which was exactly what i needed to level up.",
+    body: "my biggest challenge before the mentorship was understanding how to set up continuous integration and delivery pipelines. the hands-on approach made it clear how devops tools fit together in the real world. ",
     img: Placeholder,
   },
 ];
@@ -39,44 +35,58 @@ const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const Testimonials = () => {
-  useGSAP(() => {
-    gsap.from(".review-title", {
-      opacity: 0,
-      duration: 2,
-      stagger: {
-        amount: 0.5,
-        from: "start",
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const sectionElement = sectionRef.current;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        const target = entry.target;
+
+        // when 30% enter the viewport
+
+        if (entry.intersectionRatio >= 0.3) {
+          target.classList.add("light");
+          target.setAttribute("data-theme", "light");
+        }
+
+        // when 50% leave the viewport
+        if (!entry.isIntersecting && entry.intersectionRatio <= 0.5) {
+          target.classList.remove("light");
+          target.setAttribute("data-theme", "dark");
+        }
       },
-      ease: "power2.inOut",
-
-      scrollTrigger: ".review-title",
-    });
-
-    gsap.from(".testimonials", {
-      y: 100,
-      backgroundColor: "",
-      duration: 1,
-      stagger: {
-        amount: 0.5,
-        from: "start",
+      {
+        threshold: [0.3, 0.5], // Trigger at 50% entry and 80% exit
       },
-      ease: "power2.inOut",
+    );
 
-      scrollTrigger: ".testimonials",
-    });
+    if (sectionElement) observer.observe(sectionElement);
+
+    return () => {
+      if (sectionElement) observer.unobserve(sectionElement);
+    };
   }, []);
+
   return (
-    <section className="py-16">
+    <section
+      className="group py-16 pb-0 duration-300 ease-linear data-[theme=light]:bg-[#f8f8f8]"
+      data-theme="dark"
+      ref={sectionRef}
+    >
       <div className="wrapper">
         <div className="mb-16 space-y-6 text-center">
-          <h2 className="review-title text-center text-2xl font-semibold text-white md:text-4xl md:leading-tight">
+          <h2 className="review-title text-center text-2xl font-semibold text-white duration-300 ease-linear group-data-[theme=light]:text-primary-900 md:text-4xl md:leading-tight">
             Testimonial
           </h2>
-          <p className="review-title text-sm font-extralight text-[#C2C2C2] md:text-base">
+          <p className="review-title text-sm font-extralight text-[#C2C2C2] duration-300 ease-linear group-data-[theme=light]:text-secondary-500 md:text-base">
             From past mentees
           </p>
         </div>
-
+      </div>
+      <div className="relative pb-16">
         <div className="testimonials relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
           <Marquee pauseOnHover className="[--duration:20s]">
             {firstRow.map((review, index) => (
@@ -105,12 +115,18 @@ const Testimonials = () => {
               />
             ))}
           </Marquee>
-
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-full bg-reviews sm:block"></div>
         </div>
+
+        <div className="group-data-[theme=light]:bg-light pointer-events-none absolute inset-y-0 left-0 hidden w-full scale-x-125 bg-reviews duration-300 sm:block"></div>
       </div>
     </section>
   );
 };
 
 export default Testimonials;
+
+/* 
+linear-gradient(90deg,#030B1B_10%,_rgba(3,_11,_27,_0)_25.4%,_rgba(3,_11,_27,_0)_75.3%,_#030B1B_90.4%)",
+
+
+*/

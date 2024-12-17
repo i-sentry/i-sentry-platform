@@ -7,7 +7,7 @@ import { fetchCaseStudies } from "@/sanity/lib/fetchDatas";
 import { Skeleton } from "../ui/skeleton";
 
 const CaseStudies = () => {
-  const [data, setData] = useState<{ [x: string]: string }>();
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState<boolean>();
 
   useEffect(() => {
