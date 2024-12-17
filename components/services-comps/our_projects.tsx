@@ -8,7 +8,7 @@ import { IProject } from "@/utils";
 import Image from "next/image";
 
 const OurProjects = () => {
-  const [data, setData] = useState<{ [x: string]: string }>();
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState<boolean>();
 
   useEffect(() => {

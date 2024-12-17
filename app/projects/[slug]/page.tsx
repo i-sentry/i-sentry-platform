@@ -20,7 +20,7 @@ type ComponentProps = {
 
 const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
   const [project, setProject] = useState<IProject>();
-  const [projects, setProjects] = useState<IProject>();
+  const [projects, setProjects] = useState<IProject[]>([]);
   const [loading, setLoading] = useState<boolean>();
 
   useEffect(() => {
@@ -77,7 +77,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                     </h2>
                     <div className="flex flex-wrap items-center gap-3">
                       <EachElement
-                        of={project?.services}
+                        of={project?.services as string[]}
                         render={(tag: string) => (
                           <Badge
                             key={tag}
@@ -96,7 +96,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                     </h2>
                     <div className="flex items-center gap-3">
                       <EachElement
-                        of={project?.tools}
+                        of={project?.tools as string[]}
                         render={(tool: string) => (
                           <Badge
                             key={tool}
@@ -152,6 +152,8 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
               {/* OTHER PROJECT IMAGES */}
               <div className="mt-20 flex flex-wrap justify-center gap-6">
                 <EachElement
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  // @ts-ignore
                   of={project?.image}
                   render={(img: { asset: { url: string } }, index: number) => (
                     <Image

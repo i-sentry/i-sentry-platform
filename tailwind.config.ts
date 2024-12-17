@@ -63,6 +63,8 @@ const config: Config = {
           "linear-gradient(180deg, rgba(250, 250, 250, 0.075) 0%, rgba(244, 244, 244, 0.05) 100%)",
         reviews:
           "linear-gradient(90deg, #030B1B 10%, rgba(3, 11, 27, 0) 25.4%, rgba(3, 11, 27, 0) 75.3%, #030B1B 90.4%)",
+        light:
+          "linear-gradient(90deg, #F8F8F8 10%, rgba(3, 11, 27, 0) 25.4%, rgba(3, 11, 27, 0) 75.3%, #F8F8F8 90.4%)",
         footer1:
           "linear-gradient(180deg, rgba(194, 194, 194, 0.02) 64.5%, rgba(194, 194, 194, 0.1) 95.33%)",
         footer2:

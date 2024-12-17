@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from "react";
 import EachElement from "@/components/widgets/list_rendering";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -8,7 +10,7 @@ import { fetchCoreTeam } from "@/sanity/lib/fetchDatas";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const CoreTeam = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState<boolean>();
 
   useEffect(() => {
