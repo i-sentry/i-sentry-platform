@@ -17,7 +17,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl border border-[#FAFAFA]/10 bg-stats p-4",
+        "relative w-64 cursor-pointer overflow-hidden rounded-xl border border-[#FAFAFA]/10 bg-stats p-4 duration-300 ease-linear group-data-[theme=light]:bg-[#EDEDED]",
         className,
       )}
     >
@@ -30,15 +30,15 @@ const ReviewCard = ({
           src={img}
         />
         <div className="flex flex-col">
-          <figcaption className="font-dm-sans text-sm font-normal text-white">
+          <figcaption className="font-dm-sans text-sm font-normal text-white duration-300 ease-linear group-data-[theme=light]:text-primary-800">
             {name}
           </figcaption>
-          <p className="font-dm-sans text-sm font-light text-[#C2C2C2B2]">
+          <p className="font-dm-sans text-sm font-light text-[#C2C2C2B2] duration-300 ease-linear group-data-[theme=light]:text-secondary-600">
             {username}
           </p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm font-light text-[#C2C2C2B2]">
+      <blockquote className="mt-2 text-sm font-light text-[#C2C2C2B2] duration-300 ease-linear group-data-[theme=light]:text-primary-900">
         {body}
       </blockquote>
     </figure>
