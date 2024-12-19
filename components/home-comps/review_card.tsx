@@ -19,7 +19,7 @@ const ReviewCard = ({
       className={cn(
         "relative w-64 cursor-pointer overflow-hidden rounded-xl border border-[#FAFAFA]/10 bg-stats p-4 duration-300 ease-linear group-data-[theme=light]:bg-[#EDEDED]",
         className,
-      )}
+      )} 
     >
       <div className="flex flex-row items-center gap-2">
         <Image
