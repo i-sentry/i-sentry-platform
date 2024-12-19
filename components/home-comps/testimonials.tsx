@@ -28,7 +28,7 @@ const reviews = [
     username: "ReactJs, NextJs",
     body: "my biggest challenge before the mentorship was understanding how to set up continuous integration and delivery pipelines. the hands-on approach made it clear how devops tools fit together in the real world. ",
     img: Placeholder,
-  },
+  }, 
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
