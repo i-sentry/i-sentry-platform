@@ -7,6 +7,17 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import PhoneInputField from "../widgets/phone_input";
+import ContactFormEmail from "@/emails/contact_form";
+import { render } from "@react-email/components";
+// import emailjs from "@emailjs/browser";
+
+export type IContactForm = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  phone: string;
+};
 
 const contactFormData = [
   {
@@ -51,6 +62,8 @@ const schema = yup.object().shape({
 });
 
 const ContactForm = () => {
+  // const form = useRef();
+
   const [isChecked, setIsChecked] = useState(false);
   const {
     handleSubmit,
@@ -64,11 +77,30 @@ const ContactForm = () => {
   });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = async (data: any) => {
+    const ownerEmailHTML = render(<ContactFormEmail {...data} />);
+    const s = await ownerEmailHTML;
+
+    console.log(data, ownerEmailHTML, s, "ownerEmailHTML");
+
+    // emailjs
+    //   .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact_us", {
+    //     publicKey: "YOUR_PUBLIC_KEY",
+    //   })
+    //   .then(
+    //     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    //     (res: any) => {
+    //       console.log("SUCCESS!", res);
+    //     },
+    //     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    //     (err: any) => {
+    //       console.log("FAILED...", err.text);
+    //     },
+    //   );
 
     reset();
   };
+
   return (
     <div className="rounded-xl border border-[#FAFAFA1F] bg-footer2 p-5 md:p-8">
       <form

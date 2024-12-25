@@ -7,14 +7,14 @@ import {
   Hr,
   Html,
   Img,
-  Link,
+  // Link,
   Preview,
   // Section,
   Text,
 } from "@react-email/components";
 import { IContactForm } from "@/components/contact-comps/page";
 
-const InternFormEmail: React.FC<IContactForm> = ({}) => {
+const InternEnrollNotify: React.FC<IContactForm> = ({}) => {
   return (
     <>
       <Html lang="en" dir="ltr">
@@ -33,36 +33,39 @@ const InternFormEmail: React.FC<IContactForm> = ({}) => {
               alt="Koala"
               style={logo}
             />
-            <Text style={paragraph}>Dear [Applicant&apos;s Name]</Text>
+            <Text style={paragraph}>Dear [Admin/Team Name],</Text>
             <Text style={paragraph}>
-              Thank you for applying for the [Applicant&apos;s Track] internship
-              position at ISentry Technologies. We have received your
-              application and will review it shortly.
+              A new internship application has been submitted via the enrollment
+              form. Here are the details:
             </Text>
             <Text style={paragraph}>
-              Our team will contact you if your qualifications match our
-              requirements. In the meantime, feel free to reach out to us at
-              <Link
-                style={{ textDecoration: "underline", color: "#8bb0d5" }}
-                href="https://wa.link/by898v"
-              >
-                +2349122413819
-              </Link>{" "}
-              for any questions.
+              <strong>Name</strong> [Sender&apos;s Full Name]
             </Text>
             <Text style={paragraph}>
-              We appreciate your interest in joining ISentry Technologies and
-              wish you all the best.
+              <strong>Email:</strong> [Sender&apos;s Email Address]
             </Text>
             <Text style={paragraph}>
-              We appreciate your interest and look forward to assisting you.
+              <strong>Phone Number: </strong> [Sender&apos;s Phone Number]
             </Text>
-            <Text style={paragraph}></Text>
+            <Text style={paragraph}>
+              <strong>Country:</strong> [Sender&apos;s Country]
+            </Text>
+            <Text style={paragraph}>
+              <strong>Track:</strong> [Sender&apos;s Track]
+            </Text>
+            <Text style={paragraph}>
+              <strong>How they got information about the internship:</strong>{" "}
+              [Sender&apos;s Message]
+            </Text>
+
+            <Text style={paragraph}>
+              Please review the submission and take appropriate action.
+            </Text>
 
             <Text style={paragraph}>
               Best Regards,
               <br />
-              The ISentry Team
+              [Your Website Name]
             </Text>
             <Hr style={hr} />
             <Text style={footer}>
@@ -75,7 +78,7 @@ const InternFormEmail: React.FC<IContactForm> = ({}) => {
   );
 };
 
-export default InternFormEmail;
+export default InternEnrollNotify;
 
 const main = {
   backgroundColor: "#030b1b",

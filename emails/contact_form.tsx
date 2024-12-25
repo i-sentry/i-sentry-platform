@@ -1,18 +1,20 @@
 import React from "react";
 import {
   Body,
-  Button,
+  // Button,
   Container,
   Head,
   Hr,
   Html,
   Img,
+  Link,
   Preview,
-  Section,
+  // Section,
   Text,
 } from "@react-email/components";
+import { IContactForm } from "@/components/contact-comps/page";
 
-const ContactFormEmail = () => {
+const ContactFormEmail: React.FC<IContactForm> = ({ firstName }) => {
   return (
     <>
       <Html lang="en" dir="ltr">
@@ -31,20 +33,31 @@ const ContactFormEmail = () => {
               alt="Koala"
               style={logo}
             />
-            <Text style={paragraph}>Hi {"userFirstname"},</Text>
+            <Text style={paragraph}>Hi {firstName},</Text>
             <Text style={paragraph}>
-              Welcome to Koala, the sales intelligence platform that helps you
-              uncover qualified leads and close deals faster.
+              Thank you for reaching out to us! We have received your message
+              and will get back to you as soon as possible.
             </Text>
-            <Section style={btnContainer}>
-              <Button style={button} href="https://getkoala.com">
-                Get started
-              </Button>
-            </Section>
+            <Text style={paragraph}>
+              If your inquiry is urgent, please feel free to contact us directly
+              at{" "}
+              <Link
+                style={{ textDecoration: "underline", color: "#8bb0d5" }}
+                href="https://wa.link/by898v"
+              >
+                +2349122413819
+              </Link>
+              .
+            </Text>
+            <Text style={paragraph}>
+              We appreciate your interest and look forward to assisting you.
+            </Text>
+            <Text style={paragraph}></Text>
+
             <Text style={paragraph}>
               Best,
               <br />
-              The Koala team
+              The ISentry Team
             </Text>
             <Hr style={hr} />
             <Text style={footer}>
@@ -77,23 +90,23 @@ const logo = {
 const paragraph = {
   fontSize: "16px",
   lineHeight: "26px",
-  color: "#fff"
-};
-
-const btnContainer = {
-  textAlign: "center" as const,
-};
-
-const button = {
-  backgroundColor: "#5F51E8",
-  borderRadius: "3px",
   color: "#fff",
-  fontSize: "16px",
-  textDecoration: "none",
-  textAlign: "center" as const,
-  display: "block",
-  padding: "12px",
 };
+
+// const btnContainer = {
+//   textAlign: "center" as const,
+// };
+
+// const button = {
+//   backgroundColor: "#5F51E8",
+//   borderRadius: "3px",
+//   color: "#fff",
+//   fontSize: "16px",
+//   textDecoration: "none",
+//   textAlign: "center" as const,
+//   display: "block",
+//   padding: "12px",
+// };
 
 const hr = {
   borderColor: "#cccccc",
