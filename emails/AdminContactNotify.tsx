@@ -14,14 +14,20 @@ import {
 } from "@react-email/components";
 import { IContactForm } from "@/components/contact-comps/page";
 
-const AdminContactNotify: React.FC<IContactForm> = ({}) => {
+const AdminContactNotify: React.FC<IContactForm> = ({
+  firstName,
+  lastName,
+  email,
+  message,
+  phone,
+}) => {
   return (
     <>
       <Html lang="en" dir="ltr">
         <Head />
         <Preview>
-          The sales intelligence platform that helps you uncover qualified
-          leads.
+          You have a new contact form submission. Name: {firstName}. Email:
+          {email}. Please review and follow up.
         </Preview>
 
         <Body style={main}>
@@ -33,22 +39,22 @@ const AdminContactNotify: React.FC<IContactForm> = ({}) => {
               alt="Koala"
               style={logo}
             />
-            <Text style={paragraph}>Dear [Admin/Team Name],</Text>
+            <Text style={paragraph}>Dear ISentry Team,</Text>
             <Text style={paragraph}>
               You have received a new message via the contact form on your
               website. Below are the details:
             </Text>
             <Text style={paragraph}>
-              <strong>Name</strong> [Sender&apos;s Full Name]
+              <strong>Name</strong> {firstName} {lastName}
             </Text>
             <Text style={paragraph}>
-              <strong>Email:</strong> [Sender&apos;s Email Address]
+              <strong>Email:</strong> {email}
             </Text>
             <Text style={paragraph}>
-              <strong>Phone Number: </strong> [Sender&apos;s Phone Number]
+              <strong>Phone Number: </strong> {phone}
             </Text>
             <Text style={paragraph}>
-              <strong>Message:</strong> [Sender&apos;s Message]
+              <strong>Message:</strong> {message}
             </Text>
 
             <Text style={paragraph}>
@@ -58,7 +64,7 @@ const AdminContactNotify: React.FC<IContactForm> = ({}) => {
             <Text style={paragraph}>
               Best Regards,
               <br />
-              [Your Website Name]
+              ISentry Tech Website
             </Text>
             <Hr style={hr} />
             <Text style={footer}>

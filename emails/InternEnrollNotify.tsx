@@ -12,16 +12,33 @@ import {
   // Section,
   Text,
 } from "@react-email/components";
-import { IContactForm } from "@/components/contact-comps/page";
 
-const InternEnrollNotify: React.FC<IContactForm> = ({}) => {
+type IForm = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  phone: string;
+  country: string;
+  track: string;
+};
+
+const InternEnrollNotify: React.FC<IForm> = ({
+  firstName,
+  lastName,
+  email,
+  message,
+  phone,
+  country,
+  track,
+}) => {
   return (
     <>
       <Html lang="en" dir="ltr">
         <Head />
         <Preview>
-          The sales intelligence platform that helps you uncover qualified
-          leads.
+          A new internship application has been submitted. Name: {firstName}{" "}
+          {lastName}. Email: {email}. Review now.
         </Preview>
 
         <Body style={main}>
@@ -33,29 +50,29 @@ const InternEnrollNotify: React.FC<IContactForm> = ({}) => {
               alt="Koala"
               style={logo}
             />
-            <Text style={paragraph}>Dear [Admin/Team Name],</Text>
+            <Text style={paragraph}>Dear ISentry Team,</Text>
             <Text style={paragraph}>
               A new internship application has been submitted via the enrollment
               form. Here are the details:
             </Text>
             <Text style={paragraph}>
-              <strong>Name</strong> [Sender&apos;s Full Name]
+              <strong>Name</strong> {firstName} {lastName}
             </Text>
             <Text style={paragraph}>
-              <strong>Email:</strong> [Sender&apos;s Email Address]
+              <strong>Email:</strong> {email}
             </Text>
             <Text style={paragraph}>
-              <strong>Phone Number: </strong> [Sender&apos;s Phone Number]
+              <strong>Phone Number: </strong> {phone}
             </Text>
             <Text style={paragraph}>
-              <strong>Country:</strong> [Sender&apos;s Country]
+              <strong>Country:</strong> {country}
             </Text>
             <Text style={paragraph}>
-              <strong>Track:</strong> [Sender&apos;s Track]
+              <strong>Track:</strong> {track}
             </Text>
             <Text style={paragraph}>
               <strong>How they got information about the internship:</strong>{" "}
-              [Sender&apos;s Message]
+              {message}
             </Text>
 
             <Text style={paragraph}>
@@ -65,7 +82,7 @@ const InternEnrollNotify: React.FC<IContactForm> = ({}) => {
             <Text style={paragraph}>
               Best Regards,
               <br />
-              [Your Website Name]
+              ISentry Tech Website
             </Text>
             <Hr style={hr} />
             <Text style={footer}>

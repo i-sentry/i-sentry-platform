@@ -20,8 +20,8 @@ const ContactFormEmail: React.FC<IContactForm> = ({ firstName }) => {
       <Html lang="en" dir="ltr">
         <Head />
         <Preview>
-          The sales intelligence platform that helps you uncover qualified
-          leads.
+          Thank you for reaching out to ISentry Technologies! We&apos;ve
+          received your message and will get back to you shortly.
         </Preview>
 
         <Body style={main}>

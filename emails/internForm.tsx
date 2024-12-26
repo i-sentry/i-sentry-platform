@@ -20,8 +20,8 @@ const InternFormEmail: React.FC<IContactForm> = ({}) => {
       <Html lang="en" dir="ltr">
         <Head />
         <Preview>
-          The sales intelligence platform that helps you uncover qualified
-          leads.
+          Thank you for applying to ISentry Technologies! We&apos;ve received
+          your application and will review it soon.
         </Preview>
 
         <Body style={main}>

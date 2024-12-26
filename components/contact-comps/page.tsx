@@ -9,7 +9,8 @@ import { useState } from "react";
 import PhoneInputField from "../widgets/phone_input";
 import ContactFormEmail from "@/emails/contact_form";
 import { render } from "@react-email/components";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
+import { Loader } from "lucide-react";
 
 export type IContactForm = {
   firstName: string;
@@ -62,13 +63,13 @@ const schema = yup.object().shape({
 });
 
 const ContactForm = () => {
-  // const form = useRef();
-
+  const [, setStatus] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const [isChecked, setIsChecked] = useState(false);
   const {
     handleSubmit,
     formState: { errors },
-    reset,
+    // reset,
     register,
     control,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -78,27 +79,38 @@ const ContactForm = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (data: any) => {
-    const ownerEmailHTML = render(<ContactFormEmail {...data} />);
-    const s = await ownerEmailHTML;
+    // const adminEmail = render(<AdminContactNotify {...data} />);
 
-    console.log(data, ownerEmailHTML, s, "ownerEmailHTML");
+    setLoading(true);
+    setStatus("");
+    try {
+      const userEmail = await render(<ContactFormEmail {...data} />);
+      console.log(data, userEmail, "ownerEmailHTML");
 
-    // emailjs
-    //   .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact_us", {
-    //     publicKey: "YOUR_PUBLIC_KEY",
-    //   })
-    //   .then(
-    //     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    //     (res: any) => {
-    //       console.log("SUCCESS!", res);
-    //     },
-    //     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    //     (err: any) => {
-    //       console.log("FAILED...", err.text);
-    //     },
-    //   );
+      await emailjs.send(
+        "service_udyqvvc",
+        "template_wbm4rs5",
+        {
+          to_email: data.email,
+          from_email: "programs@isentrytechnologies.com",
+          // subject: "New Form Submission",
+          html_message: userEmail,
+          name: `${data.firstName} ${data?.lastName}`,
+          phone: data.phone,
+          email: data.email,
+          message: data.message,
+        },
+        "NSO4VhtozM_fxtMXW",
+      );
 
-    reset();
+      setStatus("Form submitted successfully!");
+      //  reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setStatus("Error submitting form. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -221,11 +233,23 @@ const ContactForm = () => {
         </div>
         <Button
           type="submit"
-          disabled={!isChecked}
+          disabled={!isChecked || loading}
           className="group inline-flex h-auto cursor-pointer items-center gap-4 rounded-full bg-grad px-8 py-3.5 font-dm-sans font-light text-white hover:shadow-lg hover:shadow-white/25 disabled:opacity-35"
         >
-          Send message
+          {loading ? (
+            <>
+              <Loader size={20} className="animate-spin" />
+              Sending...
+            </>
+          ) : (
+            "Send message"
+          )}
         </Button>
+        {/* {status && (
+          <p className="mt-4 flex items-center gap-2 text-sm font-light text-primary-200">
+            <Check size={20} /> {status}
+          </p>
+        )} */}
       </form>
     </div>
   );
