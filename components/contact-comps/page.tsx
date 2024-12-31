@@ -5,8 +5,17 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PhoneInputField from "../widgets/phone_input";
+import emailjs from "@emailjs/browser";
+import { Check, Loader, X } from "lucide-react";
+
+export type IContactForm = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+};
 
 const contactFormData = [
   {
@@ -50,7 +59,13 @@ const schema = yup.object().shape({
   // agreeToPolicy: yup.boolean().required("You need to agree to privacy policy"),
 });
 
+// mailsender: mlsn.46c207dc33bd27a645bc59402da1b0caf2ebb297900637784730c4e6f0182d4b
+
 const ContactForm = () => {
+  const [clicked, setClicked] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("");
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [isChecked, setIsChecked] = useState(false);
   const {
     handleSubmit,
@@ -64,11 +79,52 @@ const ContactForm = () => {
   });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = async (data: any) => {
+    setLoading(true);
+    setClicked(true);
+    try {
+      await emailjs.send(
+        "service_udyqvvc",
+        "template_wbm4rs5",
+        {
+          to_email: data.email,
+          from_email: "programs@isentrytechnologies.com",
+          subject: "Thank You for Contacting ISentry Technologies!",
+          name: `${data.firstName} ${data?.lastName}`,
+          phone: data.phone,
+          email: data.email,
+          message: data.message,
+          type: "contact",
+          main: "Thank you for reaching out to us! We have received your message and will get back to you as soon as possible.",
+          end: "We appreciate your interest and look forward to assisting you.",
+        },
+        "NSO4VhtozM_fxtMXW",
+      );
 
-    reset();
+      setIsSuccess(true);
+      reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setIsSuccess(false);
+    } finally {
+      setLoading(false);
+      setClicked(false);
+    }
   };
+
+  useEffect(() => {
+    if (clicked && isSuccess) {
+      setMessage("Form submitted successfully!");
+    } else if (clicked && !isSuccess) {
+      setMessage("Error submitting form. Please try again.");
+    }
+    const timer = setTimeout(() => {
+      setMessage("");
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [clicked, isSuccess]);
+
   return (
     <div className="rounded-xl border border-[#FAFAFA1F] bg-footer2 p-5 md:p-8">
       <form
@@ -189,11 +245,28 @@ const ContactForm = () => {
         </div>
         <Button
           type="submit"
-          disabled={!isChecked}
+          disabled={!isChecked || loading}
           className="group inline-flex h-auto cursor-pointer items-center gap-4 rounded-full bg-grad px-8 py-3.5 font-dm-sans font-light text-white hover:shadow-lg hover:shadow-white/25 disabled:opacity-35"
         >
-          Send message
+          {loading ? (
+            <>
+              <Loader size={20} className="animate-spin" />
+              Sending...
+            </>
+          ) : (
+            "Send message"
+          )}
         </Button>
+        {message && (
+          <p
+            className={cn(
+              "mt-6 flex items-center gap-2 text-sm font-light text-primary-50",
+              isSuccess ? "text-green-500" : "text-red-500",
+            )}
+          >
+            {isSuccess ? <Check size={20} /> : <X size={20} />} {message}
+          </p>
+        )}
       </form>
     </div>
   );

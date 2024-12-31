@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Cone from "@/public/assets/svg/cone-pattern.svg";
 import InternshipForm from "@/components/internship-comps/internship_enrollment_form";
+
 const InternshipEnroll = () => {
   return (
     <>
