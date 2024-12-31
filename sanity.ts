@@ -2,7 +2,7 @@ import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
 export const sanityClient = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "rfvrfj3j",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "pt7qa29o",
   dataset: "production",
   useCdn: true,
   apiVersion: "2023-01-01", // Use the date you created this config as the version

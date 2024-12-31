@@ -12,16 +12,25 @@ import {
   // Section,
   Text,
 } from "@react-email/components";
-import { IContactForm } from "@/components/contact-comps/page";
 
-const InternFormEmail: React.FC<IContactForm> = ({}) => {
+type IContactForm = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  track: string;
+  country: string;
+  phone: string;
+};
+
+const InternFormEmail: React.FC<IContactForm> = ({ firstName, track }) => {
   return (
     <>
       <Html lang="en" dir="ltr">
         <Head />
         <Preview>
-          Thank you for applying to ISentry Technologies! We&apos;ve received
-          your application and will review it soon.
+          Thank you for applying to ISentry Technologies Internship! We&apos;ve
+          received your application and will review it soon.
         </Preview>
 
         <Body style={main}>
@@ -33,9 +42,9 @@ const InternFormEmail: React.FC<IContactForm> = ({}) => {
               alt="Koala"
               style={logo}
             />
-            <Text style={paragraph}>Dear [Applicant&apos;s Name]</Text>
+            <Text style={paragraph}>Dear {firstName}</Text>
             <Text style={paragraph}>
-              Thank you for applying for the [Applicant&apos;s Track] internship
+              Thank you for applying for the {track} internship
               position at ISentry Technologies. We have received your
               application and will review it shortly.
             </Text>
@@ -65,9 +74,9 @@ const InternFormEmail: React.FC<IContactForm> = ({}) => {
               The ISentry Team
             </Text>
             <Hr style={hr} />
-            <Text style={footer}>
+            {/* <Text style={footer}>
               470 Noor Ave STE B #1148, South San Francisco, CA 94080
-            </Text>
+            </Text> */}
           </Container>
         </Body>
       </Html>
@@ -118,7 +127,7 @@ const hr = {
   margin: "20px 0",
 };
 
-const footer = {
-  color: "#8898aa",
-  fontSize: "12px",
-};
+// const footer = {
+//   color: "#8898aa",
+//   fontSize: "12px",
+// };

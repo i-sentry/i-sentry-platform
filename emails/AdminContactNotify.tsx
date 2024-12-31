@@ -19,7 +19,6 @@ const AdminContactNotify: React.FC<IContactForm> = ({
   lastName,
   email,
   message,
-  phone,
 }) => {
   return (
     <>
@@ -51,7 +50,7 @@ const AdminContactNotify: React.FC<IContactForm> = ({
               <strong>Email:</strong> {email}
             </Text>
             <Text style={paragraph}>
-              <strong>Phone Number: </strong> {phone}
+              <strong>Phone Number: </strong>
             </Text>
             <Text style={paragraph}>
               <strong>Message:</strong> {message}
