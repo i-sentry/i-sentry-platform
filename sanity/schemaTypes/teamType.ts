@@ -32,8 +32,13 @@ export const teamType = defineType({
               type: "string",
             }),
             defineField({
-              name: "url",
-              title: "URL",
+              name: "linkedin",
+              title: "Linkedin URL",
+              type: "url",
+            }),
+            defineField({
+              name: "twitter",
+              title: "Twitter URL",
               type: "url",
             }),
           ],
