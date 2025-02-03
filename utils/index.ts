@@ -2,10 +2,9 @@ import PorkerHut from "@/public/assets/partners/porkerhut.svg";
 import TTfcx from "@/public/assets/partners/ttfcx.svg";
 import Dataphyte from "@/public/assets/partners/Dataphyte.svg";
 import Ri from "@/public/assets/partners/ri-softwares.svg";
-
-// import { StaticImageData } from "next/image";
-// import PorkerHutWeb from "@/public/images/case-studies/porkerhut.png";
-// import Bankify from "@/public/images/case-studies/bankify.png";
+import { StaticImageData } from "next/image";
+import PorkerHutWeb from "@/public/images/case-studies/porkerhut.png";
+import Bankify from "@/public/images/case-studies/bankify.png";
 
 export type LinkProps = {
   name: string;
@@ -142,51 +141,50 @@ export const legal: LinkProps[] = [
 ];
 
 export type IProject = {
+  id: string;
+  title: string;
+  isLunched: boolean;
+  tags: string[];
+  image: StaticImageData;
+  slug: string;
   tools: string[];
   client: string;
   url: string;
+  industry: string;
   descriptions: string[];
-  id: string;
-  slug: {
-    current: string;
-    _type: string;
-  };
-  services: string[];
-  image: {
-    asset: {
-      url: string;
-    };
-  }[];
-  title: string;
-  isLaunched: boolean;
 };
 
-// export const caseStudies: IProject[] = [
-//   {
-//     id: "0",
-//     title: "PorkerHut Website",
-//     isLunched: false,
-//     tags: ["Web Design", "Web Development", "Marketing", "Creative Direction"],
-//     image: PorkerHutWeb,
-//     slug: "porkerhut",
-//     tools: ["MongoDB", "ReactJS", "AWS"],
-//     client: "Web Design",
-//     url: "/",
-//     industry: "Ecommerce, Agriculture",
-//   },
-//   {
-//     id: "1",
-//     title: "Bankify Fintech Website",
-//     isLunched: true,
-//     tags: ["Web Design", "Web Development", "Marketing", "Creative Direction"],
-//     image: Bankify,
-//     slug: "bankify",
-//     tools: ["MongoDB", "ReactJS"],
-//     client: "Web Design",
-//     url: "/",
-//     industry: "Fintech",
-//   },
-// ];
+export const caseStudies: IProject[] = [
+  {
+    id: "0",
+    title: "PorkerHut Website",
+    isLunched: false,
+    tags: ["Web Design", "Web Development", "Marketing", "Creative Direction"],
+    image: PorkerHutWeb,
+    slug: "porkerhut",
+    tools: ["MongoDB", "ReactJS", "AWS"],
+    client: "Web Design",
+    url: "https://porker-hut-frontend-client.vercel.app/",
+    industry: "Ecommerce, Agriculture",
+    descriptions: [
+      "PorkerHut is a platform that connects farmers to buyers",
+      "The platform is designed to help farmers sell their pigs",
+    ],
+  },
+  {
+    id: "1",
+    title: "The Cake App",
+    isLunched: true,
+    tags: ["Web Design", "Web Development", "Marketing", "Creative Direction"],
+    image: Bankify,
+    slug: "the-cake-app",
+    tools: ["MongoDB", "NextJS", "Vercel"],
+    client: "Web Design",
+    url: "https://goldies-frontend-v3.vercel.app/",
+    industry: "Ecommerce, Bakery",
+    descriptions: ["The Cake App is an ecommerce platform for selling cakes"],
+  },
+];
 
 export type StatProps = {
   percentage: number;

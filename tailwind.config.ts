@@ -91,8 +91,8 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        inter: "var(--font-inter)",
-        "dm-sans": "var(--font-dm-sans)",
+        inter: `"Inter", serif;`,
+        "dm-sans": `"DM Sans", sans-serif;`,
       },
       keyframes: {
         marquee: {

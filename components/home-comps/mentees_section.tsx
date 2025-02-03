@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-// import Placeholder from "@/public/images/placeholder.png";
 import MenteeCard from "./mentee_card";
 import Ariyo from "@/public/assets/mentees/Ariyo_O.B.png";
 import Emem from "@/public/assets/mentees/Emem-Peace.jpg";
@@ -12,31 +10,9 @@ import Marquee from "../ui/marquee";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { fetchInterns } from "@/sanity/lib/fetchDatas";
 gsap.registerPlugin(ScrollTrigger);
 
 const MenteeSection = () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [data, setData] = useState<any[]>();
-
-  console.log(data, "interns");
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const fetchedInterns = await fetchInterns();
-        setData(fetchedInterns);
-      } catch (err) {
-        // setError("Error loading data");
-        console.error(err);
-      } finally {
-        // setLoading(false);
-      }
-    };
-
-    getData();
-  }, []);
-
   useGSAP(() => {
     gsap.from(".mentee", {
       x: 190,

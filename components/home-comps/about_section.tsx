@@ -4,35 +4,12 @@ import Consult3 from "@/public/images/consult-3.jpeg";
 import Cloud from "@/public/images/cloud-solutions.jpeg";
 import { StaticImageData } from "next/image";
 import AboutCard from "./about_card";
-import { fetchAbout } from "@/sanity/lib/fetchDatas";
-import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [data, setData] = useState<any>();
-
-  console.log(data, "about list box");
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const fetchedAbout = await fetchAbout();
-        setData(fetchedAbout);
-      } catch (err) {
-        // setError("Error loading data");
-        console.error(err);
-      } finally {
-        // setLoading(false);
-      }
-    };
-
-    getData();
-  }, []);
-
   useGSAP(() => {
     const card1 = [".aboutCard-1", ".aboutCard-2"];
     const card2 = [".aboutCard-3", ".aboutCard-4"];

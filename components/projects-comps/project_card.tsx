@@ -18,15 +18,15 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
   return (
     <SmartLinkButton
       variant="bright"
-      className="bg-transparent text-left hover:shadow-none"
+      className="bg-transparent p-0 text-left hover:shadow-none"
       isLink
-      url={`/projects/${data?.slug?.current}`}
+      url={`/projects/${data?.slug}`}
       buttonText={
         <div className="block rounded-[16px] bg-box p-4 lg:p-6">
           <figure className="relative h-[300px] overflow-hidden rounded-[8px] md:h-[350px] xl:h-[400px]">
             <div className="relative z-10 p-6">
               {/* COMING SOON BADGE */}
-              {!data?.isLaunched && (
+              {!data?.isLunched && (
                 <Badge className="mb-6 inline-block rounded-full border border-[#FAFAFA1F] bg-secondary-700 px-6 py-2 font-dm-sans font-light text-white hover:bg-secondary-700">
                   Coming Soon
                 </Badge>
@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
               {/* TAGS */}
               <div className="flex flex-wrap gap-3">
                 <EachElement
-                  of={data?.services}
+                  of={data?.tags}
                   render={(tag: string, index: number) => {
                     if (isMobile) {
                       if (index === 0) {
@@ -73,7 +73,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
             </div>
             <div className="absolute left-0 top-0 z-[2] h-full w-full bg-primary-900/10" />
             <Image
-              src={data?.image[0]?.asset?.url}
+              src={data?.image}
               alt={data?.title}
               width="1000"
               height="1000"
