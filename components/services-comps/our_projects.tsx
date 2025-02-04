@@ -13,7 +13,7 @@ const OurProjects = () => {
           Explore our projects
         </h2>
 
-        <div className="w-full overflow-y-hidden no-scrollbar">
+        <div className="flex w-full gap-6 overflow-y-hidden no-scrollbar">
           <EachElement
             of={caseStudies}
             render={(data: IProject, index: number) => {

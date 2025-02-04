@@ -7,7 +7,7 @@ import { navMenu } from "@/utils";
 import MobileSideMenu from "./mobile-sidemenu";
 import SmartButton from "./custom_button";
 import { Menu, X } from "lucide-react";
-import TransitionLink from "./widgets/transition_links";
+import Link from "next/link";
 import Logo from "@/public/images/isentry.svg";
 import Image from "next/image";
 
@@ -34,8 +34,6 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
     };
   }, [setIsSticky]);
 
- 
-
   return (
     <>
       <nav
@@ -46,19 +44,19 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
       >
         <div className="wrapper flex items-center justify-between">
           {/* LOGO */}
-          <TransitionLink href="/" className="text-white">
+          <Link href="/" className="text-white">
             <Image
               src={Logo}
               alt="ISentry Technologies"
               className="w-[120px] md:w-[150px]"
             />
-          </TransitionLink>
+          </Link>
 
           {/* NAV LINKS */}
           <div className="hidden lg:flex lg:items-center lg:gap-4 xl:gap-6">
             {navMenu.map(
               (link: { name: string; url: string }, index: number) => (
-                <TransitionLink
+                <Link
                   href={link.url}
                   key={index}
                   className={cn(
@@ -76,7 +74,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
                   >
                     {link.name}
                   </span>
-                </TransitionLink>
+                </Link>
               ),
             )}
           </div>

@@ -1,5 +1,5 @@
 "use client";
-import TransitionLink from "@/components/widgets/transition_links";
+import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import React from "react";
 import {
@@ -20,7 +20,7 @@ const ProjectArchive = () => {
       <section className="py-16 md:py-24">
         <div className="wrapper">
           <div>
-            <TransitionLink
+            <Link
               href="/projects"
               className="inline-flex items-center gap-2 text-secondary-300"
             >
@@ -28,7 +28,7 @@ const ProjectArchive = () => {
                 <ArrowLeft size={20} />
               </span>
               Projects
-            </TransitionLink>
+            </Link>
             <h1 className="font-dm-sans text-2xl font-semibold text-white sm:text-3xl">
               All Projects
             </h1>
@@ -99,7 +99,7 @@ const ProjectArchive = () => {
                           </div>
                         </TableCell>
                         <TableCell className="align-top text-sm text-primary-50">
-                          <TransitionLink
+                          <Link
                             href={`/projects/${item.slug}`}
                             className="inline-flex items-center gap-2 text-secondary-300"
                           >
@@ -107,7 +107,7 @@ const ProjectArchive = () => {
                             <span>
                               <ArrowUpRight size={20} />
                             </span>
-                          </TransitionLink>
+                          </Link>
                         </TableCell>
                       </TableRow>
                     )}

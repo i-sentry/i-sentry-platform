@@ -1,7 +1,7 @@
 "use client";
-import Banner from "@/components/custom-software-comps/banner";
-import Features from "@/components/custom-software-comps/Features";
-import Offerings from "@/components/custom-software-comps/Offerings";
+// import Banner from "@/components/custom-software-comps/banner";
+// import Features from "@/components/custom-software-comps/Features";
+// import Offerings from "@/components/custom-software-comps/Offerings";
 import { usePathname } from "next/navigation";
 import React from "react";
 import NotFound from "../not-found";
@@ -16,7 +16,7 @@ const solutions = [
 const Service = () => {
   const pathname = usePathname();
   const solution = pathname.replace("/", "") as keyof typeof servicesContent;
-  const { title, description, image, process } = servicesContent[solution];
+  // const { title, description, image, process } = servicesContent[solution];
 
   console.log(pathname, "SERVICE");
   if (servicesContent[solution]) {
@@ -28,9 +28,9 @@ const Service = () => {
   if (solutions.includes(pathname)) {
     return (
       <>
-        <Banner title={title} description={description} image={image} />
+        {/* <Banner title={title} description={description} image={image} />
         <Offerings process={process} />
-        <Features />
+        <Features /> */}
       </>
     );
   } else {

@@ -18,8 +18,8 @@ type SmartLinkButtonProps = {
   target?: string;
 };
 
-const sleep = (ms: number): Promise<void> =>
-  new Promise((resolve) => setTimeout(resolve, ms));
+// const sleep = (ms: number): Promise<void> =>
+//   new Promise((resolve) => setTimeout(resolve, ms));
 
 const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
   buttonText,
@@ -42,12 +42,12 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
     if (onClick) onClick();
 
     if (isLink && url) {
-      const body = document.querySelector("body");
-      body?.classList.add("page-transition");
-      await sleep(500);
+      // const body = document.querySelector("body");
+      // body?.classList.add("page-transition");
+      // await sleep(500);
       router.push(url);
-      await sleep(500);
-      body?.classList.remove("page-transition");
+      // await sleep(500);
+      // body?.classList.remove("page-transition");
     }
   };
 

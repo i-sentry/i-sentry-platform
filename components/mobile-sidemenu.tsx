@@ -3,7 +3,7 @@ import { legal, navMenu, programs } from "@/utils";
 import { usePathname } from "next/navigation";
 import React from "react";
 import FooterLink from "./footer_links";
-import TransitionLink from "./widgets/transition_links";
+import Link from "next/link";
 
 const MobileSideMenu = ({
   open,
@@ -25,7 +25,7 @@ const MobileSideMenu = ({
       <div className="absolute right-0 top-0 z-10 h-full w-full overflow-hidden bg-primary-900 pt-6">
         <div className="relative z-10 mt-16 flex flex-col justify-center">
           {navMenu.map((link: { name: string; url: string }, index: number) => (
-            <TransitionLink
+            <Link
               href={link.url}
               key={index}
               onClick={() => setOpen(false)}
@@ -35,7 +35,7 @@ const MobileSideMenu = ({
               )}
             >
               {link.name}
-            </TransitionLink>
+            </Link>
           ))}
         </div>
 

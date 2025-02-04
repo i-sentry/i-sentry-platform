@@ -1,19 +1,19 @@
-import Link, { LinkProps } from "next/link";
+// import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import React, { ReactNode } from "react";
 
-interface ILink extends LinkProps {
-  children: ReactNode;
-  href: string;
-  className?: string;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
-}
+// interface ILink extends LinkProps {
+//   children: ReactNode;
+//   href: string;
+//   className?: string;
+//   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+// }
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const TransitionLink: React.FC<ILink> = ({
+const Link: React.FC<ILink> = ({
   href,
   children,
   className,
@@ -55,4 +55,4 @@ const TransitionLink: React.FC<ILink> = ({
   );
 };
 
-export default TransitionLink;
+export default Link;
