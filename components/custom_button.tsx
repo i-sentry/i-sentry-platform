@@ -16,6 +16,7 @@ type SmartLinkButtonProps = {
   url?: string;
   isLink?: boolean;
   target?: string;
+  ariaLabel?: string;
 };
 
 // const sleep = (ms: number): Promise<void> =>

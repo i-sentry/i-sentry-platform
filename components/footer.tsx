@@ -83,12 +83,14 @@ const Footer = () => {
 
               <div className="inline-flex items-center gap-5">
                 <Link
+                  aria-label="Twitter"
                   href="https://x.com/ISentryTech/"
                   className="cursor-pointer text-[#98A2B3]"
                 >
                   <FaXTwitter size={20} />
                 </Link>
                 <Link
+                  aria-label="LinkedIn"
                   href="https://www.linkedin.com/company/isentry-technologies/"
                   className="cursor-pointer text-[#98A2B3]"
                 >
@@ -101,12 +103,14 @@ const Footer = () => {
                   <FaFacebook size={20} />
                 </Link> */}
                 <Link
+                  aria-label="Github"
                   href="https://github.com/i-sentry"
                   className="cursor-pointer text-[#98A2B3]"
                 >
                   <FaGithub size={20} />
                 </Link>
                 <Link
+                  aria-label="Medium"
                   href="https://medium.com/@isentrytechnologies"
                   className="cursor-pointer text-[#98A2B3]"
                 >

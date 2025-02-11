@@ -74,6 +74,7 @@ const StatCard: React.FC<ComponentProps> = ({
 
       <SmartButton
         variant="dark"
+        ariaLabel="Learn more about our services"
         buttonText="Learn more"
         className="mt-4 border-[#F4F4F40D] text-white backdrop-blur-none duration-300 ease-linear hover:shadow-none group-data-[theme=light]:bg-secondary-500"
         showAnimatedIcon
