@@ -60,11 +60,11 @@ export const solutions: LinkProps[] = [
     url: "/expert-guidance-and-strategy",
     // comingSoon: true,
   },
-  {
-    name: "Custom Enterprise Software",
-    url: "/custom-enterprise-software",
-    // comingSoon: true,
-  },
+  // {
+  //   name: "Custom Enterprise Software",
+  //   url: "/custom-enterprise-software",
+  //   // comingSoon: true,
+  // },
   {
     name: "Cloud Solutions",
     url: "/cloud-solutions",

@@ -34,7 +34,7 @@ const Footer = () => {
     <>
       <footer className="bg-footer1">
         <section className="border-t border-[#C2C2C21A] px-4 pt-10 backdrop-blur-md">
-          <div className="mx-auto max-w-7xl">
+          <div className="wrapper mx-auto">
             <div className="mb-16 lg:grid lg:grid-cols-2 lg:items-start">
               <div className="">
                 <h3 className="mb-3 font-dm-sans text-[2rem] font-semibold leading-10 text-[#FAFAFA] sm:text-4xl md:text-5xl md:font-bold md:leading-tight lg:text-6xl lg:leading-tight">

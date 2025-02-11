@@ -1,13 +1,13 @@
-// import Link, { LinkProps } from "next/link";
+import { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import React, { ReactNode } from "react";
 
-// interface ILink extends LinkProps {
-//   children: ReactNode;
-//   href: string;
-//   className?: string;
-//   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
-// }
+interface ILink extends LinkProps {
+  children: ReactNode;
+  href: string;
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+}
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));

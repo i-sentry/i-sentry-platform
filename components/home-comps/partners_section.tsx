@@ -32,7 +32,7 @@ const Partners = ({ className }: { className?: string }) => {
         className,
       )}
     >
-      <div className="absolute left-0 top-0 z-10 h-full w-full bg-partners"></div>
+      <div className="absolute left-0 top-0 z-20 h-full w-full bg-partners"></div>
       <div className="wrapper">
         <Marquee
           pauseOnHover

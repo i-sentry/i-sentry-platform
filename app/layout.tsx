@@ -3,6 +3,8 @@ import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner";
+
 // import { gsap } from "gsap/dist/gsap";
 // import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 // import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
@@ -47,6 +49,22 @@ export default function RootLayout({
       </head>
 
       <body className="overflow-x-hidden font-dm-sans">
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            // unstyled: true,
+            classNames: {
+              error:
+                "bg-red-700 text-white rounded-xl border border-primary-100/20",
+              success:
+                "bg-green-700 text-white rounded-xl border border-primary-100/20",
+              // title: "text-secondary-300",
+              warning: "text-yellow-400",
+              info: "bg-blue-400",
+              // toast: "bg-primary-900 rounded-xl border border-primary-100/20",
+            },
+          }}
+        />
         {/* NAVBAR */}
         <Navbar />
         <main className="w-full overflow-x-clip contain-paint">{children}</main>
