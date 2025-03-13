@@ -28,7 +28,7 @@ const ContactUs = () => {
                 to learn more about our offerings, our team is here to help.
               </p>
               <p className="pt-3 text-sm font-light leading-normal text-primary-100 md:text-base">
-                Already a customer? Reach out to your dedicated{" "}
+                Reach out to your dedicated{" "}
                 <Link
                   href="https://calendly.com/isentrytechnologies"
                   className="text-secondary-200 underline"

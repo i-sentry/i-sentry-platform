@@ -32,6 +32,7 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
   url,
   isLink = false,
   target,
+  ariaLabel,
 }) => {
   const router = useRouter();
 
@@ -69,6 +70,7 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
         className={commonStyles}
         passHref
         target={target}
+        aria-label={ariaLabel}
       >
         <>
           {buttonText}
@@ -91,7 +93,12 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
 
   // Render as Button
   return (
-    <Button onClick={handleTransition} type={type} className={commonStyles}>
+    <Button
+      onClick={handleTransition}
+      aria-label={ariaLabel}
+      type={type}
+      className={commonStyles}
+    >
       <>
         {buttonText}
         {showAnimatedIcon && (

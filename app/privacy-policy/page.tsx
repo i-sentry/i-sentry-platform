@@ -1,4 +1,11 @@
+import Link from "next/link";
 import React from "react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaMedium,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 const PrivacyPolicy = () => {
   const updatedAt = new Date("2024 01 01");
@@ -163,7 +170,7 @@ const PrivacyPolicy = () => {
         />
       </svg>
       <div className="wrapper max-w-5xl">
-        <h1 className="mb-16 text-center font-inter text-xl text-secondary-200">
+        <h1 className="mb-16 text-center font-inter text-2xl text-secondary-200">
           Privacy Policy
         </h1>
 
@@ -403,10 +410,63 @@ const PrivacyPolicy = () => {
             </p>
 
             <ul className="list-disc space-y-3 pl-4 text-grey-200">
-              <li>I-Sentry Technologies</li>
-              <li>Contact Information</li>
-              <li>Email Address</li>
-              <li>Phone number</li>
+              <li>
+                Email Address:{" "}
+                <Link
+                  className="text-secondary-200"
+                  href="mailto:info@isentrytechnologies.com"
+                >
+                  info@isentrytechnologies.com
+                </Link>
+              </li>
+              <li>
+                Phone number:{" "}
+                <Link
+                  href="tel:+234 912 241 3819"
+                  className="text-secondary-200"
+                >
+                  +234 912 241 3819
+                </Link>
+              </li>
+              <li>
+                Social Medias:{" "}
+                <span className="inline-flex translate-y-0.5 gap-3">
+                  <Link
+                    aria-label="Twitter"
+                    href="https://x.com/ISentryTech/"
+                    className="cursor-pointer text-secondary-200"
+                  >
+                    <FaXTwitter size={20} />
+                  </Link>
+                  <Link
+                    aria-label="LinkedIn"
+                    href="https://www.linkedin.com/company/isentry-technologies/"
+                    className="cursor-pointer text-secondary-200"
+                  >
+                    <FaLinkedin size={20} />
+                  </Link>
+                  {/* <Link
+                  href="https://facebook.com/"
+                  className="cursor-pointer text-secondary-200"
+                >
+                  <FaFacebook size={20} />
+                </Link> */}
+                  <Link
+                    aria-label="Github"
+                    href="https://github.com/i-sentry"
+                    className="cursor-pointer text-secondary-200"
+                  >
+                    <FaGithub size={20} />
+                  </Link>
+                  <Link
+                    aria-label="Medium"
+                    href="https://medium.com/@isentrytechnologies"
+                    className="cursor-pointer text-secondary-200"
+                  >
+                    <FaMedium size={20} />
+                  </Link>
+                </span>
+              </li>
             </ul>
           </div>
         </article>

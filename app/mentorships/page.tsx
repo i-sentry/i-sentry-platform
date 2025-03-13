@@ -1,13 +1,13 @@
 import SmartButton from "@/components/custom_button";
 import PriceCard from "@/components/mentorship-comps/price_card";
 import React from "react";
-import InternImage from "@/public/images/internship.jpeg";
-import Image from "next/image";
+// import InternImage from "@/public/images/internship.jpeg";
+// import Image from "next/image";
 import BannerIllustration from "@/components/BannerIllustration";
-import EachElement from "@/components/widgets/list_rendering";
-import SolutionCard from "@/components/mentorship-comps/solution_card";
-import { Cloud, Code2, MessageCircle } from "lucide-react";
-import { SolutionProp } from "@/utils";
+// import EachElement from "@/components/widgets/list_rendering";
+// import SolutionCard from "@/components/mentorship-comps/solution_card";
+// import { Cloud, Code2, MessageCircle } from "lucide-react";
+// import { SolutionProp } from "@/utils";
 
 export type PriceListProp = {
   package: string;
@@ -162,7 +162,7 @@ const Mentorships = () => {
       </section>
 
       {/* SOLUTIONS */}
-      <section className="wrapper py-16">
+      {/* <section className="wrapper py-16">
         <div className="md:w-1/2">
           <h4 className="text-sm text-secondary-200">Solutions</h4>
           <h3 className="my-4 text-2xl font-medium leading-[1.3] text-white">
@@ -191,46 +191,46 @@ const Mentorships = () => {
             className="self-stretch rounded-xl object-cover object-[right_center]"
           />
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
 
 export default Mentorships;
 
-const solutions: SolutionProp[] = [
-  {
-    icon: <Code2 />,
-    title: "Custom Software Development",
-    description:
-      "From ideation to deployment, we craft bespoke software solutions that seamlessly integrate with your existing systems. With a focus on scalability, security, and flexibility, we help your business grow and adapt to ever-changing needs.",
-    keyFeatures: [
-      "End-to-end development tailored to your goals.",
-      "Scalable solutions to future-proof your business.",
-      "Expert integration with existing platforms.",
-    ],
-  },
+// const solutions: SolutionProp[] = [
+//   {
+//     icon: <Code2 />,
+//     title: "Custom Software Development",
+//     description:
+//       "From ideation to deployment, we craft bespoke software solutions that seamlessly integrate with your existing systems. With a focus on scalability, security, and flexibility, we help your business grow and adapt to ever-changing needs.",
+//     keyFeatures: [
+//       "End-to-end development tailored to your goals.",
+//       "Scalable solutions to future-proof your business.",
+//       "Expert integration with existing platforms.",
+//     ],
+//   },
 
-  {
-    icon: <Cloud />,
-    title: "Cloud Solutions",
-    description:
-      "Leverage the power of the cloud to enhance efficiency and reduce operational costs. Whether it's storage, computing power, or SaaS applications, our solutions are designed to align with your business objectives and maximize performance.",
-    keyFeatures: [
-      "Secure and scalable cloud infrastructure.",
-      "Cost-efficient solutions tailored to your needs.",
-      "Expertise in leading cloud platforms like AWS, Azure, and Google Cloud.",
-    ],
-  },
-  {
-    icon: <MessageCircle />,
-    title: "Tech Consultancy",
-    description:
-      "Empower your business with strategic technology planning and execution. From initial consultation to implementation, we ensure that your digital transformation aligns perfectly with your business goals, giving you a competitive edge.",
-    keyFeatures: [
-      "Comprehensive digital roadmaps for growth.",
-      "Expert guidance in emerging technologies.",
-      "Continuous support for seamless implementation.",
-    ],
-  },
-];
+//   {
+//     icon: <Cloud />,
+//     title: "Cloud Solutions",
+//     description:
+//       "Leverage the power of the cloud to enhance efficiency and reduce operational costs. Whether it's storage, computing power, or SaaS applications, our solutions are designed to align with your business objectives and maximize performance.",
+//     keyFeatures: [
+//       "Secure and scalable cloud infrastructure.",
+//       "Cost-efficient solutions tailored to your needs.",
+//       "Expertise in leading cloud platforms like AWS, Azure, and Google Cloud.",
+//     ],
+//   },
+//   {
+//     icon: <MessageCircle />,
+//     title: "Tech Consultancy",
+//     description:
+//       "Empower your business with strategic technology planning and execution. From initial consultation to implementation, we ensure that your digital transformation aligns perfectly with your business goals, giving you a competitive edge.",
+//     keyFeatures: [
+//       "Comprehensive digital roadmaps for growth.",
+//       "Expert guidance in emerging technologies.",
+//       "Continuous support for seamless implementation.",
+//     ],
+//   },
+// ];
