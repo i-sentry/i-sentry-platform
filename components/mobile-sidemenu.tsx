@@ -40,7 +40,7 @@ const MobileSideMenu = ({
         </div>
 
         {/* CTA BUTTONs */}
-        <div className="mt-10 flex items-start justify-start gap-10 border-t border-secondary-300/10 px-4 pt-8 sm:grid sm:grid-cols-2">
+        <div className="mt-10 flex flex-wrap items-start justify-start gap-10 border-t border-secondary-300/10 px-4 pt-8 sm:grid sm:grid-cols-2">
           <FooterLink title="Programs" links={programs} />
           <FooterLink title="Legals" links={legal} />
         </div>

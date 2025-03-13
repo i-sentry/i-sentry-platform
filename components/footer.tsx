@@ -49,11 +49,11 @@ const Footer = () => {
                 </p>
               </div>
 
-              <div className="mt-6 inline-flex flex-wrap items-center gap-4 justify-self-end lg:mt-0">
+              <div className="mt-6 inline-flex items-center gap-4 justify-self-end sm:flex-wrap lg:mt-0">
                 <SmartButton
                   variant="dark"
                   buttonText="Talk to our team"
-                  className="border-[#F4F4F40D] backdrop-blur-none"
+                  className="border-[#F4F4F40D] px-5 backdrop-blur-none"
                   url="/contact"
                   isLink
                 />
@@ -61,6 +61,7 @@ const Footer = () => {
                   variant="bright"
                   buttonText="Join our Program"
                   url="/mentorships"
+                  className="px-5"
                   isLink
                 />
               </div>

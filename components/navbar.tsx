@@ -85,7 +85,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
               <SmartButton
                 variant="bright"
                 buttonText="Join our Program"
-                className="px-8 py-3.5 text-sm sm:text-base"
+                className="text-sm sm:text-base"
                 url="/mentorships"
                 isLink
               />
