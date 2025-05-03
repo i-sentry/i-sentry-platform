@@ -1,8 +1,10 @@
 import React from "react";
+import BannerIllustration from "../BannerIllustration";
 
 const ServiceBanner = () => {
   return (
     <section className="pb-20 pt-28 lg:pt-40">
+      <BannerIllustration />
       <div className="wrapper">
         <div className="text-center md:mx-auto md:max-w-xl">
           <h4 className="text-sm text-secondary-200">Services</h4>

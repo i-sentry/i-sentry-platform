@@ -51,7 +51,7 @@ const Career = () => {
       <div className="wrapper">
         <div className="career mb-16 inline-flex items-center gap-4">
           <h2 className="font-dm-sans font-medium text-white md:text-2xl">
-            Career homepage
+            Careers homepage
           </h2>
           <span className="flex h-6 w-6 items-center justify-center bg-[linear-gradient(90deg,_#DBE5F0_0%,_#A0BBD6_100%)] text-[#0C111D]">
             <ChevronRight />
@@ -64,9 +64,9 @@ const Career = () => {
               <h4 className="font-dm-sans text-sm font-light text-[#EAECF0] md:text-base">
                 Find a job
               </h4>
-              <div className="link font-dm-sans text-base font-normal text-white md:text-lg">
+              <Link href="/careers" className="link font-dm-sans text-base font-normal text-white md:text-lg">
                 Search for jobs
-              </div>
+              </Link>
             </div>
 
             <div className="space-y-2">

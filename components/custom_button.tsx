@@ -54,7 +54,7 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
   };
 
   const commonStyles = cn(
-    "group h-auto cursor-pointer inline-flex items-center gap-4 rounded-full px-5 sm:px-8 py-3.5 font-dm-sans font-light text-white hover:shadow-lg hover:shadow-white/25",
+    "group h-auto cursor-pointer duration-300 inline-flex items-center gap-4 rounded-full px-5 sm:px-8 py-3.5 font-dm-sans font-light text-white hover:shadow-lg hover:shadow-[#ffffff52]",
     variant === "bright"
       ? "bg-grad"
       : "border border-[#023B74]/20 bg-grad-alt backdrop-blur-[50px]",
