@@ -4,6 +4,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { caseStudies, IProject } from "@/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 const OurProjects = () => {
   return (
@@ -32,9 +33,12 @@ const OurProjects = () => {
                     className="absolute top-0 h-full w-full rounded-3xl object-cover object-center"
                   />
                   <div className="absolute bottom-0 left-0 z-10 flex h-max w-full flex-col justify-end bg-primary-900/50 p-6 backdrop-blur-md">
-                    <h3 className="mb-1 text-lg font-normal text-white">
+                    <Link
+                      href={`/project/${data.slug}`}
+                      className="mb-1 text-lg font-normal text-white"
+                    >
                       {data?.title}
-                    </h3>
+                    </Link>
                     <p className="text-sm text-primary-50">
                       {data?.tools?.join(", ")}
                     </p>
