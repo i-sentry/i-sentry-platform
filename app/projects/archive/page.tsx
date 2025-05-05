@@ -1,7 +1,7 @@
 "use client";
-import TransitionLink from "@/components/widgets/transition_links";
+import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Table,
   TableBody,
@@ -12,36 +12,15 @@ import {
 } from "@/components/ui/table";
 import EachElement from "@/components/widgets/list_rendering";
 import { Badge } from "@/components/ui/badge";
-import { fetchCaseStudies } from "@/sanity/lib/fetchDatas";
+import { caseStudies, IProject } from "@/utils";
 
 const ProjectArchive = () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [data, setData] = useState<any>({});
-  const [loading, setLoading] = useState<boolean>(false);
-
-  console.log(loading);
-
-  useEffect(() => {
-    const getData = async () => {
-      setLoading(true);
-      try {
-        const data = await fetchCaseStudies();
-
-        setData(data);
-      } catch (error) {
-        console.error("Error fetching core team data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getData();
-  }, []);
   return (
     <>
       <section className="py-16 md:py-24">
         <div className="wrapper">
           <div>
-            <TransitionLink
+            <Link
               href="/projects"
               className="inline-flex items-center gap-2 text-secondary-300"
             >
@@ -49,14 +28,14 @@ const ProjectArchive = () => {
                 <ArrowLeft size={20} />
               </span>
               Projects
-            </TransitionLink>
+            </Link>
             <h1 className="font-dm-sans text-2xl font-semibold text-white sm:text-3xl">
               All Projects
             </h1>
           </div>
 
           <div className="mt-12">
-            {data?.length >= 1 && (
+            {caseStudies?.length >= 1 && (
               <Table>
                 <TableHeader className="[&_tr]:border-primary-50/10">
                   <TableRow className="hover:bg-transparent">
@@ -80,16 +59,8 @@ const ProjectArchive = () => {
                 <TableBody className="[&_tr>td]:py-4 [&_tr]:border-primary-50/10">
                   {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                   <EachElement
-                    of={data}
-                    render={(
-                      item: {
-                        title: string;
-                        industry: string;
-                        tools: string[];
-                        tags: string[];
-                      },
-                      index: number,
-                    ) => (
+                    of={caseStudies}
+                    render={(item: IProject, index: number) => (
                       <TableRow key={index} className="hover:bg-transparent">
                         <TableCell className="align-top text-sm font-medium text-primary-50">
                           {item.title}
@@ -128,15 +99,15 @@ const ProjectArchive = () => {
                           </div>
                         </TableCell>
                         <TableCell className="align-top text-sm text-primary-50">
-                          <TransitionLink
-                            href="/project"
+                          <Link
+                            href={`/projects/${item.slug}`}
                             className="inline-flex items-center gap-2 text-secondary-300"
                           >
                             View details
                             <span>
                               <ArrowUpRight size={20} />
                             </span>
-                          </TransitionLink>
+                          </Link>
                         </TableCell>
                       </TableRow>
                     )}

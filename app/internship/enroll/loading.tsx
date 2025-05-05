@@ -1,0 +1,66 @@
+const Loading = () => {
+  return (
+    <div
+      id="load"
+      className="flex h-screen w-full items-center justify-center bg-[#030b1b] text-white"
+    >
+      <div className="flex flex-col items-center">
+        <svg
+          className="animate-bounce opacity-80"
+          width="100"
+          height="80"
+          viewBox="0 0 352 180"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M172.747 151.048L48.8134 95.4558L41.1282 92.0025C37.2901 90.7567 33.2048 90.0881 28.9546 90.0881C17.5047 90.0881 7.19972 94.9703 0 102.765L68.1683 133.341L122.23 157.597L171.062 179.498C183.923 176.494 196.316 172.244 208.087 166.894C224.922 159.246 240.513 149.325 254.463 137.537C261.443 131.638 268.011 125.281 274.13 118.493L250.964 103.581L238.314 95.4375L175.605 55.0696C174.854 58.1015 174.46 61.28 174.46 64.541C174.46 78.116 181.33 90.0881 191.773 97.1687L193.357 98.1946L230.418 122.056C213.399 135.082 193.889 145.011 172.738 151.029L172.747 151.048Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M112.896 84.0425L175.605 124.41C176.356 121.378 176.75 118.2 176.75 114.939C176.75 101.364 169.88 89.3919 159.438 82.3113L157.853 81.2854L120.792 57.4237C137.811 44.3983 157.322 34.4597 178.472 28.4508L302.406 84.0425L310.092 87.4958C313.93 88.7416 318.015 89.4102 322.265 89.4102C333.715 89.4102 344.02 84.528 351.22 76.7329L283.051 46.157L228.989 21.9014L180.158 0C167.297 3.00446 154.904 7.25468 143.133 12.6041C126.297 20.2526 110.707 30.1729 96.7565 41.9617C89.7766 47.8607 83.2089 54.2177 77.0901 61.0052L100.246 75.9176L112.896 84.0608V84.0425Z"
+            fill="white"
+          />
+        </svg>
+        <span className="animate-pulse font-semibold uppercase tracking-[1rem]">
+          Loading
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default Loading;
+
+
+
+/* 
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyB1hoLwi-bBEVqOXaO8MIH7I5lZvE0PiB8",
+  authDomain: "isentry-tech.firebaseapp.com",
+  projectId: "isentry-tech",
+  storageBucket: "isentry-tech.firebasestorage.app",
+  messagingSenderId: "302782430644",
+  appId: "1:302782430644:web:6ee2711e25f6cb680946e1",
+  measurementId: "G-JJX1C1JYWS"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+*/

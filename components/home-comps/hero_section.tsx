@@ -49,14 +49,14 @@ const Hero = () => {
                 url="/services"
                 variant="dark"
                 buttonText="Our Services"
-                className="btn-1"
+                className=""
               />
               <SmartButton
                 isLink
                 url="/mentorships"
                 variant="bright"
                 buttonText="Join our Program"
-                className="btn-2"
+                className=""
               />
             </div>
           </div>

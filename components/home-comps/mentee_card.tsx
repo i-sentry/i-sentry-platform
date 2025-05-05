@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import Placeholder from "@/public/images/placeholder.png";
 import Link from "next/link";
-import { ILinks } from "./mentees_section";
+import { ILinks } from "@/utils";
 
 const MenteeCard = ({
   image,

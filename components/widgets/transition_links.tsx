@@ -1,4 +1,4 @@
-import Link, { LinkProps } from "next/link";
+import { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import React, { ReactNode } from "react";
 
@@ -13,7 +13,7 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const TransitionLink: React.FC<ILink> = ({
+const Link: React.FC<ILink> = ({
   href,
   children,
   className,
@@ -55,4 +55,4 @@ const TransitionLink: React.FC<ILink> = ({
   );
 };
 
-export default TransitionLink;
+export default Link;

@@ -5,6 +5,13 @@ import { Badge } from "../ui/badge";
 import ReactCountryFlag from "react-country-flag";
 import Image from "next/image";
 import CareerImg from "@/public/images/career.jpeg";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const JobPositions = () => {
   return (
@@ -25,20 +32,45 @@ const JobPositions = () => {
             <span className="hidden text-sm text-primary-50 sm:inline-block">
               Location:
             </span>
-            <div className="flex items-center justify-between rounded-[8px] bg-grad p-3 sm:gap-10 sm:p-1.5">
+            <Select defaultValue="any">
+              <SelectTrigger className="h-auto w-[180px] items-center rounded-[8px] border-0 bg-grad p-2 text-sm text-white outline-0 focus:ring-0 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-2">
+                <SelectValue
+                  placeholder={
+                    <span className="inline-flex items-center gap-2">
+                      <MapPin size={20} className="sm:w-4" />
+                      <span>Worldwide</span>
+                    </span>
+                  }
+                  className=""
+                />
+              </SelectTrigger>
+              <SelectContent className="bg-primary-100">
+                <SelectItem value="any">
+                  <span className="inline-flex items-center gap-2">
+                    <MapPin size={20} className="sm:w-4" />
+                    <span>Worldwide</span>
+                  </span>
+                </SelectItem>
+                <SelectItem value="lagos">Lagos</SelectItem>
+                <SelectItem value="abuja">Abuja</SelectItem>
+                <SelectItem value="portharcourt">Port Harcourt</SelectItem>
+              </SelectContent>
+            </Select>
+
+            {/* <div className="flex items-center justify-between rounded-[8px] bg-grad p-3 sm:gap-10 sm:p-1.5">
               <div className="inline-flex items-center gap-2 text-primary-50 sm:text-xs">
                 <MapPin size={20} className="sm:w-4" />
                 <span>Worldwide</span>
               </div>
 
               <ChevronDown size={20} className="text-primary-50" />
-            </div>
+            </div> */}
           </div>
         </div>
 
         <div className="space-y-6">
           <p className="text-center font-medium text-white">
-            No recent applications
+            No current openings available.
           </p>
           {/* DESIGN JOBS */}
           {/* <div className="pt-10 sm:border-t sm:border-[#FAFAFA26] md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_1.4fr]">

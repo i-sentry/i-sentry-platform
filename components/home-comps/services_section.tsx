@@ -75,6 +75,7 @@ const Services = () => {
               </p>
 
               <SmartButton
+                ariaLabel="Learn more about our mentorship program"
                 variant="dark"
                 buttonText="Learn more"
                 className="mt-12 border-[#F4F4F40D] bg-grad-alt backdrop-blur-0 hover:shadow-none"

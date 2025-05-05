@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import Marquee from "../ui/marquee";
 import ReviewCard from "./review_card";
 import Placeholder from "@/public/images/placeholder.png";
+import { professionals } from "@/utils";
 
 const reviews = [
   {
@@ -28,11 +29,15 @@ const reviews = [
     username: "ReactJs, NextJs",
     body: "my biggest challenge before the mentorship was understanding how to set up continuous integration and delivery pipelines. the hands-on approach made it clear how devops tools fit together in the real world. ",
     img: Placeholder,
-  }, 
+  },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+const firstRow = professionals
+  .filter((item) => !item.alias.toLowerCase().includes("victor"))
+  .slice(0, 3);
+const secondRow = professionals
+  .filter((item) => !item.alias.toLowerCase().includes("victor"))
+  .slice(reviews.length / 2);
 
 const Testimonials = () => {
   const sectionRef = useRef(null);
@@ -91,7 +96,7 @@ const Testimonials = () => {
           <Marquee pauseOnHover className="[--duration:20s]">
             {firstRow.map((review, index) => (
               <ReviewCard
-                key={review.username + index}
+                key={review.alias + index}
                 {...review}
                 className="w-[400px]"
               />
@@ -100,7 +105,7 @@ const Testimonials = () => {
           <Marquee reverse pauseOnHover className="[--duration:20s]">
             {secondRow.map((review, index) => (
               <ReviewCard
-                key={review.username + index}
+                key={review.alias + index}
                 {...review}
                 className="w-[400px]"
               />
@@ -109,7 +114,7 @@ const Testimonials = () => {
           <Marquee pauseOnHover className="[--duration:30s]">
             {firstRow.map((review, index) => (
               <ReviewCard
-                key={review.username + index + "0"}
+                key={review.alias + index + "0"}
                 {...review}
                 className="w-[400px]"
               />
@@ -117,7 +122,7 @@ const Testimonials = () => {
           </Marquee>
         </div>
 
-        <div className="group-data-[theme=light]:bg-light pointer-events-none absolute inset-y-0 left-0 hidden w-full scale-x-125 bg-reviews duration-300 sm:block"></div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-full scale-x-125 bg-reviews duration-300 group-data-[theme=light]:bg-light sm:block"></div>
       </div>
     </section>
   );

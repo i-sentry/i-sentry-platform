@@ -1,25 +1,25 @@
 import StatCard from "@/components/home-comps/stat_card";
 import { StatProps } from "@/utils";
 import React from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
+// import { useGSAP } from "@gsap/react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/all";
+// gsap.registerPlugin(ScrollTrigger);
 
 const ServiceStats = () => {
-  useGSAP(() => {
-    gsap.from(".stat", {
-      x: 100,
-      opacity: 0,
-      duration: 2,
-      stagger: {
-        amount: 0.5,
-        from: "start",
-      },
-      ease: "power2.inOut",
-      scrollTrigger: ".stat",
-    });
-  }, []);
+  // useGSAP(() => {
+  //   gsap.from(".stat", {
+  //     x: 100,
+  //     opacity: 0,
+  //     duration: 2,
+  //     stagger: {
+  //       amount: 0.5,
+  //       from: "start",
+  //     },
+  //     ease: "power2.inOut",
+  //     scrollTrigger: ".stat",
+  //   });
+  // }, []);
 
   return (
     <div className="wrapper py-10">

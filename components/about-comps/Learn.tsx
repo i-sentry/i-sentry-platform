@@ -72,7 +72,7 @@ const Learn = () => {
             <SmartLinkButton
               variant="dark"
               showAnimatedIcon
-              buttonText="Explore Oppotunities"
+              buttonText="Explore Opportunities"
               className="mt-8 py-3"
               url="/careers"
               isLink

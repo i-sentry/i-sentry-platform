@@ -1,10 +1,17 @@
 import React from "react";
 import SmartButton from "@/components/custom_button";
-import Image from "next/image";
-import Img from "@/public/images/custom-software.webp";
+import Image, { StaticImageData } from "next/image";
 import Illus from "@/public/assets/svg/cone-pattern.svg";
 
-const Banner = () => {
+const Banner = ({
+  title,
+  description,
+  image,
+}: {
+  title: string;
+  description: string;
+  image: StaticImageData;
+}) => {
   return (
     <>
       {/* BANNER */}
@@ -17,13 +24,10 @@ const Banner = () => {
         <div className="wrapper relative z-10 flex flex-col-reverse md:grid md:grid-cols-2 md:items-center md:gap-8 xl:gap-32">
           <div>
             <h1 className="mb-2 text-left text-3xl font-medium text-white md:text-balance md:text-4xl md:leading-snug xl:text-5xl xl:leading-snug">
-              We make your software stand out.
+              {title}
             </h1>
             <p className="mb-6 font-light leading-normal text-primary-100">
-              We building custom software across various niches that are very
-              responsive and work effective to drive business growth. Our team
-              are one of the best across the globe that build software that are
-              tailor your needs.
+              {description}
             </p>
 
             <SmartButton
@@ -35,7 +39,7 @@ const Banner = () => {
           </div>
           <div className="mb-8 md:mb-0 md:h-full">
             <Image
-              src={Img}
+              src={image}
               alt="A hand holding a smartphone"
               className="h-[200px] w-full rounded-[12px] object-cover object-center md:h-[300px]"
             />

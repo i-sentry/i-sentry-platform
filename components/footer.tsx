@@ -34,7 +34,7 @@ const Footer = () => {
     <>
       <footer className="bg-footer1">
         <section className="border-t border-[#C2C2C21A] px-4 pt-10 backdrop-blur-md">
-          <div className="mx-auto max-w-7xl">
+          <div className="wrapper mx-auto">
             <div className="mb-16 lg:grid lg:grid-cols-2 lg:items-start">
               <div className="">
                 <h3 className="mb-3 font-dm-sans text-[2rem] font-semibold leading-10 text-[#FAFAFA] sm:text-4xl md:text-5xl md:font-bold md:leading-tight lg:text-6xl lg:leading-tight">
@@ -49,11 +49,11 @@ const Footer = () => {
                 </p>
               </div>
 
-              <div className="mt-6 inline-flex flex-wrap items-center gap-4 justify-self-end lg:mt-0">
+              <div className="mt-6 inline-flex items-center gap-4 justify-self-end sm:flex-wrap lg:mt-0">
                 <SmartButton
                   variant="dark"
                   buttonText="Talk to our team"
-                  className="border-[#F4F4F40D] backdrop-blur-none"
+                  className="border-[#F4F4F40D] px-5 backdrop-blur-none"
                   url="/contact"
                   isLink
                 />
@@ -61,6 +61,7 @@ const Footer = () => {
                   variant="bright"
                   buttonText="Join our Program"
                   url="/mentorships"
+                  className="px-5"
                   isLink
                 />
               </div>
@@ -83,12 +84,14 @@ const Footer = () => {
 
               <div className="inline-flex items-center gap-5">
                 <Link
+                  aria-label="Twitter"
                   href="https://x.com/ISentryTech/"
                   className="cursor-pointer text-[#98A2B3]"
                 >
                   <FaXTwitter size={20} />
                 </Link>
                 <Link
+                  aria-label="LinkedIn"
                   href="https://www.linkedin.com/company/isentry-technologies/"
                   className="cursor-pointer text-[#98A2B3]"
                 >
@@ -101,12 +104,14 @@ const Footer = () => {
                   <FaFacebook size={20} />
                 </Link> */}
                 <Link
+                  aria-label="Github"
                   href="https://github.com/i-sentry"
                   className="cursor-pointer text-[#98A2B3]"
                 >
                   <FaGithub size={20} />
                 </Link>
                 <Link
+                  aria-label="Medium"
                   href="https://medium.com/@isentrytechnologies"
                   className="cursor-pointer text-[#98A2B3]"
                 >

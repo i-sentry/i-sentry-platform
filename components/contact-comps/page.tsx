@@ -5,10 +5,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PhoneInputField from "../widgets/phone_input";
 import emailjs from "@emailjs/browser";
-import { Check, Loader, X } from "lucide-react";
+import { Loader } from "lucide-react";
+import { toast } from "sonner";
 
 export type IContactForm = {
   firstName: string;
@@ -62,10 +63,10 @@ const schema = yup.object().shape({
 // mailsender: mlsn.46c207dc33bd27a645bc59402da1b0caf2ebb297900637784730c4e6f0182d4b
 
 const ContactForm = () => {
-  const [clicked, setClicked] = useState<boolean>(false);
+  // const [clicked, setClicked] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>("");
-  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  // const [message, setMessage] = useState<string>("");
+  // const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [isChecked, setIsChecked] = useState(false);
   const {
     handleSubmit,
@@ -81,7 +82,9 @@ const ContactForm = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (data: any) => {
     setLoading(true);
-    setClicked(true);
+    toast.error("Form submitted successfully!");
+
+    // setClicked(true);
     try {
       await emailjs.send(
         "service_udyqvvc",
@@ -100,30 +103,32 @@ const ContactForm = () => {
         },
         "NSO4VhtozM_fxtMXW",
       );
-
-      setIsSuccess(true);
+      toast.success("Form submitted successfully!");
+      // setIsSuccess(true);
       reset();
     } catch (error) {
       console.error("Error sending email:", error);
-      setIsSuccess(false);
+      toast.error("Error submitting form. Please try again.");
+
+      // setIsSuccess(false);
     } finally {
       setLoading(false);
-      setClicked(false);
+      // setClicked(false);
     }
   };
 
-  useEffect(() => {
-    if (clicked && isSuccess) {
-      setMessage("Form submitted successfully!");
-    } else if (clicked && !isSuccess) {
-      setMessage("Error submitting form. Please try again.");
-    }
-    const timer = setTimeout(() => {
-      setMessage("");
-    }, 5000);
+  // useEffect(() => {
+  //   if (clicked && isSuccess && !loading) {
+  //     setMessage("Form submitted successfully!");
+  //   } else if (clicked && !isSuccess && !loading) {
+  //     setMessage("Error submitting form. Please try again.");
+  //   }
+  //   const timer = setTimeout(() => {
+  //     setMessage("");
+  //   }, 5000);
 
-    return () => clearTimeout(timer);
-  }, [clicked, isSuccess]);
+  //   return () => clearTimeout(timer);
+  // }, [clicked, isSuccess, loading]);
 
   return (
     <div className="rounded-xl border border-[#FAFAFA1F] bg-footer2 p-5 md:p-8">
@@ -257,7 +262,7 @@ const ContactForm = () => {
             "Send message"
           )}
         </Button>
-        {message && (
+        {/* {message && (
           <p
             className={cn(
               "mt-6 flex items-center gap-2 text-sm font-light text-primary-50",
@@ -266,7 +271,7 @@ const ContactForm = () => {
           >
             {isSuccess ? <Check size={20} /> : <X size={20} />} {message}
           </p>
-        )}
+        )} */}
       </form>
     </div>
   );

@@ -5,14 +5,15 @@ import EachElement from "../widgets/list_rendering";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "../ui/button";
 
 import PhoneInputField from "../widgets/phone_input";
 import CountryInput from "../widgets/country_imput";
 import TrackInput from "../widgets/track_input";
-import { Check, Loader, X } from "lucide-react";
+import { Loader } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 
 const schema = yup.object().shape({
   firstName: yup.string().required("Input your first name"),
@@ -26,10 +27,10 @@ const schema = yup.object().shape({
 });
 
 const InternshipForm = () => {
-  const [clicked, setClicked] = useState<boolean>(false);
+  // const [clicked, setClicked] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>("");
-  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  // const [message, setMessage] = useState<string>("");
+  // const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [isChecked, setIsChecked] = useState(false);
 
   const {
@@ -46,7 +47,7 @@ const InternshipForm = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (data: any) => {
     setLoading(true);
-    setClicked(true);
+    // setClicked(true);
     try {
       const track = data.track
         .split("-")
@@ -77,8 +78,8 @@ const InternshipForm = () => {
         "NSO4VhtozM_fxtMXW",
       );
 
-      setIsSuccess(true);
-
+      // setIsSuccess(true);
+      toast.success("Form submitted successfully!");
       reset({
         firstName: "",
         lastName: "",
@@ -90,25 +91,26 @@ const InternshipForm = () => {
       });
     } catch (error) {
       console.error("Error sending email:", error);
-      setIsSuccess(false);
+      toast.error("Error submitting form. Please try again.");
+      // setIsSuccess(false);
     } finally {
       setLoading(false);
-      setClicked(false);
+      // setClicked(false);
     }
   };
 
-  useEffect(() => {
-    if (clicked && isSuccess) {
-      setMessage("Form submitted successfully!");
-    } else if (clicked && !isSuccess) {
-      setMessage("Error submitting form. Please try again.");
-    }
-    const timer = setTimeout(() => {
-      setMessage("");
-    }, 5000);
+  // useEffect(() => {
+  //   if (clicked && isSuccess) {
+  //     setMessage("Form submitted successfully!");
+  //   } else if (clicked && !isSuccess) {
+  //     setMessage("Error submitting form. Please try again.");
+  //   }
+  //   const timer = setTimeout(() => {
+  //     setMessage("");
+  //   }, 5000);
 
-    return () => clearTimeout(timer);
-  }, [clicked, isSuccess]);
+  //   return () => clearTimeout(timer);
+  // }, [clicked, isSuccess]);
 
   return (
     <div className="rounded-xl border border-[#FAFAFA1F] bg-footer2 p-5 md:p-8">
@@ -246,7 +248,7 @@ const InternshipForm = () => {
             "Enroll now"
           )}
         </Button>
-
+        {/* 
         {message && (
           <p
             className={cn(
@@ -256,7 +258,7 @@ const InternshipForm = () => {
           >
             {isSuccess ? <Check size={20} /> : <X size={20} />} {message}
           </p>
-        )}
+        )} */}
       </form>
     </div>
   );

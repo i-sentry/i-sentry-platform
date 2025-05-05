@@ -1,6 +1,6 @@
 import { Award, Heart, Puzzle, TrendingUp, Users } from "lucide-react";
 import { BsTools } from "react-icons/bs";
-import SmartLinkButton from "../custom_button";
+// import SmartLinkButton from "../custom_button";
 
 type KPIProps = {
   icon: React.JSX.Element;
@@ -52,7 +52,7 @@ const KeyPoints = () => {
     <section>
       <div className="wrapper">
         {/* JOIN THE TEAM */}
-        <div className="md:w-3/4 lg:w-1/2">
+        {/* <div className="md:w-3/4 lg:w-1/2">
           <h3 className="mb-2 font-dm-sans text-2xl text-white">
             Join a team of makers
           </h3>
@@ -72,7 +72,7 @@ const KeyPoints = () => {
             url="/about#team"
             isLink
           />
-        </div>
+        </div> */}
         {/* KPI */}
 
         <div className="mt-10">

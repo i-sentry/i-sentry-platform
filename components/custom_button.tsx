@@ -16,10 +16,11 @@ type SmartLinkButtonProps = {
   url?: string;
   isLink?: boolean;
   target?: string;
+  ariaLabel?: string;
 };
 
-const sleep = (ms: number): Promise<void> =>
-  new Promise((resolve) => setTimeout(resolve, ms));
+// const sleep = (ms: number): Promise<void> =>
+//   new Promise((resolve) => setTimeout(resolve, ms));
 
 const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
   buttonText,
@@ -31,6 +32,7 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
   url,
   isLink = false,
   target,
+  ariaLabel,
 }) => {
   const router = useRouter();
 
@@ -42,17 +44,17 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
     if (onClick) onClick();
 
     if (isLink && url) {
-      const body = document.querySelector("body");
-      body?.classList.add("page-transition");
-      await sleep(500);
+      // const body = document.querySelector("body");
+      // body?.classList.add("page-transition");
+      // await sleep(500);
       router.push(url);
-      await sleep(500);
-      body?.classList.remove("page-transition");
+      // await sleep(500);
+      // body?.classList.remove("page-transition");
     }
   };
 
   const commonStyles = cn(
-    "group h-auto cursor-pointer inline-flex items-center gap-4 rounded-full px-8 py-3.5 font-dm-sans font-light text-white hover:shadow-lg hover:shadow-white/25",
+    "group h-auto cursor-pointer duration-300 inline-flex items-center gap-4 rounded-full px-5 sm:px-8 py-3.5 font-dm-sans font-light text-white hover:shadow-lg hover:shadow-[#ffffff52]",
     variant === "bright"
       ? "bg-grad"
       : "border border-[#023B74]/20 bg-grad-alt backdrop-blur-[50px]",
@@ -68,6 +70,7 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
         className={commonStyles}
         passHref
         target={target}
+        aria-label={ariaLabel}
       >
         <>
           {buttonText}
@@ -90,7 +93,12 @@ const SmartLinkButton: React.FC<SmartLinkButtonProps> = ({
 
   // Render as Button
   return (
-    <Button onClick={handleTransition} type={type} className={commonStyles}>
+    <Button
+      onClick={handleTransition}
+      aria-label={ariaLabel}
+      type={type}
+      className={commonStyles}
+    >
       <>
         {buttonText}
         {showAnimatedIcon && (

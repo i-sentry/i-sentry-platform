@@ -68,12 +68,13 @@ const StatCard: React.FC<ComponentProps> = ({
         {count}
         {symbol}
       </h3>
-      <p className="mb-6 mt-3 font-inter text-sm font-extralight lowercase text-white duration-300 ease-linear group-data-[theme=light]:text-secondary-800">
+      <p className="mb-6 mt-3 font-inter text-sm font-light lowercase text-white duration-300 ease-linear group-data-[theme=light]:text-[#022E5A]">
         {title}
       </p>
 
       <SmartButton
         variant="dark"
+        ariaLabel="Learn more about our services"
         buttonText="Learn more"
         className="mt-4 border-[#F4F4F40D] text-white backdrop-blur-none duration-300 ease-linear hover:shadow-none group-data-[theme=light]:bg-secondary-500"
         showAnimatedIcon
