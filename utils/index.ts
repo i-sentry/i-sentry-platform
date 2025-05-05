@@ -158,6 +158,7 @@ export type IProject = {
   url: string;
   industry: string;
   descriptions: string[];
+  info: string;
 };
 
 export const caseStudies: IProject[] = [
@@ -176,6 +177,7 @@ export const caseStudies: IProject[] = [
       "PorkerHut is a platform that connects farmers to buyers",
       "The platform is designed to help farmers sell their pigs",
     ],
+    info: "",
   },
   {
     id: "1",
@@ -189,6 +191,7 @@ export const caseStudies: IProject[] = [
     url: "https://goldies-frontend-v3.vercel.app/",
     industry: "Ecommerce, Bakery",
     descriptions: ["The Cake App is an ecommerce platform for selling cakes"],
+    info: "",
   },
 ];
 

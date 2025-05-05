@@ -76,7 +76,7 @@ const Vision = () => {
                         <Badge
                           key={item}
                           variant="outline"
-                          className="rounded-full bg-transparent px-6 py-3 text-sm font-light text-white"
+                          className="rounded-full bg-transparent text-sm font-light text-white"
                         >
                           {item}
                         </Badge>
