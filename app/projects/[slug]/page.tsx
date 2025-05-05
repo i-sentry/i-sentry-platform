@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import SmartButton from "@/components/custom_button";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import ProjectCard from "@/components/projects-comps/project_card";
-import { cn } from "@/lib/utils";
 // import { Skeleton } from "@/components/ui/skeleton";
 type ComponentProps = {
   params: {
@@ -57,7 +56,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                       render={(tag: string) => (
                         <Badge
                           key={tag}
-                          className="inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal text-primary-900 hover:bg-white"
+                          className="inline-block rounded-full bg-white font-dm-sans font-normal text-primary-900 hover:bg-white"
                         >
                           {tag}
                         </Badge>
@@ -76,7 +75,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                       render={(tool: string) => (
                         <Badge
                           key={tool}
-                          className="inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal text-primary-900 hover:bg-white"
+                          className="inline-block rounded-full bg-white font-dm-sans font-normal text-primary-900 hover:bg-white"
                         >
                           {tool}
                         </Badge>
@@ -91,7 +90,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                     Client
                   </h2>
                   <div className="flex items-center gap-3">
-                    <Badge className="inline-block rounded-full bg-white px-6 py-3 font-dm-sans font-normal text-primary-900 hover:bg-white">
+                    <Badge className="inline-block rounded-full bg-white font-dm-sans font-normal text-primary-900 hover:bg-white">
                       {project?.client}
                     </Badge>
                   </div>
@@ -126,7 +125,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
             </div>
 
             {/* OTHER PROJECT IMAGES */}
-            <div className="mt-20 flex flex-wrap justify-center gap-6">
+            {/* <div className="mt-20 flex flex-wrap justify-center gap-6">
               <Image
                 src={project?.image || PlaceHolder}
                 alt="placeholder"
@@ -141,7 +140,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
                   // index === 3 && "lg:h-[600px]",
                 )}
               />
-            </div>
+            </div> */}
           </>
 
           {/* RELATED PROJECTS */}
