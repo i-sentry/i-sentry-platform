@@ -12,7 +12,7 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  assetPrefix: process.env.NODE_ENV === "production" ? "." : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/" : "",
   compress: true,
   poweredByHeader: false,
   generateEtags: true,

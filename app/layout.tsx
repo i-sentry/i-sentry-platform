@@ -77,7 +77,7 @@ export const metadata: Metadata = {
       "Discover the amazing potential of your business with our creative solutions and global expertise, crafted to support you as you navigate the exciting digital landscape of the future!",
     images: [
       {
-        url: "http://isentrytechnologies.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fisentry-ab.1851b683.webp&w=3840&q=75",
+        url: "https://isentrytechnologies.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fisentry-ab.1851b683.webp&w=3840&q=75",
         width: 1200,
         height: 630,
         alt: "ISentry Technologies",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     description:
       "Discover the amazing potential of your business with our creative solutions and global expertise, crafted to support you as you navigate the exciting digital landscape of the future!",
     images: [
-      "http://isentrytechnologies.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fisentry-ab.1851b683.webp&w=3840&q=75",
+      "https://isentrytechnologies.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fisentry-ab.1851b683.webp&w=3840&q=75",
     ],
   },
 };
