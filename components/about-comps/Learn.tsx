@@ -81,7 +81,7 @@ const Learn = () => {
           <Image
             src={AboutLearn}
             alt="A team discussing"
-            className="mt-6 h-[400px] w-full rounded-xl object-cover object-center lg:col-span-2"
+            className="mt-6 h-[400px] w-full rounded-xl object-cover object-center md:h-[500px] lg:col-span-2 lg:object-top"
           />
         </div>
       </section>

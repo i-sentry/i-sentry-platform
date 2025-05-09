@@ -14,7 +14,7 @@ const OurProjects = () => {
           Explore our projects
         </h2>
 
-        <div className="flex w-full gap-6 overflow-y-hidden no-scrollbar">
+        <div className="grid w-full gap-6 overflow-y-hidden no-scrollbar md:grid-cols-2">
           <EachElement
             of={caseStudies}
             render={(data: IProject, index: number) => {
@@ -22,7 +22,7 @@ const OurProjects = () => {
                 <div
                   key={index}
                   className={cn(
-                    "relative flex h-[400px] w-[360px] flex-wrap items-end justify-between overflow-hidden rounded-3xl md:w-[380px]",
+                    "relative flex h-[400px] w-full flex-wrap items-end justify-between overflow-hidden rounded-3xl",
                   )}
                 >
                   <Image
@@ -35,7 +35,7 @@ const OurProjects = () => {
                   <div className="absolute bottom-0 left-0 z-10 flex h-max w-full flex-col justify-end bg-primary-900/50 p-6 backdrop-blur-md">
                     <Link
                       href={`/project/${data.slug}`}
-                      className="mb-1 text-lg font-normal text-white"
+                      className="mb-1 text-lg font-normal text-white hover:underline"
                     >
                       {data?.title}
                     </Link>
