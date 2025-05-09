@@ -4,7 +4,7 @@ import Dataphyte from "@/public/assets/partners/Dataphyte.svg";
 import Ri from "@/public/assets/partners/ri-softwares.svg";
 import { StaticImageData } from "next/image";
 import PorkerHutWeb from "@/public/images/case-studies/porkerhut.png";
-import Bankify from "@/public/images/case-studies/bankify.png";
+import Bankify from "@/public/images/case-studies/cake-app.jpg";
 import Ariyo from "@/public/assets/mentees/Ariyo_O.B.png";
 import Emem from "@/public/assets/mentees/Emem-Peace.jpg";
 import Victor from "@/public/assets/mentees/Victor-udo.jpeg";
@@ -174,10 +174,10 @@ export const caseStudies: IProject[] = [
     url: "https://porker-hut-frontend-client.vercel.app/",
     industry: "Ecommerce, Agriculture",
     descriptions: [
-      "PorkerHut is a platform that connects farmers to buyers",
-      "The platform is designed to help farmers sell their pigs",
+      "Porkerhut is an agro-based e-commerce platform that blends online convenience with in-store shopping for pork products. It offers customers a flexible, accessible way to shop from home or in person.",
+      "It also serves as a vendor marketplace, helping sellers reach more customers. By digitizing the pork supply chain, Porkerhut streamlines operations and modernizes the buying and selling experience.",
     ],
-    info: "",
+    info: "Porkerhut is an agro-based e-commerce platform that blends online convenience with in-store shopping for pork products",
   },
   {
     id: "1",
@@ -190,8 +190,11 @@ export const caseStudies: IProject[] = [
     client: "Web Design",
     url: "https://goldies-frontend-v3.vercel.app/",
     industry: "Ecommerce, Bakery",
-    descriptions: ["The Cake App is an ecommerce platform for selling cakes"],
-    info: "",
+    descriptions: [
+      "The Cake App is an online platform to purchase delicious cakes. It offers a range of pre-designed options and a custom design service for unique creations tailored to any event or preference.",
+      "Your online destination for delicious cakes, The Cake App offers both ready-to-order designs and personalized custom creations for any occasion, catering to diverse customer needs.",
+    ],
+    info: "The Cake App is an online platform to purchase delicious cakes, offering a wide variety of flavors, custom designs to suit every occasion.",
   },
 ];
 
