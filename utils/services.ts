@@ -6,7 +6,7 @@ export const servicesContent = {
   "custom-software": {
     title: "We make your software stand out.",
     description:
-      "We building custom software across various niches that are very responsive and work effective to drive business growth. Our team are one of the best across the globe that build software that are tailor your needs.",
+      "We building custom software across various niches that are very responsive and work effective to drive business growth. Our team are one of the best across the globe, building software tailored to your needs.",
     image: Img,
     process: {
       title: "Our Development Process",
