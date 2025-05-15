@@ -82,8 +82,6 @@ const ContactForm = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (data: any) => {
     setLoading(true);
-    toast.error("Form submitted successfully!");
-
     // setClicked(true);
     try {
       await emailjs.send(
