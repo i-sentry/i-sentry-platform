@@ -1,5 +1,5 @@
 import { LinkProps } from "@/utils";
-import React from "react";
+import React, { SetStateAction } from "react";
 import { Badge } from "./ui/badge";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -7,9 +7,10 @@ import Link from "next/link";
 type ComponentProps = {
   title: string;
   links: LinkProps[];
+  setOpen: React.Dispatch<SetStateAction<boolean>>;
 };
 
-const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
+const FooterLink: React.FC<ComponentProps> = ({ title, links, setOpen }) => {
   return (
     <>
       <div>
@@ -24,6 +25,7 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links }) => {
               className="inline-flex items-center justify-start gap-2"
             >
               <Link
+                onClick={() => setOpen(false)}
                 href={item?.comingSoon ? "" : item?.url}
                 className={cn(
                   "inline-flex items-end font-inter text-base font-light text-[#97A4B7] duration-300 hover:text-secondary-400",

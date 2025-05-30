@@ -104,6 +104,7 @@ const Mentorships = () => {
                 url="https://calendly.com/isentrytechnologies"
                 target="_blank"
                 buttonText="Schedule a call"
+                className="text-sm"
               />
               <SmartButton
                 variant="dark"
@@ -111,6 +112,7 @@ const Mentorships = () => {
                 showAnimatedIcon
                 isLink
                 url="/internship"
+                className="text-sm"
               />
             </div>
           </div>
