@@ -44,7 +44,7 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
       >
         <div className="wrapper flex items-center justify-between">
           {/* LOGO */}
-          <Link href="/" className="text-white">
+          <Link href="/" onClick={() => setOpen(false)} className="text-white">
             <Image
               src={Logo}
               alt="ISentry Technologies"

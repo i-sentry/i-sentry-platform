@@ -12,6 +12,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { link } from "fs";
+import SmartLinkButton from "../custom_button";
+import Link from "next/link";
 
 const JobPositions = () => {
   return (
@@ -69,67 +72,83 @@ const JobPositions = () => {
         </div>
 
         <div className="space-y-6">
-          <p className="text-center font-medium text-white">
+          {/* <p className="text-center font-medium text-white">
             No current openings available.
-          </p>
+          </p> */}
           {/* DESIGN JOBS */}
-          {/* <div className="pt-10 sm:border-t sm:border-[#FAFAFA26] md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_1.4fr]">
-            <div>
-              <h3 className="font-dm-sans text-lg font-medium text-white">
-                Design
-              </h3>
-              <p className="font-light text-primary-100">
-                Open positions in our design team.
-              </p>
-            </div>
+          {jobs.map((role, i) => (
+            <div
+              key={i}
+              className="pt-10 sm:border-t sm:border-[#FAFAFA26] md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_1.4fr]"
+            >
+              <div>
+                <h3 className="font-dm-sans text-lg font-medium text-white">
+                  {role?.team === "software" && "Development"}
+                  {role?.team === "product" && "Product"}
+                </h3>
+                <p className="font-light text-primary-100">
+                  {role?.team === "software" &&
+                    "Open positions in our development team."}
+                  {role?.team === "product" &&
+                    "Open positions in our product team."}
+                </p>
+              </div>
 
-      
-            <div className="mt-6 rounded-2xl border border-[#FAFAFA26] p-5 md:mt-0">
-              <div className="lg:flex lg:items-center lg:gap-2">
-                <h4 className="mb-2 font-dm-sans text-lg font-medium text-white lg:mb-0">
-                  Product Designer
-                </h4>
-                <div className="flex items-center gap-2 lg:grow lg:justify-between">
-                  <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#2E90FA]"></span>{" "}
-                    Design
-                  </Badge>
-                  <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
-                    <span className="inline-block h-4 w-4 rounded-full text-primary-50">
-                      <ReactCountryFlag
-                        svg
-                        countryCode="AU"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                        }}
-                        className="rounded-full object-cover"
-                      />
-                    </span>{" "}
-                    Melbourne, Australia
-                  </Badge>
+              <div className="mt-6 rounded-2xl border border-[#FAFAFA26] p-5 md:mt-0">
+                <div className="lg:flex lg:items-center lg:gap-2">
+                  <h4 className="mb-2 font-dm-sans text-lg font-medium text-white lg:mb-0">
+                    {role?.title}
+                  </h4>
+                  <div className="flex items-center gap-2 lg:grow lg:justify-between">
+                    {/* <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#2E90FA]"></span>{" "}
+                      Design
+                    </Badge> */}
+                    <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
+                      <span className="inline-block h-4 w-4 rounded-full text-primary-50">
+                        <ReactCountryFlag
+                          svg
+                          countryCode="NG"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                          }}
+                          className="rounded-full object-cover"
+                        />
+                      </span>{" "}
+                      Remote, Nigeria
+                    </Badge>
+                  </div>
                 </div>
-              </div>
-              <p className="mb-8 mt-2 font-light text-primary-100">
-                We&apos;re looking for a mid-level product designer to join our
-                team.
-              </p>
-              <div className="inline-flex items-center gap-6">
-                <div className="inline-flex items-center gap-2 text-primary-100">
-                  <span>
-                    <Clock size={20} />
-                  </span>
-                  Full time
-                </div>
-                <div className="inline-flex items-center gap-2 text-primary-100">
-                  <span>
-                    <CircleDollarSign size={20} />
-                  </span>
-                  80k - 100k
+                <p className="mb-8 mt-2 font-light text-primary-100">
+                  We&apos;re looking for a junior/mid-level{" "}
+                  {role.title?.toLowerCase()} to join our team.
+                </p>
+                <div className="flex items-center justify-between gap-6">
+                  <div className="inline-flex items-center gap-2 text-primary-100">
+                    <span>
+                      <Clock size={20} />
+                    </span>
+                    {role.duration}
+                  </div>
+                  {/* <div className="inline-flex items-center gap-2 text-primary-100">
+                    <span>
+                      <CircleDollarSign size={20} />
+                    </span>
+                    80k - 100k
+                  </div> */}
+
+                  <Link
+                    target="_blank"
+                    className="rounded-[6px] border border-[#FAFAFA26] px-3 py-2 text-sm font-medium text-primary-100"
+                    href={role.link}
+                  >
+                    Apply
+                  </Link>
                 </div>
               </div>
             </div>
-          </div> */}
+          ))}
 
           {/* SOFTWARE JOBS */}
           {/* <div className="border-t border-[#FAFAFA26] pt-10 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_1.4fr]">
@@ -202,3 +221,42 @@ const JobPositions = () => {
 };
 
 export default JobPositions;
+
+const jobs = [
+  {
+    title: "Frontend Developer Intern",
+    duration: "3-4months",
+    pay: false,
+    team: "software",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSelofH6t1NPxb6vnK0qKvdrgEhyfkEqAoC0ecVClH8Qml4DTg/viewform?usp=header",
+  },
+  {
+    title: "Product Designer Intern",
+    duration: "3-4months",
+    pay: false,
+    team: "product",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfCNTSV0haT9N7I5cBg_WuhffxzS4AIixt4idC-pyfKtXdtDQ/viewform?usp=header",
+  },
+  {
+    title: "Backend Developer Intern",
+    duration: "3-4months",
+    pay: false,
+    team: "software",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSegTDdxx-tWGb4YHbOfhKz5a73pzwQvvJHi_E7uwlF6yg1zoA/viewform?usp=header",
+  },
+
+  {
+    title: "Product Manager Intern",
+    duration: "3-4months",
+    pay: false,
+    team: "product",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSecxp-ytBCoMgzy_eLbq4Mux9XTgaGBinSqHZBJxmY9xbE_iA/viewform?usp=header",
+  },
+  {
+    title: "QA Tester Intern",
+    duration: "3-4months",
+    pay: false,
+    team: "software",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSeE6hmao8SIWMj00P7WKvsUjY1_HiYhif7JgVdNjzHyYCvZIA/viewform?usp=header",
+  },
+];
