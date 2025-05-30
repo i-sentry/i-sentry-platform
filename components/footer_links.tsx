@@ -7,7 +7,7 @@ import Link from "next/link";
 type ComponentProps = {
   title: string;
   links: LinkProps[];
-  setOpen: React.Dispatch<SetStateAction<boolean>>;
+  setOpen?: React.Dispatch<SetStateAction<boolean>>;
 };
 
 const FooterLink: React.FC<ComponentProps> = ({ title, links, setOpen }) => {
@@ -25,7 +25,7 @@ const FooterLink: React.FC<ComponentProps> = ({ title, links, setOpen }) => {
               className="inline-flex items-center justify-start gap-2"
             >
               <Link
-                onClick={() => setOpen(false)}
+                onClick={() => setOpen && setOpen(false)}
                 href={item?.comingSoon ? "" : item?.url}
                 className={cn(
                   "inline-flex items-end font-inter text-base font-light text-[#97A4B7] duration-300 hover:text-secondary-400",
