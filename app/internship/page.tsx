@@ -60,12 +60,10 @@ const Internship = () => {
             We accept people who are ready to develop their skill.
           </h3>
           <p className="text-base font-light leading-normal text-primary-200">
-            Lorem ipsum dolor sit amet consectetur. Dignissim mus in risus ut
-            bibendum pretium enim. Est feugiat pretium tempus sit ac lacus.
-            Ultrices malesuada placerat vitae gravida velit. Nulla sit penatibus
-            faucibus pulvinar egestas amet scelerisque cras donec. Enim vitae
-            quisque nulla risus. Iaculis at sit ultricies velit in mauris quis
-            etiam at.
+            At our company, we welcome interns who are eager to learn, grow, and
+            take on real challenges. If you&apos;re ready to sharpen your
+            skills, gain hands-on experience, and make a meaningful impact, this
+            is the place to start your journey.
           </p>
         </div>
       </div>
@@ -75,12 +73,12 @@ const Internship = () => {
         <div className="text-center md:text-left">
           <h3 className="mb-2 text-2xl text-white">How we run our program</h3>
           <p className="text-base font-light leading-normal text-primary-200">
-            Lorem ipsum dolor sit amet consectetur. Dignissim mus in risus ut
-            bibendum pretium enim. Est feugiat pretium tempus sit ac lacus.
-            Ultrices malesuada placerat vitae gravida velit. Nulla sit penatibus
-            faucibus pulvinar egestas amet scelerisque cras donec. Enim vitae
-            quisque nulla risus. Iaculis at sit ultricies velit in mauris quis
-            etiam at.
+            Our internship program is designed to provide a structured yet
+            flexible learning experience. Interns work on real projects
+            alongside experienced mentors, participate in regular feedback
+            sessions, and attend skill-building workshops. We focus on personal
+            growth, practical experience, and professional development ensuring
+            you leave with valuable knowledge and a clearer path forward.
           </p>
         </div>
         <div className="mt-6 md:mt-0">
