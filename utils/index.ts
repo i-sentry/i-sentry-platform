@@ -84,8 +84,8 @@ export const programs: LinkProps[] = [
     url: "/mentorships",
   },
   {
-    name: "Tech Internships",
-    url: "/internship",
+    name: "Tech Incubator",
+    url: "/tech-incubator",
   },
   {
     name: "Certification",
