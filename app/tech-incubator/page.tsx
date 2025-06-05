@@ -12,15 +12,16 @@ const Internship = () => {
       <section className="pb-20 pt-28 lg:pt-40">
         <div className="wrapper">
           <div className="text-center md:mx-auto md:max-w-xl">
-            <h4 className="text-sm text-secondary-200">Internship</h4>
+            <h4 className="text-sm text-secondary-200">Tech Incubator</h4>
             <h1 className="my-4 text-3xl font-medium leading-[1.35] text-white sm:text-5xl sm:leading-tight">
               Launch your career with
               <br className="hidden sm:block" /> innovation at I-Sentry
             </h1>
             <p className="font-light leading-normal text-primary-200">
-              Our internship programs are 99% hands-on. You get to design and
-              build outstanding projects that can give you an edge in a hiring
-              process.
+              Our Tech Incubator programs are 99% hands-on and project-based,
+              giving you the opportunity to design and build standout projects
+              that enhance your skills, provide valuable mentorship, and give
+              you a competitive edge in the hiring process.
             </p>
 
             <SmartButton
@@ -28,7 +29,7 @@ const Internship = () => {
               buttonText="Enroll for free"
               className="mt-10"
               isLink
-              url="/internship/enroll"
+              url="/tech-incubator/enroll"
             />
           </div>
         </div>
@@ -60,12 +61,10 @@ const Internship = () => {
             We accept people who are ready to develop their skill.
           </h3>
           <p className="text-base font-light leading-normal text-primary-200">
-            Lorem ipsum dolor sit amet consectetur. Dignissim mus in risus ut
-            bibendum pretium enim. Est feugiat pretium tempus sit ac lacus.
-            Ultrices malesuada placerat vitae gravida velit. Nulla sit penatibus
-            faucibus pulvinar egestas amet scelerisque cras donec. Enim vitae
-            quisque nulla risus. Iaculis at sit ultricies velit in mauris quis
-            etiam at.
+            At our company, we welcome interns who are eager to learn, grow, and
+            take on real challenges. If you&apos;re ready to sharpen your
+            skills, gain hands-on experience, and make a meaningful impact, this
+            is the place to start your journey.
           </p>
         </div>
       </div>
@@ -75,12 +74,13 @@ const Internship = () => {
         <div className="text-center md:text-left">
           <h3 className="mb-2 text-2xl text-white">How we run our program</h3>
           <p className="text-base font-light leading-normal text-primary-200">
-            Lorem ipsum dolor sit amet consectetur. Dignissim mus in risus ut
-            bibendum pretium enim. Est feugiat pretium tempus sit ac lacus.
-            Ultrices malesuada placerat vitae gravida velit. Nulla sit penatibus
-            faucibus pulvinar egestas amet scelerisque cras donec. Enim vitae
-            quisque nulla risus. Iaculis at sit ultricies velit in mauris quis
-            etiam at.
+            Our Tech Incubator program offers a structured yet flexible
+            environment for hands-on, project-based learning. Participants work
+            on real-world tech challenges, guided by experienced mentors, while
+            receiving regular feedback and attending targeted skill-building
+            sessions. We emphasize innovation, practical experience, and
+            personal growth equipping you with the tools, knowledge, and
+            confidence to take your ideas or career to the next level.
           </p>
         </div>
         <div className="mt-6 md:mt-0">
@@ -107,10 +107,12 @@ const Internship = () => {
               Technical Certifications
             </h4>
             <ul className="list-disc space-y-2 pl-5 text-base font-light leading-normal text-white">
+              <li>Frontend Development (ReactJs/NextJs)</li>
+              <li>Backend Development (NodeJs/Express, Python + Fast API)</li>
               <li>Full-Stack Development (MERN Stack)</li>
               <li>Cloud Computing (AWS/Azure)</li>
               <li>Data Science & Machine Learning</li>
-              <li> DevOps & CI/CD</li>
+              <li>DevOps & CI/CD</li>
             </ul>
           </div>
 
@@ -173,7 +175,7 @@ const Internship = () => {
           career?
         </h3>
 
-        <Link href="/internship/enroll">
+        <Link href="/tech-incubator/enroll">
           <SmartButton
             variant="bright"
             buttonText="Enroll for free"
@@ -190,20 +192,8 @@ export default Internship;
 const reviews = [
   {
     content:
-      " Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
-    reviewer: "Caitlyn King",
-    title: "Head of Design, Layers",
-  },
-  {
-    content:
-      " Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
-    reviewer: "King Caitlyn",
-    title: "Head of Design, Layers",
-  },
-  {
-    content:
-      " Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
-    reviewer: "Jason Bright",
-    title: "Head of Design, Layers",
+      "I really appreciated the team's prompt response and proactive approach to delivering the project. Their professionalism and efficiency stood out. I'm definitely looking forward to working together again in the future.",
+    reviewer: "Jemuel Martines",
+    title: "Co-Founder, Elevero",
   },
 ];
