@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import InternImage from "@/public/images/avatar.png";
+import InternImage from "@/public/images/internship.jpeg";
 
 type Review = {
   content: string;
@@ -35,7 +35,7 @@ const Carousel: React.FC<CarouselProps> = ({ reviews, interval = 3000 }) => {
 
   return (
     <div className="mt-10 bg-secondary-500 p-4 py-16">
-      <div className="relative mx-auto h-[12rem] max-w-[35rem] overflow-hidden no-scrollbar">
+      <div className="relative mx-auto h-[12rem] max-w-[30rem] overflow-hidden no-scrollbar">
         {reviews.map((item, index) => (
           <div
             key={index}
@@ -45,19 +45,17 @@ const Carousel: React.FC<CarouselProps> = ({ reviews, interval = 3000 }) => {
               transition: "transform 1s",
             }}
           >
-            <p className="text-center text-base font-light leading-normal text-white">
+            <h3 className="text-center text-lg font-light leading-normal text-white">
               {item.content}
-            </p>
+            </h3>
             <div className="mt-6 flex flex-col items-center">
               <Image
                 src={InternImage}
-                width={200}
-                height={200}
                 alt={`Image of ${item.reviewer}`}
                 className="h-10 w-10 rounded-full object-cover object-center"
               />
               <h4 className="text-sm text-white">{item.reviewer}</h4>
-              <p className="text-xs text-primary-100">{item.title}</p>
+              <p className="text-xs text-primary-200">{item.title}</p>
             </div>
           </div>
         ))}

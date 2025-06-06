@@ -15,29 +15,12 @@ import {
 import { link } from "fs";
 import SmartLinkButton from "../custom_button";
 import Link from "next/link";
-import NoJobs from "./NoJobs";
-import { useState } from "react";
 
 const JobPositions = () => {
-
-  const [selectedLocation, setSelectedLocation] = useState("any");
-
-
-
-  const jobGroups = jobs.reduce(
-    (jobGroups, job) => {
-      if (!jobGroups[job.team]) {
-        jobGroups[job.team] = [];
-      }
-      jobGroups[job.team].push(job);
-      return jobGroups;
-    },
-    {} as Record<string, typeof jobs>,
-  );
   return (
     <section id="positions" className="bg-footer2 py-16 md:pt-24">
       <div className="wrapper">
-        <div className="mb-6 pb-6 sm:grid sm:grid-cols-[1.5fr_1fr] sm:items-start sm:justify-between sm:gap-6">
+        <div className="mb-6 border-b border-[#FAFAFA1F] pb-6 sm:grid sm:grid-cols-[1.5fr_1fr] sm:items-start sm:justify-between sm:gap-6">
           <div className="">
             <h3 className="mb-5 font-dm-sans text-xl font-normal text-white sm:text-2xl md:text-3xl">
               Start doing work that matters
@@ -48,15 +31,11 @@ const JobPositions = () => {
               team — we&apos;re hiring!
             </p>
           </div>
-          {/* Location dropdown */}
           <div className="mt-8 items-center gap-2.5 sm:mt-0 sm:inline-flex sm:justify-end">
             <span className="hidden text-sm text-primary-50 sm:inline-block">
               Location:
             </span>
-            <Select
-              defaultValue="any"
-              onValueChange={(value) => setSelectedLocation(value)}
-            >
+            <Select defaultValue="any">
               <SelectTrigger className="h-auto w-[180px] items-center rounded-[8px] border-0 bg-grad p-2 text-sm text-white outline-0 focus:ring-0 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-2">
                 <SelectValue
                   placeholder={
@@ -91,66 +70,88 @@ const JobPositions = () => {
             </div> */}
           </div>
         </div>
-        {/* Positions available */}
-        {selectedLocation === "any" ? (
-          <div className="space-y-6">
-            {Object.entries(jobGroups).map(([team, group]) => (
-              <div
-                key={team}
-                className="pt-10 sm:border-t sm:border-[#FAFAFA26] md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_1.4fr]"
-              >
-                <div>
-                  <h3 className="font-dm-sans text-lg font-medium text-white">
-                    {team === "software" && "Development"}
-                    {team === "product" && "Product"}
-                  </h3>
-                  <p className="font-light text-primary-100">
-                    {team === "software" &&
-                      "Open positions in our development team."}
-                    {team === "product" &&
-                      "Open positions in our product team."}
-                  </p>
+
+        <div className="space-y-6">
+          {/* <p className="text-center font-medium text-white">
+            No current openings available.
+          </p> */}
+          {/* DESIGN JOBS */}
+          {jobs.map((role, i) => (
+            <div
+              key={i}
+              className="pt-10 sm:border-t sm:border-[#FAFAFA26] md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_1.4fr]"
+            >
+              <div>
+                <h3 className="font-dm-sans text-lg font-medium text-white">
+                  {role?.team === "software" && "Development"}
+                  {role?.team === "product" && "Product"}
+                </h3>
+                <p className="font-light text-primary-100">
+                  {role?.team === "software" &&
+                    "Open positions in our development team."}
+                  {role?.team === "product" &&
+                    "Open positions in our product team."}
+                </p>
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-[#FAFAFA26] p-5 md:mt-0">
+                <div className="lg:flex lg:items-center lg:gap-2">
+                  <h4 className="mb-2 font-dm-sans text-lg font-medium text-white lg:mb-0">
+                    {role?.title}
+                  </h4>
+                  <div className="flex items-center gap-2 lg:grow lg:justify-between">
+                    {/* <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#2E90FA]"></span>{" "}
+                      Design
+                    </Badge> */}
+                    <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
+                      <span className="inline-block h-4 w-4 rounded-full text-primary-50">
+                        <ReactCountryFlag
+                          svg
+                          countryCode="NG"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                          }}
+                          className="rounded-full object-cover"
+                        />
+                      </span>{" "}
+                      Remote, Nigeria
+                    </Badge>
+                  </div>
                 </div>
-                <div className="mt-6 space-y-6 md:mt-0">
-                  {group.map((role, i) => (
-                    <div
-                      key={i}
-                      className="rounded-2xl border border-[#FAFAFA26] p-5"
-                    >
-                      <div className="lg:flex lg:items-center lg:gap-2">
-                        <h4 className="mb-2 font-dm-sans text-lg font-medium text-white lg:mb-0">
-                          {role.title}
-                        </h4>
-                        <div className="flex items-center gap-2 lg:grow lg:justify-between">
-                          <Badge className="inline-flex items-center gap-2 rounded-[6px] bg-career px-2 py-0.5 font-inter text-sm font-normal text-primary-50">
-                            Remote
-                          </Badge>
-                        </div>
-                      </div>
-                      <p className="mt-8 mb-2 font-light text-primary-100">
-                        {role.skills}
-                      </p>
-                      <div className="flex items-center justify-between gap-6">
-                        <div className="inline-flex items-center gap-2 text-primary-100">
-                          <Clock size={20} />
-                          {role.duration}
-                        </div>
-                        <Link
-                          target="_blank"
-                          className="rounded-[6px] border border-[#FAFAFA26] px-3 py-2 text-sm font-medium text-primary-100"
-                          href={role.link}
-                        >
-                          Apply
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
+                <p className="mb-8 mt-2 font-light text-primary-100">
+                  We&apos;re looking for a junior/mid-level{" "}
+                  {role.title?.toLowerCase()} to join our team.
+                </p>
+                <div className="flex items-center justify-between gap-6">
+                  <div className="inline-flex items-center gap-2 text-primary-100">
+                    <span>
+                      <Clock size={20} />
+                    </span>
+                    {role.duration}
+                  </div>
+                  {/* <div className="inline-flex items-center gap-2 text-primary-100">
+                    <span>
+                      <CircleDollarSign size={20} />
+                    </span>
+                    80k - 100k
+                  </div> */}
+
+                  <Link
+                    target="_blank"
+                    className="rounded-[6px] border border-[#FAFAFA26] px-3 py-2 text-sm font-medium text-primary-100"
+                    href={role.link}
+                  >
+                    Apply
+                  </Link>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
 
-            {/* SOFTWARE JOBS */}
-            {/* <div className="border-t border-[#FAFAFA26] pt-10 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_1.4fr]">
+          {/* SOFTWARE JOBS */}
+          {/* <div className="border-t border-[#FAFAFA26] pt-10 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_1.4fr]">
             <div>
               <h3 className="font-dm-sans text-lg font-medium text-white">
                 Software Engineering
@@ -208,15 +209,12 @@ const JobPositions = () => {
           </div>
         </div> */}
 
-            <Image
-              src={CareerImg}
-              alt="office-room"
-              className="mt-6 h-[480px] w-full rounded-xl object-cover object-[right_center]"
-            />
-          </div>
-        ) : (
-          <NoJobs />
-        )}
+          <Image
+            src={CareerImg}
+            alt="office-room"
+            className="mt-6 h-[480px] w-full rounded-xl object-cover object-[right_center]"
+          />
+        </div>
       </div>
     </section>
   );
@@ -230,7 +228,6 @@ const jobs = [
     duration: "3-4months",
     pay: false,
     team: "software",
-    skills: "Seeking a Frontend Development Intern with experience in React, Next.js, Tailwind CSS, JavaScript, and Git to build responsive web interfaces and collaborate on real-world projects.",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSelofH6t1NPxb6vnK0qKvdrgEhyfkEqAoC0ecVClH8Qml4DTg/viewform?usp=header",
   },
   {
@@ -238,7 +235,6 @@ const jobs = [
     duration: "3-4months",
     pay: false,
     team: "product",
-    skills: "Seeking a Product Design Intern with foundational UI/UX skills, proficiency in Figma, and experience in user-centered design to create and iterate on digital product interfaces.",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSfCNTSV0haT9N7I5cBg_WuhffxzS4AIixt4idC-pyfKtXdtDQ/viewform?usp=header",
   },
   {
@@ -246,15 +242,14 @@ const jobs = [
     duration: "3-4months",
     pay: false,
     team: "software",
-    skills: "Seeking a Backend Development Intern with foundational experience in Python and FastAPI to build RESTful APIs, design databases, and collaborate on scalable backend systems with a strong interest in AI/ML.",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSegTDdxx-tWGb4YHbOfhKz5a73pzwQvvJHi_E7uwlF6yg1zoA/viewform?usp=header",
   },
+
   {
     title: "Product Manager Intern",
     duration: "3-4months",
     pay: false,
     team: "product",
-    skills: "Seeking a Product Management Intern with basic knowledge of Agile and MVP to assist in product planning, coordination, and tracking using tools like Trello, Notion, or Excel.",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSecxp-ytBCoMgzy_eLbq4Mux9XTgaGBinSqHZBJxmY9xbE_iA/viewform?usp=header",
   },
   {
@@ -262,7 +257,6 @@ const jobs = [
     duration: "3-4months",
     pay: false,
     team: "software",
-    skills: "Seeking a QA Testing Intern with foundational knowledge of manual testing, bug reporting, and exposure to automation tools like Cypress or Selenium to help ensure product quality across web applications.",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSeE6hmao8SIWMj00P7WKvsUjY1_HiYhif7JgVdNjzHyYCvZIA/viewform?usp=header",
   },
 ];

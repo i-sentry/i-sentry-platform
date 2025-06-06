@@ -1,6 +1,5 @@
+import { Award, Heart, Puzzle, TrendingUp, Users } from "lucide-react";
 import { BsTools } from "react-icons/bs";
-import { Users, Puzzle, TrendingUp, Award, Heart } from "lucide-react";
-
 // import SmartLinkButton from "../custom_button";
 
 type KPIProps = {
