@@ -34,7 +34,7 @@ const ContactUs = () => {
                   className="text-secondary-200 underline"
                   target="_blank"
                 >
-                  programs manager
+                  account manager
                 </Link>
                 &nbsp;for personalized support.
               </p>

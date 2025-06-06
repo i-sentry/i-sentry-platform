@@ -111,7 +111,7 @@ const Mentorships = () => {
                 buttonText="Tech Internship"
                 showAnimatedIcon
                 isLink
-                url="/tech-incubator"
+                url="/internship"
                 className="text-sm"
               />
             </div>

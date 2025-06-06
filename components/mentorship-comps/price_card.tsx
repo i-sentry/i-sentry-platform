@@ -63,7 +63,7 @@ const PriceCard = ({ list }: { list: PriceListProp }) => {
             : "cursor-default bg-primary-400/35 opacity-30 grayscale-[50] hover:shadow-none",
         )}
         isLink={!list.comingSoon}
-        url="/tech-incubator/enroll"
+        url="/internship/enroll"
       />
     </div>
   );

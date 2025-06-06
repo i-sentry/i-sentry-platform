@@ -19,13 +19,13 @@ const InternshipEnroll = () => {
               Let&apos;s get started
             </h1>
             <p className="text-sm font-light leading-normal text-primary-100 md:text-base">
-              Transform your career trajectory with our intensive, year-long
+              Transform your career trajectory through our intensive year-long
               mentorship program. At I-Sentry Technologies, we don&apos;t just
-              teach—we immerse you in real-world projects, connect you with
+              teach—we immerse you in real-world projects, surround you with
               industry experts, and guide your journey from aspiring developer
-              to confident tech professional.
+              to tech professional.
             </p>
-            {/* <ul>
+            <ul>
               <li>
                 <div className="inline-flex items-center gap-3 text-sm font-light text-white md:text-base">
                   <span className="inline-block h-2 w-2 rounded-full bg-grad"></span>
@@ -44,7 +44,7 @@ const InternshipEnroll = () => {
                   Program Foundation Building
                 </div>
               </li>
-            </ul> */}
+            </ul>
           </div>
           {/* FORM */}
           <InternshipForm />
