@@ -206,7 +206,7 @@ export type StatProps = {
 
 export const stats: StatProps[] = [
   {
-    percentage: 1000,
+    percentage: 5,
     title: "Businesses Transformed \n Through our enterprise digital solutions",
     symbol: "+",
   },

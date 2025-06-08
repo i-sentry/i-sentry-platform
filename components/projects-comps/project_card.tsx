@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ComponentProps> = ({ data }) => {
           alt={data?.title}
           width="1000"
           height="1000"
-          className="absolute top-0 h-full w-full object-contain object-center"
+          className="absolute top-0 h-full w-full object-cover object-center"
         />
       </figure>
 

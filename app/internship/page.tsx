@@ -106,6 +106,8 @@ const Internship = () => {
             </h4>
             <ul className="list-disc space-y-2 pl-5 text-base font-light leading-normal text-white">
               <li>Full-Stack Development (MERN Stack)</li>
+              <li>Frontend Development (ReactJs/NextJs)</li>
+              <li>Backend Development (NodeJs/Express, Python + Fast API)</li>
               <li>Cloud Computing (AWS/Azure)</li>
               <li>Data Science & Machine Learning</li>
               <li> DevOps & CI/CD</li>
@@ -188,20 +190,8 @@ export default Internship;
 const reviews = [
   {
     content:
-      " Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
-    reviewer: "Caitlyn King",
-    title: "Head of Design, Layers",
-  },
-  {
-    content:
-      " Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
-    reviewer: "King Caitlyn",
-    title: "Head of Design, Layers",
-  },
-  {
-    content:
-      " Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
-    reviewer: "Jason Bright",
-    title: "Head of Design, Layers",
+      "ISentry Team highly impressed by their prompt response, professionalism, and proactive approach throughout the project. Their efficiency and commitment to quality were outstanding. I look forward to future collaborations.",
+    reviewer: "Jemuel Martines",
+    title: "Co-Founder, Elevero",
   },
 ];
