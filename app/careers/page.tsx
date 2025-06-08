@@ -2,7 +2,7 @@
 import SmartButton from "@/components/custom_button";
 import Image from "next/image";
 import React from "react";
-import Stacks from "@/public/images/pictures-stack.png";
+// import Stacks from "@/public/images/pictures-stack.png";
 import { useRouter } from "next/navigation";
 import KeyPoints from "@/components/careers-comps/key_points";
 import JobPositions from "@/components/careers-comps/job_positions";
