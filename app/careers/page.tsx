@@ -30,7 +30,11 @@ const Career = () => {
           </div>
           <div className="relative">
             <div className="absolute -bottom-2 left-0 h-full w-full bg-stack"></div>
-            <Image src={Stacks} alt="image mansory" className="w-full" />
+            <Image
+              src="/images/pictures-stack.png"
+              alt="image mansory"
+              className="w-full"
+            />
           </div>
         </div>
       </section>
