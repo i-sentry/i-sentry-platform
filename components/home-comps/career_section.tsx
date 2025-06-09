@@ -51,7 +51,7 @@ const Career = () => {
       <div className="wrapper">
         <div className="career mb-16 inline-flex items-center gap-4">
           <h2 className="font-dm-sans font-medium text-white md:text-2xl">
-            Careers homepage
+            Careers
           </h2>
           <span className="flex h-6 w-6 items-center justify-center bg-[linear-gradient(90deg,_#DBE5F0_0%,_#A0BBD6_100%)] text-[#0C111D]">
             <ChevronRight />

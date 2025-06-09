@@ -2,42 +2,42 @@
 import React, { useEffect, useRef } from "react";
 import Marquee from "../ui/marquee";
 import ReviewCard from "./review_card";
-import Placeholder from "@/public/images/placeholder.png";
+// import Placeholder from "@/public/images/placeholder.png";
 import { professionals } from "@/utils";
 
-const reviews = [
-  {
-    name: "Maurice",
-    username: "ReactJs, NextJs",
-    body: "I was initially intimidated by React, but the mentorship really helped me break down complex concepts into manageable pieces. My mentor's feedback on my projects gave me a real-world understanding of how to improve my code structure and design thinking.",
-    img: Placeholder,
-  },
-  {
-    name: "Maurice",
-    username: "ReactJs, NextJs",
-    body: "Working on real-life backend problems was a game-changer for me. I learned not just how to write clean code, but also how to architect systems that scale. The hands-on experience prepared me for production-level challenges.",
-    img: Placeholder,
-  },
-  {
-    name: "Maurice",
-    username: "ReactJs, NextJs",
-    body: "before i got into flutter, mobile app development felt like a huge mountain to climb. i knew basic programming, but translating that into a mobile app was overwhelming. during the mentorship, i learned the fundamentals of flutter and dart.",
-    img: Placeholder,
-  },
-  {
-    name: "Maurice",
-    username: "ReactJs, NextJs",
-    body: "my biggest challenge before the mentorship was understanding how to set up continuous integration and delivery pipelines. the hands-on approach made it clear how devops tools fit together in the real world. ",
-    img: Placeholder,
-  },
-];
+// const reviews = [
+//   {
+//     name: "Maurice",
+//     username: "ReactJs, NextJs",
+//     body: "I was initially intimidated by React, but the mentorship really helped me break down complex concepts into manageable pieces. My mentor's feedback on my projects gave me a real-world understanding of how to improve my code structure and design thinking.",
+//     img: Placeholder,
+//   },
+//   {
+//     name: "Maurice",
+//     username: "ReactJs, NextJs",
+//     body: "Working on real-life backend problems was a game-changer for me. I learned not just how to write clean code, but also how to architect systems that scale. The hands-on experience prepared me for production-level challenges.",
+//     img: Placeholder,
+//   },
+//   {
+//     name: "Maurice",
+//     username: "ReactJs, NextJs",
+//     body: "before i got into flutter, mobile app development felt like a huge mountain to climb. i knew basic programming, but translating that into a mobile app was overwhelming. during the mentorship, i learned the fundamentals of flutter and dart.",
+//     img: Placeholder,
+//   },
+//   {
+//     name: "Maurice",
+//     username: "ReactJs, NextJs",
+//     body: "my biggest challenge before the mentorship was understanding how to set up continuous integration and delivery pipelines. the hands-on approach made it clear how devops tools fit together in the real world. ",
+//     img: Placeholder,
+//   },
+// ];
 
 const firstRow = professionals
   .filter((item) => !item.alias.toLowerCase().includes("victor"))
   .slice(0, 3);
-const secondRow = professionals
-  .filter((item) => !item.alias.toLowerCase().includes("victor"))
-  .slice(reviews.length / 2);
+// const secondRow = professionals
+//   .filter((item) => !item.alias.toLowerCase().includes("victor"))
+//   .slice(reviews.length / 2);
 
 const Testimonials = () => {
   const sectionRef = useRef(null);
@@ -102,7 +102,7 @@ const Testimonials = () => {
               />
             ))}
           </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:20s]">
+          {/* <Marquee reverse pauseOnHover className="[--duration:20s]">
             {secondRow.map((review, index) => (
               <ReviewCard
                 key={review.alias + index}
@@ -119,7 +119,7 @@ const Testimonials = () => {
                 className="w-[400px]"
               />
             ))}
-          </Marquee>
+          </Marquee> */}
         </div>
 
         <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-full scale-x-125 bg-reviews duration-300 group-data-[theme=light]:bg-light sm:block"></div>

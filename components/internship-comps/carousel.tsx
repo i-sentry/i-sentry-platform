@@ -35,7 +35,7 @@ const Carousel: React.FC<CarouselProps> = ({ reviews, interval = 3000 }) => {
 
   return (
     <div className="mt-10 bg-secondary-500 p-4 py-16">
-      <div className="relative mx-auto h-[12rem] max-w-[30rem] overflow-hidden no-scrollbar">
+      <div className="relative mx-auto h-[12rem] max-w-[40rem] overflow-hidden no-scrollbar">
         {reviews.map((item, index) => (
           <div
             key={index}
@@ -55,7 +55,7 @@ const Carousel: React.FC<CarouselProps> = ({ reviews, interval = 3000 }) => {
                 className="h-10 w-10 rounded-full object-cover object-center"
               />
               <h4 className="text-sm text-white">{item.reviewer}</h4>
-              <p className="text-xs text-primary-200">{item.title}</p>
+              <p className="text-xs text-primary-100">{item.title}</p>
             </div>
           </div>
         ))}

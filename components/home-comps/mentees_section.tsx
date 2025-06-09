@@ -27,11 +27,11 @@ const MenteeSection = () => {
       <div className="px-4">
         <div className="mb-16 space-y-6 text-center">
           <h2 className="text-center text-2xl font-semibold text-white md:text-4xl md:leading-tight">
-            Current Mentees
+            Past Mentees
           </h2>
-          <p className="text-sm font-extralight text-[#C2C2C2] md:text-base">
+          {/* <p className="text-sm font-extralight text-[#C2C2C2] md:text-base">
             Featured Interns
-          </p>
+          </p> */}
         </div>
 
         <div>
