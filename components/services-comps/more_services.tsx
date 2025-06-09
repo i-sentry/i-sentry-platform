@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Placeholder from "@/public/images/image.webp";
+// import Placeholder from "@/public/images/image.webp";
 import SmartButton from "@/components/custom_button";
 import EachElement from "../widgets/list_rendering";
 import { IProps } from "@/app/services/page";
@@ -70,7 +70,9 @@ const MoreServices = () => {
         </p>
 
         <Image
-          src={Placeholder}
+          src="/images/image.webp"
+          width={1100}
+          height={733}
           alt="Placeholder"
           className="mt-6 h-[250px] w-full object-cover object-center"
         />

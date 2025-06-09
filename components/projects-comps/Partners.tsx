@@ -26,6 +26,8 @@ const Partners = () => {
                 <Image
                   key={client?.name + index}
                   src={client?.brand}
+                  width={200}
+                  height={60}
                   alt={client?.name}
                   className={cn(
                     "aspect-[9/4] w-[100px]",

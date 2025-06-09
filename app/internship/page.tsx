@@ -2,8 +2,8 @@
 import SmartButton from "@/components/custom_button";
 import Image from "next/image";
 import Link from "next/link";
-import InternImage from "@/public/images/internship.jpeg";
-import Roles from "@/public/images/roles.png";
+// import InternImage from "@/public/images/internship.jpeg";
+// import Roles from "@/public/images/roles.png";
 import Carousel from "@/components/internship-comps/carousel";
 
 const Internship = () => {
@@ -38,7 +38,9 @@ const Internship = () => {
       <div className="wrapper py-16 lg:grid lg:grid-cols-2 lg:items-center lg:justify-between lg:gap-8">
         <figure className="relative">
           <Image
-            src={InternImage}
+            src="/images/internship.jpeg"
+            width={500}
+            height={300}
             alt="A woman resting  on the wall while operating her laptop"
             className="rounded-xl object-cover object-center md:h-[300px]"
           />
@@ -82,7 +84,13 @@ const Internship = () => {
           </p>
         </div>
         <div className="mt-6 md:mt-0">
-          <Image src={Roles} alt="A cursor " className="rounded-xl" />
+          <Image
+            src="/images/roles.png"
+            width={600}
+            height={400}
+            alt="A cursor "
+            className="rounded-xl"
+          />
         </div>
       </div>
 
@@ -134,9 +142,7 @@ const Internship = () => {
           it&apos;s about transforming lives and shaping the future of tech.
           Here&apos;s a glimpse into the impact we&apos;ve made
         </p>
-
         <Carousel reviews={reviews} />
-
         {/* <div className="mt-10 bg-secondary-500 p-8">
           <div className="no-scrollbar mx-auto w-[70%] overflow-hidden">
             <div className="flex w-max space-x-5">
@@ -163,14 +169,12 @@ const Internship = () => {
           </div>
         </div> */}
       </section>
-
       {/* CTAT */}
       <section className="wrapper flex flex-col items-center py-20">
         <h3 className="text-balance text-center text-2xl font-medium leading-normal text-white md:text-wrap md:text-4xl md:leading-tight">
           Ready to take the next step in <br className="hidden md:block" /> your
           career?
         </h3>
-
         <Link href="/internship/enroll">
           <SmartButton
             variant="bright"

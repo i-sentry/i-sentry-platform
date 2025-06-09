@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import CareerImg from "@/public/images/career-home.webp";
+// import CareerImg from "@/public/images/career-home.webp";
 import { ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -64,7 +64,10 @@ const Career = () => {
               <h4 className="font-dm-sans text-sm font-light text-[#EAECF0] md:text-base">
                 Find a job
               </h4>
-              <Link href="/careers" className="link font-dm-sans text-base font-normal text-white md:text-lg">
+              <Link
+                href="/careers"
+                className="link font-dm-sans text-base font-normal text-white md:text-lg"
+              >
                 Search for jobs
               </Link>
             </div>
@@ -107,7 +110,7 @@ const Career = () => {
           <div className="">
             <Image
               className="career-img h-full w-full rounded-[12px] object-cover object-center"
-              src={CareerImg}
+              src="/images/career-home.webp"
               alt="placeholder"
               width={1000}
               height={3000}

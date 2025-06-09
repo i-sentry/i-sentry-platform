@@ -127,7 +127,7 @@ const JobPositions = () => {
                           </Badge>
                         </div>
                       </div>
-                      <p className="mt-8 mb-2 font-light text-primary-100">
+                      <p className="mb-2 mt-8 font-light text-primary-100">
                         {role.skills}
                       </p>
                       <div className="flex items-center justify-between gap-6">
@@ -209,7 +209,9 @@ const JobPositions = () => {
         </div> */}
 
             <Image
-              src={CareerImg}
+              src="/images/career.jpeg"
+              width={100}
+              height={480}
               alt="office-room"
               className="mt-6 h-[480px] w-full rounded-xl object-cover object-[right_center]"
             />

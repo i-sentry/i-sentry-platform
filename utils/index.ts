@@ -1,16 +1,16 @@
-import PorkerHut from "@/public/assets/partners/porkerhut.svg";
-import TTfcx from "@/public/assets/partners/ttfcx.svg";
-import Dataphyte from "@/public/assets/partners/Dataphyte.svg";
-import Ri from "@/public/assets/partners/ri-softwares.svg";
-import { StaticImageData } from "next/image";
-import PorkerHutWeb from "@/public/images/case-studies/porkerhut.png";
-import Bankify from "@/public/images/case-studies/cake-app.jpg";
-import Ariyo from "@/public/assets/mentees/Ariyo_O.B.png";
-import Emem from "@/public/assets/mentees/Emem-Peace.jpg";
-import Victor from "@/public/assets/mentees/Victor-udo.jpeg";
-import Wangui from "@/public/assets/mentees/Wangui.jpg";
-import Taiwo from "@/public/assets/mentees/Taiwo_Oyewale.jpg";
-import Gideon from "@/public/assets/mentees/gideon.webp";
+// import PorkerHut from "@/public/assets/partners/porkerhut.svg";
+// import TTfcx from "@/public/assets/partners/ttfcx.svg";
+// import Dataphyte from "@/public/assets/partners/Dataphyte.svg";
+// import Ri from "@/public/assets/partners/ri-softwares.svg";
+// import { StaticImageData } from "next/image";
+// import PorkerHutWeb from "@/public/images/case-studies/porkerhut.png";
+// import Bankify from "@/public/images/case-studies/cake-app.jpg";
+// import Ariyo from "@/public/assets/mentees/Ariyo_O.B.png";
+// import Emem from "@/public/assets/mentees/Emem-Peace.jpg";
+// import Victor from "@/public/assets/mentees/Victor-udo.jpeg";
+// import Wangui from "@/public/assets/mentees/Wangui.jpg";
+// import Taiwo from "@/public/assets/mentees/Taiwo_Oyewale.jpg";
+// import Gideon from "@/public/assets/mentees/gideon.webp";
 
 export type LinkProps = {
   name: string;
@@ -19,10 +19,10 @@ export type LinkProps = {
 };
 
 export const clients = [
-  { name: "Trusted Transfers", brand: TTfcx },
-  { name: "Dataphytes", brand: Dataphyte },
-  { name: "Porker Hut", brand: PorkerHut },
-  { name: "Ri-softwares", brand: Ri },
+  { name: "Trusted Transfers", brand: "/assets/partners/ttfcx.svg" },
+  { name: "Dataphytes", brand: "/assets/partners/Dataphyte.svg" },
+  { name: "Porker Hut", brand: "/assets/partners/porkerhut.svg" },
+  { name: "Ri-softwares", brand: "/assets/partners/ri-softwares.svg" },
 ];
 
 // NAVBAR MAIN MENU
@@ -151,7 +151,7 @@ export type IProject = {
   title: string;
   isLunched: boolean;
   tags: string[];
-  image: StaticImageData;
+  image: string;
   slug: string;
   tools: string[];
   client: string;
@@ -167,7 +167,7 @@ export const caseStudies: IProject[] = [
     title: "PorkerHut Website",
     isLunched: false,
     tags: ["Web Design", "Web Development", "Marketing", "Creative Direction"],
-    image: PorkerHutWeb,
+    image: "/images/case-studies/porkerhut.png",
     slug: "porkerhut",
     tools: ["MongoDB", "ReactJS", "AWS"],
     client: "Web Design",
@@ -184,7 +184,7 @@ export const caseStudies: IProject[] = [
     title: "The Cake App",
     isLunched: true,
     tags: ["Web Design", "Web Development", "Marketing", "Creative Direction"],
-    image: Bankify,
+    image: "/images/case-studies/cake-app.jpg",
     slug: "the-cake-app",
     tools: ["MongoDB", "NextJS", "Vercel"],
     client: "Web Design",
@@ -242,7 +242,7 @@ export type IMentee = {
   alias: string;
   skill: string;
   tools: string;
-  photo: StaticImageData;
+  photo: string;
   comment: string;
   links: ILinks;
 };
@@ -266,7 +266,7 @@ export const professionals: IMentee[] = [
     alias: "Ariyo B.",
     skill: "Product Manager",
     tools: "Jira",
-    photo: Ariyo,
+    photo: "/assets/mentees/Ariyo_O.B.png",
     comment:
       "Collaborating with a cross-functional team to drive the completion of a project has been a significant learning curve. The journey has reinforced the importance of teamwork, proper communication, and strategic thinking needed to build a product.",
     links: {
@@ -280,7 +280,7 @@ export const professionals: IMentee[] = [
     alias: "Taiwo O.",
     skill: "Frontend Engineer",
     tools: "React | Next.js | TypeScript",
-    photo: Taiwo,
+    photo: "/assets/mentees/Taiwo_Oyewale.jpg",
     comment:
       "My experience thus far has been challenging but rewarding. I've gained industry experience and learned a lot.",
     links: {
@@ -295,11 +295,12 @@ export const professionals: IMentee[] = [
     name: "Wangui Njoroge",
     alias: "Wangui N.",
     skill: "Frontend Engineer",
-    tools: "Bootstrap, Tailwind, JS, React",
-    photo: Wangui,
+    tools: "Tailwind, JS, React, NextJS, Typescript",
+    photo: "/assets/mentees/Wangui.jpg",
     comment:
       "I have had the best time learning and getting the much needed hands-on experience from industry experts. They are patient, present and encouraging. I can't recommend them enough.",
     links: {
+      github: "https://github.com/R-Wangui",
       linkedin: "https://ke.linkedin.com/in/wangui-njoroge-639378181",
       email: "wangoinjoroge450@gmail.com",
     },
@@ -309,7 +310,7 @@ export const professionals: IMentee[] = [
     alias: "Victor U.",
     skill: "QA Tester/Software Tester",
     tools: "Jira, Zephyr Scale",
-    photo: Victor,
+    photo: "/assets/mentees/Victor-udo.jpeg",
     comment: "Entry level",
     links: {
       linkedin: "http://linkedin.com/in/victor-udo-55136b2b2",
@@ -321,7 +322,7 @@ export const professionals: IMentee[] = [
     alias: "Eduoku E.",
     skill: "Frontend Engineer",
     tools: "HTML, CSS, Javascript, React, Next JS, Tailwind CSS",
-    photo: Emem,
+    photo: "/assets/mentees/Emem-Peace.jpg",
     comment:
       "The experience has been great so far. I have learnt a lot with regards to collaboration on github, API integration, UI state management, website optimisation and many more. The team has also been very helpful with lots of guidance that has helped me deliver on tasks. I am grateful for the opportunity to work with everyone of my team members.",
     links: {
@@ -336,12 +337,11 @@ export const professionals: IMentee[] = [
     alias: "Gideon S.",
     skill: "Project Manager",
     tools: "Click-up",
-    photo: Gideon,
+    photo: "/assets/mentees/gideon.webp",
     comment:
       "I-Sentry is committed to nurturing future tech leaders and my experience has been to help create seamless and efficient project workflows-project planning, tracking progress, and ensuring timely delivery. Proud to be part of a community driving innovation for business and individual growth.",
     links: {
       portfolio: "https://my-portfolio-app-eight.vercel.app/",
-      github: "https://github.com/TaiwoSaidat",
       linkedin: "https://www.linkedin.com/in/gideon-sunday",
       email: "sundaygideon73@gmail.com",
     },

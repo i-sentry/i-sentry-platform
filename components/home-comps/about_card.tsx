@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import SmartButton from "../custom_button";
 
 type ComponentProps = {
   showList?: boolean;
   showImages?: boolean;
-  images?: StaticImageData[];
+  images?: string[];
   title: string;
   description: string;
   buttonText?: string;
@@ -40,10 +40,12 @@ const AboutCard: React.FC<ComponentProps> = ({
               images && images?.length < 3 && "sm:grid-cols-1",
             )}
           >
-            {images?.map((img: StaticImageData, index: number) => (
+            {images?.map((img: string, index: number) => (
               <Image
                 key={index}
                 src={img}
+                width={480}
+                height={320}
                 alt="placeholder-img"
                 className={cn(
                   "h-[150px] w-full rounded-xl object-cover object-center",

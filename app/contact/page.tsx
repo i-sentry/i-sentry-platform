@@ -2,7 +2,7 @@
 import ContactForm from "@/components/contact-comps/page";
 import Image from "next/image";
 import React from "react";
-import Cone from "@/public/assets/svg/cone-pattern.svg";
+// import Cone from "@/public/assets/svg/cone-pattern.svg";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 const ContactUs = () => {
@@ -10,7 +10,9 @@ const ContactUs = () => {
     <>
       <section className="overflow-x-hidden pb-16 pt-[11rem]">
         <Image
-          src={Cone}
+          src="/assets/svg/cone-pattern.svg"
+          width={1000}
+          height={1000}
           alt="svg"
           className="absolute -right-[10rem] top-0 z-0 opacity-30"
         />

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import PlaceHolder from "@/public/images/placeholder.png";
+// import PlaceHolder from "@/public/images/placeholder.png";
 import Image from "next/image";
 import { caseStudies, IProject } from "@/utils";
 import EachElement from "@/components/widgets/list_rendering";
@@ -32,7 +32,7 @@ const ProjectDetails: React.FC<ComponentProps> = ({ params }) => {
         <div className="wrapper">
           <>
             <Image
-              src={project?.image || PlaceHolder}
+              src="/images/placeholder.png"
               width={1000}
               height={1000}
               alt="placeholder"

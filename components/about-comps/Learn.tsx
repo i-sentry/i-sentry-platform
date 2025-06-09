@@ -1,7 +1,7 @@
 import React from "react";
 import SmartLinkButton from "../custom_button";
 import Image from "next/image";
-import AboutLearn from "@/public/images/learn-about.webp";
+// import AboutLearn from "@/public/images/learn-about.webp";
 
 const Learn = () => {
   return (
@@ -79,7 +79,9 @@ const Learn = () => {
             />
           </div>
           <Image
-            src={AboutLearn}
+            src="/images/learn-about.webp"
+            width={4096}
+            height={2731}
             alt="A team discussing"
             className="mt-6 h-[400px] w-full rounded-xl object-cover object-center md:h-[500px] lg:col-span-2 lg:object-top"
           />

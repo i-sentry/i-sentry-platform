@@ -61,7 +61,6 @@ const schema = yup.object().shape({
 });
 
 // mailsender: mlsn.46c207dc33bd27a645bc59402da1b0caf2ebb297900637784730c4e6f0182d4b
-
 const ContactForm = () => {
   // const [clicked, setClicked] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -144,7 +143,6 @@ const ContactForm = () => {
             message, and we&apos;ll be in touch as soon as possible.
           </p>
         </div>
-
         <div className="flex flex-col gap-x-8 gap-y-6 sm:grid sm:grid-cols-2">
           <EachElement
             of={contactFormData}
