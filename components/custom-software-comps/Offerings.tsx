@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Illus from "@/public/images/density-medium.svg";
+// import Illus from "@/public/images/density-medium.svg";
 import EachElement from "../widgets/list_rendering";
 
 type IProcess = {
@@ -29,7 +29,9 @@ const Offerings: React.FC<ProcessProps> = ({ process }) => {
       {/* OFFERIGS */}
       <section className="relative overflow-hidden bg-gradient-to-bl from-[#FAFAFA13] to-[#F4F4F40D] py-16 lg:py-24">
         <Image
-          src={Illus}
+          src="/images/density-medium.svg"
+          width={500}
+          height={500}
           alt="Brick illustration"
           className="absolute -right-[0px] -top-0 z-0 w-[300px] scale-150 md:scale-[1.8]"
         />

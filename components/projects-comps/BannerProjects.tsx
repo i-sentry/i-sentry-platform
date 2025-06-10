@@ -1,7 +1,7 @@
 import React from "react";
 import { useMediaQuery } from "usehooks-ts";
-import Block from "@/public/assets/svg/Keyboard-control-key.svg";
-import Cone from "@/public/assets/svg/cone-pattern.svg";
+// import Block from "@/public/assets/svg/Keyboard-control-key.svg";
+// import Cone from "@/public/assets/svg/cone-pattern.svg";
 import Image from "next/image";
 
 const BannerProjects = () => {
@@ -12,13 +12,17 @@ const BannerProjects = () => {
       <section className="relative">
         {/* SVG BG */}
         <Image
-          src={Block}
+          src="/assets/svg/Keyboard-control-key.svg"
+          width={150}
+          height={80}
           data-speed="3.5"
           alt="Brick illustration"
           className="absolute left-[70px] top-[14rem] z-0 w-[150px] scale-150 md:scale-[1.8] lg:left-[300px]"
         />
         <Image
-          src={Cone}
+          src="/assets/svg/cone-pattern.svg"
+          width={376}
+          height={200}
           data-speed="3.5"
           alt="Brick illustration"
           className="absolute -right-[100px] -top-[10px] h-[200px] w-[376px] -rotate-[20deg] scale-[1.15] md:scale-125 lg:-right-[12rem] lg:-top-12 lg:h-[400px] lg:w-[500px] lg:scale-[1]"

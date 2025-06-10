@@ -32,6 +32,8 @@ const Career = () => {
             <div className="absolute -bottom-2 left-0 h-full w-full bg-stack"></div>
             <Image
               src="/images/pictures-stack.png"
+              width={3360}
+              height={1570}
               alt="image mansory"
               className="w-full"
             />

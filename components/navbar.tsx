@@ -8,7 +8,7 @@ import MobileSideMenu from "./mobile-sidemenu";
 import SmartButton from "./custom_button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import Logo from "@/public/images/isentry.svg";
+// import Logo from "@/public/images/isentry.svg";
 import Image from "next/image";
 
 type ComponentProps = {
@@ -46,7 +46,9 @@ const Navbar: React.FC<ComponentProps> = ({}) => {
           {/* LOGO */}
           <Link href="/" onClick={() => setOpen(false)} className="text-white">
             <Image
-              src={Logo}
+              src="/images/isentry.svg"
+              width={120}
+              height={150}
               alt="ISentry Technologies"
               className="w-[120px] md:w-[150px]"
             />

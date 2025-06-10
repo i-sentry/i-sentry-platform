@@ -41,6 +41,8 @@ const Partners = ({ className }: { className?: string }) => {
           {clients.map((client, index) => (
             <Image
               key={client?.name + index}
+              width={100}
+              height={100}
               src={client?.brand}
               alt={client?.name}
               className={cn(

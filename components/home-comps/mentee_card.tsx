@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Placeholder from "@/public/images/placeholder.png";
 import Link from "next/link";
 import { ILinks } from "@/utils";
@@ -9,7 +9,7 @@ const MenteeCard = ({
   description,
   links,
 }: {
-  image: StaticImageData;
+  image: string;
   title: string;
   description: string;
   links: ILinks;
@@ -18,6 +18,9 @@ const MenteeCard = ({
     <div className="mentee relative h-[300px] w-[300px] overflow-hidden rounded-3xl">
       <Image
         src={image || Placeholder}
+        // will go back to change this
+        width={1925}
+        height={1977}
         alt="placeholder"
         className="h-full w-full object-cover object-[top_center]"
       />

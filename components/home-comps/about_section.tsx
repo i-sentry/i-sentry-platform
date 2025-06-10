@@ -1,8 +1,8 @@
-import Consult1 from "@/public/images/consult-1.jpeg";
-import Consult2 from "@/public/images/consult-2jpeg.jpeg";
-import Consult3 from "@/public/images/consult-3.jpeg";
-import Cloud from "@/public/images/cloud-solutions.jpeg";
-import { StaticImageData } from "next/image";
+// import Consult1 from "@/public/images/consult-1.jpeg";
+// import Consult2 from "@/public/images/consult-2jpeg.jpeg";
+// import Consult3 from "@/public/images/consult-3.jpeg";
+// import Cloud from "@/public/images/cloud-solutions.jpeg";
+// import Image from "next/image";
 import AboutCard from "./about_card";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -88,7 +88,7 @@ export default About;
 type ValueProp = {
   title: string;
   description: string;
-  images?: StaticImageData[];
+  images?: string[];
   buttonText?: string;
   listItems?: string[];
   url?: string;
@@ -119,12 +119,16 @@ const coreValues: ValueProp[] = [
     title: "Expert Consultancy",
     description:
       "We don't just offer consultations - we drive transformation. Our expert consultancy service is your definitive pathway to exceptional technological advancement and business growth.",
-    images: [Consult1, Consult2, Consult3],
+    images: [
+      "/images/consult-1.jpeg",
+      "/images/consult-2jpeg.jpeg",
+      "/images/consult-3.jpeg",
+    ],
   },
   {
     title: "Cloud Solutions",
     description:
       "Scalable, secure, and efficient cloud infrastructure designed for your unique needs.",
-    images: [Cloud],
+    images: ["/images/cloud-solutions.jpeg"],
   },
 ];

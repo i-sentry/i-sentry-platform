@@ -1,13 +1,14 @@
-import Img from "@/public/images/custom-software.webp";
-import Img2 from "@/public/images/tech-consult.jpeg";
-import Img3 from "@/public/images/custom-software.webp";
+// import Img from "@/public/images/custom-software.webp";
+// import Img2 from "@/public/images/tech-consult.jpeg";
+// import Img3 from "@/public/images/custom-software.webp";
+// import Image from "next/image";
 
 export const servicesContent = {
   "custom-software": {
     title: "We make your software stand out.",
     description:
       "We building custom software across various niches that are very responsive and work effective to drive business growth. Our team are one of the best across the globe, building software tailored to your needs.",
-    image: Img,
+    image: "/images/custom-software.webp",
     process: {
       title: "Our Development Process",
       description:
@@ -50,7 +51,7 @@ export const servicesContent = {
     title: "We make technology work for your business.",
     description:
       "We provide strategic technology guidance across various industries, helping businesses make informed decisions and implement effective solutions. Our expert consultants work alongside your team to drive digital transformation and achieve measurable business outcomes.",
-    image: Img2,
+    image: "/images/tech-consult.jpeg",
     process: {
       title: "Your Go-To for Tech Solutions",
       description:
@@ -93,7 +94,7 @@ export const servicesContent = {
     title: "Expert Guidance Tailored to Your Business",
     description:
       "We provide strategic leadership and expert guidance to transform your business vision into reality. Our experienced strategists work closely with your team to develop comprehensive roadmaps and actionable plans that drive sustainable growth and innovation.",
-    image: Img3,
+    image: "/images/custom-software.webp",
     process: {
       title: "Why Choose Our Expertise?",
       description:
