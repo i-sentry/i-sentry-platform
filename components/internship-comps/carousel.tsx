@@ -34,7 +34,7 @@ const Carousel: React.FC<CarouselProps> = ({ reviews, interval = 3000 }) => {
 
   return (
     <div className="mt-10 bg-secondary-500 p-4 py-16">
-      <div className="relative mx-auto h-[12rem] max-w-[40rem] overflow-hidden no-scrollbar">
+      <div className="relative mx-auto h-[18rem] max-w-[40rem] overflow-hidden no-scrollbar md:h-[12rem]">
         {reviews.map((item, index) => (
           <div
             key={index}
