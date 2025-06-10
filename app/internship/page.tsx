@@ -138,7 +138,7 @@ const Internship = () => {
       </div>
 
       {/*  */}
-      <section className="wrapper mt-8">
+      <section id="success-stories" className="wrapper mt-8">
         <p className="font-dm-sans text-2xl font-normal leading-normal text-white lg:mx-auto lg:max-w-4xl lg:text-center lg:text-xl lg:text-primary-100">
           At Isentry, our mission is not just about providing training;
           it&apos;s about transforming lives and shaping the future of tech.
@@ -197,5 +197,13 @@ const reviews = [
       "ISentry Team highly impressed by their prompt response, professionalism, and proactive approach throughout the project. Their efficiency and commitment to quality were outstanding. I look forward to future collaborations.",
     reviewer: "Jemuel Martines",
     title: "Co-Founder, Elevero",
+    image: "/assets/elevero.webp",
+  },
+  {
+    content:
+      "Working with Isentry Technologies to develop our agro-commerce platform has been an outstanding experience. They truly understood our vision of connecting pig farmers directly with customers and delivered a robust, user-friendly ecommerce solution that exceeded our expectations.",
+    reviewer: "Nadoo Jumboh",
+    title: "Co-Founder, PorkerHut Naija",
+    image: "/assets/porker.jpeg",
   },
 ];

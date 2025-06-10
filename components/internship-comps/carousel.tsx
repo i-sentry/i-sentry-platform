@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import InternImage from "@/public/images/internship.jpeg";
 
 type Review = {
   content: string;
   reviewer: string;
   title: string;
-  image?: string;
+  image: string;
 };
 
 interface CarouselProps {
@@ -48,14 +47,21 @@ const Carousel: React.FC<CarouselProps> = ({ reviews, interval = 3000 }) => {
             <h3 className="text-center text-lg font-light leading-normal text-white">
               {item.content}
             </h3>
-            <div className="mt-6 flex flex-col items-center">
-              <Image
-                src={InternImage}
-                alt={`Image of ${item.reviewer}`}
-                className="h-10 w-10 rounded-full object-cover object-center"
-              />
-              <h4 className="text-sm text-white">{item.reviewer}</h4>
-              <p className="text-xs text-primary-100">{item.title}</p>
+            <div className="flex items-center justify-center">
+              <div className="mt-6 inline-flex items-center gap-2">
+                <Image
+                  src={item.image}
+                  alt={`Image of ${item.reviewer}`}
+                  width={100}
+                  height={100}
+                  priority
+                  className="h-10 w-10 rounded-full object-cover object-center"
+                />
+                <div>
+                  <h4 className="text-sm text-white">{item.reviewer}</h4>
+                  <p className="text-xs text-primary-50">{item.title}</p>
+                </div>
+              </div>
             </div>
           </div>
         ))}
