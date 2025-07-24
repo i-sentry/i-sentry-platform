@@ -9,34 +9,17 @@ import {
 import { Controller } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import EachElement from "./list_rendering";
-import { Skeleton } from "../ui/skeleton";
+import { countries } from "@/utils/countrylist";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CountryInput = ({ errors, data, control }: any) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [countries, setCountries] = useState<any[]>([]);
-  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const getCountries = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch("https://restcountries.com/v2/all");
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json(); // Await the JSON conversion
-        console.log(data);
-        setCountries(data);
-      } catch (error) {
-        console.error("Error fetching countries:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getCountries();
-  }, []);
+  const sortedCountries = countries.sort((a, b) => {
+    const nameA = a.name.common.toUpperCase();
+    const nameB = b.name.common.toUpperCase();
+    return nameA.localeCompare(nameB);
+  });
 
   return (
     <div className="col-span-2 nth-child-1:col-span-1 nth-child-2:col-span-1">
@@ -46,9 +29,7 @@ const CountryInput = ({ errors, data, control }: any) => {
       >
         {data?.label}
       </label>
-      {loading ? (
-        <Skeleton className="h-9 w-full rounded bg-field" />
-      ) : (
+      {
         <Controller
           name="country"
           control={control}
@@ -68,15 +49,15 @@ const CountryInput = ({ errors, data, control }: any) => {
               </SelectTrigger>
               <SelectContent className="rounded border-primary-100/30 bg-primary-900">
                 <EachElement
-                  of={countries}
+                  of={sortedCountries}
                   // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   render={(data: any, index: number) => (
                     <SelectItem
                       key={index}
-                      value={data?.name}
+                      value={data?.name?.common}
                       className="text-primary-100"
                     >
-                      {data?.name}
+                      {data?.name?.common}
                     </SelectItem>
                   )}
                 />
@@ -84,7 +65,7 @@ const CountryInput = ({ errors, data, control }: any) => {
             </Select>
           )}
         />
-      )}
+      }
     </div>
   );
 };

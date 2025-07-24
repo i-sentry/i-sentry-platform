@@ -5,6 +5,8 @@ import PhoneInput from "react-phone-number-input";
 import { cn } from "@/lib/utils";
 import flags from "react-phone-number-input/flags";
 
+console.log(flags);
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const PhoneInputField = ({ errors, data, control }: any) => {
   return (
