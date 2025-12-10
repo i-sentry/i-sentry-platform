@@ -195,7 +195,7 @@ const reviews = [
   {
     content:
       "ISentry Team highly impressed by their prompt response, professionalism, and proactive approach throughout the project. Their efficiency and commitment to quality were outstanding. I look forward to future collaborations.",
-    reviewer: "Jemuel Martines",
+    reviewer: "JM",
     title: "Co-Founder, Elevero",
     image: "/assets/elevero.webp",
   },
